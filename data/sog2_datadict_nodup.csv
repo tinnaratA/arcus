@@ -1,0 +1,2362 @@
+,seqno,object_type,v_object_name,object_name,field_name,data_type,pk_fk,required,sample_value
+0,1,View,_SessionDefinition8hour,SessionDefinition,SessionName,nvarchar,,Y,(_.) 09:00-20:00
+1,1,View,_SessionDefinition8hour,SessionDefinition,LocationUID,int,FK,N,3
+2,1,View,_SessionDefinition8hour,SessionDefinition,ServiceUID,int,FK,N,2159
+3,1,View,_SessionDefinition8hour,SessionDefinition,CareProviderUID,int,FK,N,
+4,1,View,_SessionDefinition8hour,SessionDefinition,SpecialityUID,int,FK,N,
+5,1,View,_SessionDefinition8hour,SessionDefinition,MUser,int,,Y,164
+6,1,View,_SessionDefinition8hour,SessionDefinition,StatusFlag,nvarchar,,Y,A
+7,1,View,_SessionDefinition8hour,SessionDefinition,OwnerOrganisationUID,int,FK,Y,18
+8,2,View,A_Admission_Diagnosis,PayorAgreement,UID,int,PK,Y,1840
+9,2,View,A_Admission_Diagnosis,PayorAgreement,Description,nvarchar,,N,(_______) SCG Card(________ _____ ___________)
+10,2,View,A_Admission_Diagnosis,Problem,UID,int,PK,Y,1
+11,2,View,A_Admission_Diagnosis,Problem,Code,nvarchar,,N,A00.0
+12,2,View,A_Admission_Diagnosis,Problem,Name,nvarchar,,N, Acute and transient psychotic disorder
+13,2,View,A_Admission_Diagnosis,PatientVisitID,Identifier,nvarchar,,Y,E18-14-012398
+14,2,View,A_Admission_Diagnosis,PatientVisitID,PatientVisitUID,bigint,FK,Y,0
+15,2,View,A_Admission_Diagnosis,Patient,UID,bigint,PK,Y,1
+16,2,View,A_Admission_Diagnosis,Patient,SEXXXUID,int,FK,N,55630
+17,2,View,A_Admission_Diagnosis,Patient,NATNLUID,int,FK,N,99403
+18,2,View,A_Admission_Diagnosis,Patient,BirthDttm,datetime,,N,Nov 10 1973 12:00AM
+19,2,View,A_Admission_Diagnosis,Patient,StatusFlag,nvarchar,,Y,A
+20,2,View,A_Admission_Diagnosis,Careprovider,UID,int,PK,Y,1
+21,2,View,A_Admission_Diagnosis,ReferenceValue,UID,int,PK,Y,55630
+22,2,View,A_Admission_Diagnosis,ReferenceValue,Description,nvarchar,,Y, 
+23,2,View,A_Admission_Diagnosis,PatientBill,PatientVisitUID,bigint,FK,N,127181
+24,2,View,A_Admission_Diagnosis,PatientBill,PayorAgreementUID,int,FK,N,3521
+25,2,View,A_Admission_Diagnosis,PatientAddress,Line1,nvarchar,,N,10-02 AB 
+26,2,View,A_Admission_Diagnosis,PatientAddress,Line2,nvarchar,,N,10 floor 
+27,2,View,A_Admission_Diagnosis,PatientAddress,Line3,nvarchar,,N,
+28,2,View,A_Admission_Diagnosis,PatientAddress,STATEUID,int,FK,N,110648
+29,2,View,A_Admission_Diagnosis,PatientAddress,CNTRYUID,int,FK,N,46512
+30,2,View,A_Admission_Diagnosis,PatientAddress,ADTYPUID,int,FK,N,4618
+31,2,View,A_Admission_Diagnosis,PatientAddress,PatientUID,bigint,FK,Y,1
+32,2,View,A_Admission_Diagnosis,PatientAddress,StatusFlag,nvarchar,,Y,A
+33,2,View,A_Admission_Diagnosis,PatientAddress,CITTYUID,int,FK,N,109693
+34,2,View,A_Admission_Diagnosis,PatientVisit,UID,bigint,PK,Y,1
+35,2,View,A_Admission_Diagnosis,PatientVisit,PatientUID,bigint,FK,Y,0
+36,2,View,A_Admission_Diagnosis,PatientVisit,ENTYPUID,int,FK,Y,1379
+37,2,View,A_Admission_Diagnosis,PatientVisit,CareProviderUID,int,FK,N,
+38,2,View,A_Admission_Diagnosis,PatientVisit,LocationUID,int,FK,N,
+39,2,View,A_Admission_Diagnosis,PatientVisit,EndDttm,datetime,,N,
+40,2,View,A_Admission_Diagnosis,PatientVisit,OrganisationUID,int,FK,N,
+41,2,View,A_Admission_Diagnosis,PatientVisit,ArrivedDttm,datetime,,N,Dec 17 2005  2:57PM
+42,2,View,A_Admission_Diagnosis,PatientVisit,VISTYUID,int,FK,Y,444
+43,2,View,A_Admission_Diagnosis,PatientVisit,StatusFlag,nvarchar,,Y,A
+44,2,View,A_Admission_Diagnosis,PatientVisit,ReferredByUID,int,FK,N,
+45,2,View,A_Admission_Diagnosis,PatientProblem,ProblemUID,int,FK,N,1
+46,2,View,A_Admission_Diagnosis,PatientProblem,PatientVisitUID,bigint,FK,N,0
+47,2,View,A_Admission_Diagnosis,Location,UID,int,PK,Y,1
+52,3,View,A_AdmissionDiag,Patient,Forename,nvarchar,,N,VCT024
+53,3,View,A_AdmissionDiag,Patient,Surname,nvarchar,,N,
+55,3,View,A_AdmissionDiag,Patient,TITLEUID,int,FK,N,112425
+57,3,View,A_AdmissionDiag,Patient,PASID,nvarchar,,Y,18-00-000001
+58,3,View,A_AdmissionDiag,AdmissionEvent,UID,bigint,PK,Y,1
+59,3,View,A_AdmissionDiag,AdmissionEvent,PatientVisitUID,bigint,FK,Y,127181
+60,3,View,A_AdmissionDiag,DischargeEvent,AdmissionEventUID,bigint,FK,Y,0
+61,3,View,A_AdmissionDiag,DischargeEvent,DSCSTUID,int,FK,Y,68041
+63,3,View,A_AdmissionDiag,Careprovider,SurName,nvarchar,,N,
+64,3,View,A_AdmissionDiag,Careprovider,Code,nvarchar,,N,
+66,3,View,A_AdmissionDiag,ReferenceValue,ValueCode,nvarchar,,Y,1
+68,3,View,A_AdmissionDiag,ReferenceValue,ReferenceDomainUID,int,FK,Y,1
+72,3,View,A_AdmissionDiag,PatientAddress,Line4,nvarchar,,N, _.________
+74,3,View,A_AdmissionDiag,PatientAddress,Pincode,nvarchar,,N,10110
+77,3,View,A_AdmissionDiag,PatientAddress,AREAUID,int,FK,N,100630
+82,3,View,A_AdmissionDiag,PatientVisit,StartDTTM,datetime,,Y,Sep  1 2004 12:06AM
+86,3,View,A_AdmissionDiag,PatientProblem,DIAGTYPUID,int,FK,N,55625
+88,3,View,A_AdmissionDiag,Location,Name,nvarchar,,Y,ICU
+89,3,View,A_AdmissionDiag,Location,LOTYPUID,int,FK,Y,238
+90,3,View,A_AdmissionDiag,Location,Code,nvarchar,,N,18AR
+92,4,View,A_BDTAC,PayorAgreement,Code,nvarchar,,Y,1251000C010
+93,4,View,A_BDTAC,PayorAgreement,Name,nvarchar,,Y,  OPD Cash 10 % _____
+94,4,View,A_BDTAC,PayorAgreement,StatusFlag,nvarchar,,Y,A
+95,4,View,A_BDTAC,PayorAgreement,InsuranceCompanyUID,int,FK,N,108
+96,4,View,A_BDTAC,PatientBillableItem,UID,bigint,PK,Y,6
+98,4,View,A_BDTAC,PatientBillableItem,PatientOrderDetailUID,bigint,FK,N,
+100,4,View,A_BDTAC,PatientOrder,UID,bigint,PK,Y,20
+101,4,View,A_BDTAC,PatientOrder,OrderToLocaTionLocUID,int,FK,N,
+102,4,View,A_BDTAC,PatientBilledItem,UID,bigint,PK,Y,267
+103,4,View,A_BDTAC,PatientBilledItem,PatientBillUID,bigint,FK,Y,1
+104,4,View,A_BDTAC,PatientBilledItem,EventOccuredDttm,datetime,,Y,Jun  8 2014  2:34AM
+105,4,View,A_BDTAC,PatientBilledItem,ServiceName,nvarchar,,Y,Lab Test
+106,4,View,A_BDTAC,PatientBilledItem,BillableItemUID,int,FK,Y,0
+107,4,View,A_BDTAC,PatientBilledItem,StatusFlag,nvarchar,,Y,A
+108,4,View,A_BDTAC,PatientBilledItem,PatientBillableItemUID,bigint,FK,N,0
+109,4,View,A_BDTAC,PatientBilledItem,Discount,float,,N,0
+110,4,View,A_BDTAC,PatientBilledItem,NetAmount,float,,N,120
+111,4,View,A_BDTAC,PatientBilledItem,ItemMultiplier,float,,N,1
+112,4,View,A_BDTAC,PatientBilledItem,ItemName,nvarchar,,N,Chest AP Upright
+113,4,View,A_BDTAC,PatientBilledItem,CareProviderUID,int,FK,N,1053
+114,4,View,A_BDTAC,PatientBilledItem,BillPackageUID,int,FK,N,
+115,4,View,A_BDTAC,PatientBilledItem,GroupUID,int,FK,N,4
+116,4,View,A_BDTAC,PatientBilledItem,SubGroupUID,int,FK,N,56
+117,4,View,A_BDTAC,BillPackage,UID,int,PK,Y,4300
+118,4,View,A_BDTAC,BillPackage,PackageName,nvarchar,,Y, Mobile ________ ABO Group ____ 90 ___ 
+119,4,View,A_BDTAC,PayorDetail,UID,int,PK,Y,2946
+120,4,View,A_BDTAC,PayorDetail,Line1,nvarchar,,N,106 ____ 7 
+121,4,View,A_BDTAC,PayorDetail,Line2,nvarchar,,N,106 ____ 7 
+122,4,View,A_BDTAC,PayorDetail,PayorName,nvarchar,,N,18 _____ ___. (C)
+123,4,View,A_BDTAC,PayorDetail,PYRACATUID,int,FK,N,45925
+124,4,View,A_BDTAC,PayorDetail,Code,nvarchar,,N,123456789
+125,4,View,A_BDTAC,PatientServiceEvent,PatientVisitUID,bigint,FK,Y,0
+126,4,View,A_BDTAC,PatientServiceEvent,LocationUID,int,FK,N,62
+127,4,View,A_BDTAC,PatientServiceEvent,IdentifyingType,nvarchar,,N,REGISTRATION
+132,4,View,A_BDTAC,Patient,PATTPUID,int,FK,N,
+133,4,View,A_BDTAC,PatientOrderDetail,UID,bigint,PK,Y,68
+135,4,View,A_BDTAC,PatientOrderDetail,PatientOrderUID,bigint,FK,Y,0
+136,4,View,A_BDTAC,PatientOrderDetail,StartDttm,datetime,,Y,Jun  8 2014 12:00AM
+137,4,View,A_BDTAC,PatientOrderDetail,Quantity,float,,N,1
+138,4,View,A_BDTAC,PatientOrderDetail,OrderSetUID,int,FK,N,
+139,4,View,A_BDTAC,PrescriptionItem,PrescriptionUID,bigint,FK,Y,1
+140,4,View,A_BDTAC,PrescriptionItem,PatientOrderDetailUID,bigint,FK,N,
+141,4,View,A_BDTAC,BillableItem,UID,int,PK,Y,46362
+143,4,View,A_BDTAC,BillableItem,StatusFlag,nvarchar,,Y,A
+145,4,View,A_BDTAC,BillableItem,ORDCTUID,int,FK,N,0
+147,4,View,A_BDTAC,PatientBill,UID,bigint,PK,Y,1
+149,4,View,A_BDTAC,PatientBill,PatientUID,bigint,FK,N,6
+150,4,View,A_BDTAC,PatientBill,BillGeneratedDttm,datetime,,N,Jun  8 2014  3:25AM
+151,4,View,A_BDTAC,PatientBill,MUser,int,,Y,2441
+152,4,View,A_BDTAC,PatientBill,StatusFlag,nvarchar,,Y,A
+153,4,View,A_BDTAC,PatientBill,BillNumber,nvarchar,,N,18-CI14110001
+154,4,View,A_BDTAC,PatientBill,PayorUID,int,FK,N,2614
+156,4,View,A_BDTAC,InsuranceCompany,UID,int,PK,Y,2146
+160,4,View,A_BDTAC,PatientVisit,ServiceUID,int,FK,N,
+163,4,View,A_BDTAC,PatientVisit,OwnerOrganisationUID,int,FK,Y,18
+164,4,View,A_BDTAC,PatientVisit,ExpectedDischargeDttm,datetime,,N,Dec  2 2017  4:09AM
+165,4,View,A_BDTAC,PatientVisit,BedUID,int,FK,N,
+166,4,View,A_BDTAC,PatientVisit,PACLSUID,int,FK,N,
+167,4,View,A_BDTAC,Service,UID,int,PK,Y,1
+168,4,View,A_BDTAC,Service,Code,nvarchar,,N,
+171,5,View,a1,Problem,StatusFlag,nvarchar,,Y,A
+172,5,View,a1,Problem,IsChapter,nvarchar,,N,N
+175,6,View,BDMSMasterPayor,PayorAgreement,ActiveFrom,datetime,,Y,Jun 10 2004 12:00AM
+176,6,View,BDMSMasterPayor,PayorAgreement,ActiveTo,datetime,,N,
+179,6,View,BDMSMasterPayor,PayorAgreement,PolicyMasterUID,int,FK,N,8
+180,6,View,BDMSMasterPayor,PayorDetail,ContactPersonName,nvarchar,,Y,
+181,6,View,BDMSMasterPayor,PayorDetail,StatusFlag,nvarchar,,Y,A
+184,6,View,BDMSMasterPayor,PayorDetail,InsuranceCompanyUID,int,FK,N,2
+185,6,View,BDMSMasterPayor,PolicyMaster,UID,int,PK,Y,1
+186,6,View,BDMSMasterPayor,PolicyMaster,PolicyName,nvarchar,,Y,01.Cover all
+187,6,View,BDMSMasterPayor,PolicyMaster,StatusFlag,nvarchar,,Y,A
+189,6,View,BDMSMasterPayor,InsuranceCompany,CompanyName,nvarchar,,Y,(_______) SCG Card(________ _____ ___________)
+190,6,View,BDMSMasterPayor,InsuranceCompany,Description,nvarchar,,N,18A0005B058
+191,6,View,BDMSMasterPayor,InsuranceCompany,StatusFlag,nvarchar,,Y,A
+192,6,View,BDMSMasterPayor,InsuranceCompany,ActiveFrom,datetime,,N,Dec 30 2011 12:00AM
+193,6,View,BDMSMasterPayor,InsuranceCompany,Activeto,datetime,,N,Jan 29 2012 12:00AM
+194,7,View,BDMSReportPatientAllergyForCheck,PatientAllergy,UID,bigint,PK,Y,0
+195,7,View,BDMSReportPatientAllergyForCheck,PatientAllergy,AllergyDescription,nvarchar,,N,#NAME?
+196,7,View,BDMSReportPatientAllergyForCheck,PatientAllergy,ALGTYUID,int,FK,N,95
+197,7,View,BDMSReportPatientAllergyForCheck,PatientAllergy,PatientUID,bigint,FK,Y,6
+198,7,View,BDMSReportPatientAllergyForCheck,PatientAllergy,AllergicTo,nvarchar,,N,Sulfa group 
+199,7,View,BDMSReportPatientAllergyForCheck,PatientAllergy,ALGSTUID,int,FK,N,46027
+200,7,View,BDMSReportPatientAllergyForCheck,PatientAllergy,AllergySymptoms,nvarchar,,N,
+201,7,View,BDMSReportPatientAllergyForCheck,PatientAllergicDrug,PatientAllergyUID,bigint,FK,Y,0
+202,7,View,BDMSReportPatientAllergyForCheck,PatientAllergicDrug,DrugName,nvarchar,,Y,0707I Sulfa group
+203,7,View,BDMSReportPatientAllergyForCheck,PatientAllergicDrug,IdentifyingType,nvarchar,,N,FREE
+207,8,View,BNH_Vaccine_Bconnect,PatientOrder,PatientVisitUID,bigint,FK,Y,127181
+212,8,View,BNH_Vaccine_Bconnect,PatientOrderDetail,ItemName,nvarchar,,N,
+214,8,View,BNH_Vaccine_Bconnect,PatientOrderDetail,CancelledByUserUID,int,FK,N,2444
+215,8,View,BNH_Vaccine_Bconnect,BillableItem,ItemName,nvarchar,,Y,-
+216,8,View,BNH_Vaccine_Bconnect,BillableItem,ServiceUID,int,FK,N,
+217,8,View,BNH_Vaccine_Bconnect,BillableItem,Code,nvarchar,,N,/SSH18A0705A000O-03
+221,9,View,bnh_Vaccine_MTandBconnect,KIT_Vaccine_MT,HN,nvarchar,,N,
+222,9,View,bnh_Vaccine_MTandBconnect,KIT_Vaccine_MT,DateOrder,datetime,,N,
+223,9,View,bnh_Vaccine_MTandBconnect,KIT_Vaccine_MT,Age,nvarchar,,N,
+224,9,View,bnh_Vaccine_MTandBconnect,KIT_Vaccine_MT,NamePT,nvarchar,,N,
+225,9,View,bnh_Vaccine_MTandBconnect,KIT_Vaccine_MT,DOB,datetime,,N,
+226,9,View,bnh_Vaccine_MTandBconnect,KIT_Vaccine_MT,Vaccine,nvarchar,,N,
+229,10,View,BRH_nat_rev,Patient,RegistrationDTTM,datetime,,Y,Jun  7 2014 10:39PM
+234,10,View,BRH_nat_rev,PatientBill,DiscountAmount,float,,N,
+247,11,View,BUPA view,PatientBillableItem,Amount,float,,N,0
+248,11,View,BUPA view,PatientBillableItem,Discount,float,,N,0
+249,11,View,BUPA view,PatientBillableItem,NetAmount,float,,N,0
+250,11,View,BUPA view,PatientBillableItem,StartDttm,datetime,,N,Jun  8 2014  2:31AM
+251,11,View,BUPA view,PatientBillableItem,EndDttm,datetime,,N,Jun  8 2014  2:31AM
+257,11,View,BUPA view,InsurancePlan,PayorAgreementUID,int,FK,Y,1
+258,11,View,BUPA view,InsurancePlan,PayorDetailUID,int,FK,Y,0
+263,11,View,BUPA view,PatientBill,CUser,int,,Y,2441
+270,12,View,CRM_EpisodeDiag,Problem,Description,nvarchar,,N, Acute and transient psychotic disorder
+275,12,View,CRM_EpisodeDiag,PatientProblem,UID,bigint,PK,Y,262738
+277,12,View,CRM_EpisodeDiag,PatientProblem,RecordedBy,int,,N,1053
+279,12,View,CRM_EpisodeDiag,PatientProblem,StatusFlag,nvarchar,,Y,D
+280,12,View,CRM_EpisodeDiag,PatientProblem,ClosureComments,nvarchar,,N,
+288,13,View,CRM_EpisodeGeneralInfo,PatientBilledItem,PackageItemAmount,float,,N,
+293,13,View,CRM_EpisodeGeneralInfo,PatientBill,IsRefund,nvarchar,,N,Y
+305,14,View,CRM_Location,CostCode,UID,int,PK,Y,1
+306,14,View,CRM_Location,CostCode,Code,int,,Y,1002
+307,14,View,CRM_Location,CostCode,Description,nvarchar,,Y,Supervisor Office
+308,14,View,CRM_Location,LocationProfile,LocationUID,int,FK,Y,2
+309,14,View,CRM_Location,LocationProfile,StatusFlag,nvarchar,,Y,A
+310,14,View,CRM_Location,LocationProfile,PhoneNumber,nvarchar,,N,1001
+312,14,View,CRM_Location,Location,CostCodeUID,int,FK,N,
+314,14,View,CRM_Location,Location,StatusFlag,nvarchar,,Y,A
+316,14,View,CRM_Location,Location,LocationURL,nvarchar,,N,
+322,15,View,CRM_Patient,Patient,SPOKLUID,int,FK,N,
+323,15,View,CRM_Patient,Patient,MARRYUID,int,FK,N,
+326,15,View,CRM_Patient,Patient,MWhen,datetime,,Y,Feb 21 2014 12:00AM
+328,15,View,CRM_Patient,Patient,RELGNUID,int,FK,N,55936
+333,15,View,CRM_Patient,PatientDeceasedDetail,PatientUID,bigint,FK,Y,0
+334,15,View,CRM_Patient,PatientDeceasedDetail,DeathDttm,datetime,,Y,Apr 20 2011 12:00AM
+335,15,View,CRM_Patient,PatientDeceasedDetail,StatusFlag,nvarchar,,Y,D
+373,18,View,CRM_PatientDeceased,PatientDeceasedDetail,IsConfirmed,nvarchar,,N,N
+382,20,View,CRM_PATIENTVISITLOCATION,PatientVisitCareProvider,UID,bigint,PK,Y,1
+383,20,View,CRM_PATIENTVISITLOCATION,PatientVisitCareProvider,PatientVisitUID,bigint,FK,Y,127181
+384,20,View,CRM_PATIENTVISITLOCATION,PatientVisitCareProvider,CareproviderUID,int,FK,N,
+385,20,View,CRM_PATIENTVISITLOCATION,PatientVisitCareProvider,StatusFlag,nvarchar,,Y,A
+386,20,View,CRM_PATIENTVISITLOCATION,PatientVisitCareProvider,OwnerOrganisationUID,int,FK,Y,18
+387,20,View,CRM_PATIENTVISITLOCATION,PatientVisitCareProvider,StartDttm,datetime,,N,Jun  8 2014  5:58AM
+388,20,View,CRM_PATIENTVISITLOCATION,PatientVisitCareProvider,LocationUID,int,FK,N,
+389,20,View,CRM_PATIENTVISITLOCATION,PatientVisitCareProvider,PACLSUID,int,FK,N,46006
+402,21,View,CRM_PaymentInvoice,PatientBill,TotalAmount,float,,N,6882.6
+403,21,View,CRM_PaymentInvoice,PatientBill,IsPaymentComplete,nvarchar,,Y,Y
+413,22,View,CRM_PaymentRecept,PatientPaymentDetail,UID,bigint,PK,Y,1
+414,22,View,CRM_PaymentRecept,PatientPaymentDetail,PatientBillUID,bigint,FK,N,
+415,22,View,CRM_PaymentRecept,PatientPaymentDetail,PatientVisitUID,bigint,FK,N,
+416,22,View,CRM_PaymentRecept,PatientPaymentDetail,PAYMDUID,int,FK,Y,1115
+417,22,View,CRM_PaymentRecept,PatientPaymentDetail,PaidDttm,datetime,,Y,Jun  8 2014  2:35AM
+418,22,View,CRM_PaymentRecept,PatientPaymentDetail,Amount,float,,Y,1
+419,22,View,CRM_PaymentRecept,PatientPaymentDetail,CRDTYUID,int,FK,N,
+420,22,View,CRM_PaymentRecept,PatientPaymentDetail,CardNumber,nvarchar,,N,
+421,22,View,CRM_PaymentRecept,PatientPaymentDetail,StatusFlag,nvarchar,,Y,A
+437,24,View,CRM_PayorOffice,PayorDetail,PhoneNumber,nvarchar,,Y,
+439,24,View,CRM_PayorOffice,PayorDetail,PinCode,nvarchar,,N,25140
+440,24,View,CRM_PayorOffice,PayorDetail,FaxNumber,nvarchar,,N,
+441,24,View,CRM_PayorOffice,PayorDetail,CWhen,datetime,,Y,May 28 2014  2:39PM
+447,24,View,CRM_PayorOffice,PinCodeMapping,PinCode,varchar,,Y,0
+448,24,View,CRM_PayorOffice,PinCodeMapping,CITTYUID,int,FK,N,110646
+449,24,View,CRM_PayorOffice,PinCodeMapping,AREAUID,int,FK,N,107238
+450,24,View,CRM_PayorOffice,PinCodeMapping,StatusFlag,varchar,,Y,A
+451,24,View,CRM_PayorOffice,ReferenceRelationShip,SourceReferenceValueUID,int,FK,Y,1
+452,24,View,CRM_PayorOffice,ReferenceRelationShip,TargetReferenceValueUID,int,FK,Y,1
+453,24,View,CRM_PayorOffice,ReferenceRelationShip,SourceReferenceDomainCode,nvarchar,,Y,TITLE
+454,24,View,CRM_PayorOffice,ReferenceRelationShip,StatusFlag,nvarchar,,Y,D
+460,25,View,CRM_PayorPlan,PayorAgreement,PBTYPUID,int,FK,N,46190
+467,25,View,CRM_PayorPlan,InsurancePlan,UID,int,PK,Y,2862
+470,25,View,CRM_PayorPlan,InsurancePlan,StatusFlag,nvarchar,,Y,A
+471,25,View,CRM_PayorPlan,InsurancePlan,IdentifyingUID,int,FK,Y,1
+481,26,View,CRM_ProductOrderItem,BillableItem,ActiveFrom,datetime,,N,
+482,26,View,CRM_ProductOrderItem,BillableItem,ActiveTo,datetime,,N,
+490,27,View,CRM_ProductOrderSet,OrderSet,UID,int,PK,Y,1490
+491,27,View,CRM_ProductOrderSet,OrderSet,Code,nvarchar,,Y,01803GX1728
+492,27,View,CRM_ProductOrderSet,OrderSet,Name,nvarchar,,Y,Change when used for LPRC (NAT)
+493,27,View,CRM_ProductOrderSet,OrderSet,ActiveFrom,datetime,,Y,Sep 14 2017 12:00AM
+494,27,View,CRM_ProductOrderSet,OrderSet,ActiveTo,datetime,,N,
+495,27,View,CRM_ProductOrderSet,OrderSet,StatusFlag,nvarchar,,Y,A
+496,27,View,CRM_ProductOrderSet,OrderSet,OrderCategoryUID,int,FK,N,98907
+497,28,View,CRM_Provider,CareproviderSpecialty,CareproviderUID,int,FK,Y,28
+498,28,View,CRM_Provider,CareproviderSpecialty,SpecialtyUID,int,FK,Y,1
+499,28,View,CRM_Provider,CareproviderSpecialty,StatusFlag,nvarchar,,Y,A
+501,28,View,CRM_Provider,Careprovider,CPTYPUID,int,FK,Y,215
+502,28,View,CRM_Provider,Careprovider,StatusFlag,nvarchar,,Y,A
+504,28,View,CRM_Provider,Speciality,UID,int,PK,Y,1
+505,28,View,CRM_Provider,Speciality,Description,nvarchar,,Y,______ (ORTHOPAEDIST)
+506,28,View,CRM_Provider,Speciality,StatusFlag,nvarchar,,Y,A
+507,29,View,CT_CareProv,careProvider,UID,int,PK,Y,1
+508,29,View,CT_CareProv,careProvider,SurName,nvarchar,,N,
+509,29,View,CT_CareProv,careProvider,ForeName,nvarchar,,N,
+510,29,View,CT_CareProv,careProvider,ActiveTo,datetime,,N,
+511,29,View,CT_CareProv,careProvider,StatusFlag,nvarchar,,Y,A
+512,29,View,CT_CareProv,careProvider,IsCareprovider,nvarchar,,Y,N
+513,29,View,CT_CareProv,careProvider,Code,nvarchar,,N,
+516,30,View,CT_Loc,Location,Description,nvarchar,,Y,Other
+519,31,View,Discharge_Beg,PatientVisitID,UID,int,PK,Y,127643
+524,31,View,Discharge_Beg,PatientVisitPayor,UID,bigint,PK,Y,9194
+525,31,View,Discharge_Beg,PatientVisitPayor,PatientVisitUID,bigint,FK,Y,0
+526,31,View,Discharge_Beg,PatientVisitPayor,PayorUID,int,FK,Y,0
+527,31,View,Discharge_Beg,PatientVisitPayor,StatusFlag,nvarchar,,Y,A
+534,31,View,Discharge_Beg,ReferenceValue,StatusFlag,nvarchar,,Y,A
+535,31,View,Discharge_Beg,ReferenceValue,DomainCode,nvarchar,,N,ABCAN
+543,31,View,Discharge_Beg,PatientVisit,CurrentLocationUID,int,FK,N,
+567,34,View,MedicationForOPDTreatment,OrderCatalogItem,UID,int,PK,Y,1
+568,34,View,MedicationForOPDTreatment,OrderCatalogItem,StatusFlag,nvarchar,,Y,A
+569,34,View,MedicationForOPDTreatment,OrderCatalogItem,IsExecutable,nvarchar,,N,
+570,34,View,MedicationForOPDTreatment,PatientBillableItem,PatientVisitUID,bigint,FK,N,0
+571,34,View,MedicationForOPDTreatment,PatientBillableItem,StatusFlag,nvarchar,,Y,A
+575,34,View,MedicationForOPDTreatment,PatientOrder,OrderNumber,nvarchar,,Y,0
+576,34,View,MedicationForOPDTreatment,PatientOrder,RequestedDttm,datetime,,Y,Aug  4 2008 12:15AM
+577,34,View,MedicationForOPDTreatment,PatientOrder,PatientUID,bigint,FK,Y,6
+579,34,View,MedicationForOPDTreatment,PatientOrder,OrderRaisedBy,int,,Y,1
+580,34,View,MedicationForOPDTreatment,PatientOrder,CUser,int,,Y,1
+581,34,View,MedicationForOPDTreatment,PatientOrder,StatusFlag,nvarchar,,Y,A
+582,34,View,MedicationForOPDTreatment,PatientOrder,OrderLocationUID,int,FK,N,
+583,34,View,MedicationForOPDTreatment,PatientOrder,OrderToLocationUID,int,FK,N,
+584,34,View,MedicationForOPDTreatment,PatientOrder,IsContinuous,nvarchar,,N,N
+585,34,View,MedicationForOPDTreatment,PatientOrder,PRSTYPUID,int,FK,N,46150
+586,34,View,MedicationForOPDTreatment,Store,UID,int,PK,Y,1
+587,34,View,MedicationForOPDTreatment,Store,Description,nvarchar,,N,Pharmacy Banbueng Clinic Store
+590,34,View,MedicationForOPDTreatment,vBDMSOnWard,UID,bigint,,Y,
+593,34,View,MedicationForOPDTreatment,RequestDetail,UID,bigint,PK,Y,3
+594,34,View,MedicationForOPDTreatment,RequestDetail,RSSTSUID,int,FK,N,4414
+598,34,View,MedicationForOPDTreatment,PatientOrderDetail,IdentifyingUID,bigint,FK,N,1
+599,34,View,MedicationForOPDTreatment,PatientOrderDetail,IdentifyingType,varchar,,N,BillableEvent
+601,34,View,MedicationForOPDTreatment,PatientOrderDetail,EndDttm,datetime,,N,
+602,34,View,MedicationForOPDTreatment,PatientOrderDetail,ORDSTUID,int,FK,Y,4412
+603,34,View,MedicationForOPDTreatment,PatientOrderDetail,ORDPRUID,int,FK,Y,169
+605,34,View,MedicationForOPDTreatment,PatientOrderDetail,QNUOMUID,int,FK,N,
+606,34,View,MedicationForOPDTreatment,PatientOrderDetail,FRQNCUID,int,FK,N,
+607,34,View,MedicationForOPDTreatment,PatientOrderDetail,Comments,nvarchar,,N,
+608,34,View,MedicationForOPDTreatment,PatientOrderDetail,UnitPrice,float,,N,100
+609,34,View,MedicationForOPDTreatment,PatientOrderDetail,NetAmount,float,,N,100
+610,34,View,MedicationForOPDTreatment,PatientOrderDetail,OrderSubCategoryUID,int,FK,N,87
+611,34,View,MedicationForOPDTreatment,PatientOrderDetail,OrderCategoryUID,int,FK,N,
+612,34,View,MedicationForOPDTreatment,PatientOrderDetail,MWhen,datetime,,Y,Jan 21 2018  7:46PM
+613,34,View,MedicationForOPDTreatment,PatientOrderDetail,StatusFlag,varchar,,Y,A
+614,34,View,MedicationForOPDTreatment,PatientOrderDetail,OriginalUnitPrice,float,,N,100
+615,34,View,MedicationForOPDTreatment,PatientOrderDetail,BillableItemUID,int,FK,N,1
+616,34,View,MedicationForOPDTreatment,PatientOrderDetail,BillPackageUID,int,FK,N,0
+617,34,View,MedicationForOPDTreatment,PatientOrderDetail,AllocatedQuantity,float,,N,
+618,34,View,MedicationForOPDTreatment,PatientOrderDetail,CareProviderGroupUID,int,FK,N,0
+619,34,View,MedicationForOPDTreatment,PatientOrderDetail,Dosage,float,,N,
+620,34,View,MedicationForOPDTreatment,PatientOrderDetail,CareproviderUID,int,FK,N,1805
+622,34,View,MedicationForOPDTreatment,PatientOrderDetail,CancelledDttm,datetime,,N,Jun 11 2014  3:48PM
+624,34,View,MedicationForOPDTreatment,BillableItem,Description,nvarchar,,N,Consult Checkup Department
+625,34,View,MedicationForOPDTreatment,BillableItem,ItemUID,int,FK,Y,0
+626,34,View,MedicationForOPDTreatment,BillableItem,BSMDDUID,int,FK,Y,4358
+628,34,View,MedicationForOPDTreatment,BillableItem,IsConsShareRequired,nvarchar,,N,
+634,34,View,MedicationForOPDTreatment,ReferenceValue,AlternateName,nvarchar,,N,
+640,34,View,MedicationForOPDTreatment,Service,ParentServiceUID,int,FK,N,
+644,35,View,PA_ADM,PatientVisitID,StatusFlag,nvarchar,,Y,A
+657,35,View,PA_ADM,Service,SETYPUID,int,FK,Y,234
+658,35,View,PA_ADM,Service,StatusFlag,nvarchar,,Y,A
+678,36,View,PA_ADM2,SERVICE,UID,int,PK,Y,1
+679,36,View,PA_ADM2,SERVICE,SETYPUID,int,FK,Y,234
+680,36,View,PA_ADM2,SERVICE,StatusFlag,nvarchar,,Y,A
+681,36,View,PA_ADM2,SERVICE,Code,nvarchar,,N,
+698,38,View,PA_ADMxxx,vBDMSPatientVisit,PatientUID,bigint,FK,Y,
+699,38,View,PA_ADMxxx,vBDMSPatientVisit,PatientVisitUID,bigint,FK,Y,
+700,38,View,PA_ADMxxx,vBDMSPatientVisit,CareproviderCode,nvarchar,,Y,
+701,38,View,PA_ADMxxx,vBDMSPatientVisit,StartDTTM,datetime,,Y,
+702,38,View,PA_ADMxxx,vBDMSPatientVisit,VisitId,nvarchar,,Y,
+703,38,View,PA_ADMxxx,vBDMSPatientVisit,EncounterType,nvarchar,,Y,
+704,38,View,PA_ADMxxx,vBDMSPatientVisit,DischargeDate,datetime,,Y,
+705,38,View,PA_ADMxxx,vBDMSPatientVisit,LocationUID,int,FK,Y,
+706,38,View,PA_ADMxxx,vBDMSPatientVisit,CurrentServiceUID,int,FK,Y,
+707,38,View,PA_ADMxxx,vBDMSPatientVisit,CurrentLocationUID,int,FK,Y,
+717,41,View,referralDatail,BDMSReferralAgentContact,UID,int,PK,Y,
+718,41,View,referralDatail,BDMSReferralAgentContact,ForeName,nvarchar,,N,
+719,41,View,referralDatail,BDMSReferralAgentContact,SurName,nvarchar,,N,
+720,41,View,referralDatail,BDMSReferralAgentContact,TITLEUID,int,FK,N,
+728,41,View,referralDatail,AdmissionEvent,ExpectedLengthOfStay,int,,Y,0
+729,41,View,referralDatail,AdmissionEvent,StatusFlag,nvarchar,,Y,D
+730,41,View,referralDatail,BDMSReferralMaster,PatientUID,int,FK,N,626628
+731,41,View,referralDatail,BDMSReferralMaster,PatientVisitUID,int,FK,N,638254
+732,41,View,referralDatail,BDMSReferralMaster,BDMSReferralAgentContactUID,int,FK,N,0
+733,41,View,referralDatail,BDMSReferralMaster,BDMSReferrerUID,int,FK,N,1534
+734,41,View,referralDatail,BDMSReferralMaster,REFSNUID,int,FK,N,0
+735,41,View,referralDatail,BDMSReferralMaster,ReferralNote,nvarchar,,N,
+736,41,View,referralDatail,BDMSReferralMaster,ReferralDate,datetime,,N,Oct  7 2015  3:48AM
+737,41,View,referralDatail,BDMSReferralMaster,ReferrerBy,nvarchar,,N,
+738,41,View,referralDatail,BDMSReferralMaster,ReferrerStaff,int,,N,1611
+739,41,View,referralDatail,BDMSReferralMaster,CUser,int,,Y,1611
+740,41,View,referralDatail,BDMSReferralMaster,MWhen,datetime,,Y,Oct  7 2015  3:48AM
+741,41,View,referralDatail,BDMSReferralMaster,StatusFlag,nvarchar,,Y,A
+754,41,View,referralDatail,BDMSReferrer,UID,int,PK,Y,1
+755,41,View,referralDatail,BDMSReferrer,Name,nvarchar,,Y,BANGLADESH (_________)
+756,41,View,referralDatail,BDMSReferrer,REFCATUID,int,FK,N,112665
+757,41,View,referralDatail,BDMSReferrer,REFNETUID,int,FK,N,112655
+758,41,View,referralDatail,BDMSReferrer,REFAREA,int,,N,112658
+759,42,View,SS_Group,ROLE,UID,int,PK,Y,1
+760,42,View,SS_Group,ROLE,Name,nvarchar,,Y,Admin
+761,42,View,SS_Group,ROLE,StatusFlag,nvarchar,,Y,A
+762,43,View,SS_USER,Login,UID,int,PK,Y,1
+763,43,View,SS_USER,Login,LoginName,nvarchar,,Y,admin
+764,43,View,SS_USER,Login,Password,nvarchar,,Y,6ZoYxCjLONXyYIU2eJIuAw==
+765,43,View,SS_USER,Login,ActiveTo,datetime,,N,
+766,43,View,SS_USER,Login,CareproviderUID,int,FK,Y,1
+767,43,View,SS_USER,Login,StatusFlag,nvarchar,,Y,A
+768,43,View,SS_USER,CareproviderLocation,CareproviderUID,int,FK,Y,1
+769,43,View,SS_USER,CareproviderLocation,LocationUID,int,FK,Y,3
+770,43,View,SS_USER,Roleprofile,RoleUID,int,FK,Y,3
+771,43,View,SS_USER,Roleprofile,LoginUID,int,FK,Y,1
+772,43,View,SS_USER,Roleprofile,StatusFlag,nvarchar,,Y,A
+775,43,View,SS_USER,Careprovider,ForeName,nvarchar,,N,
+777,43,View,SS_USER,Careprovider,IsCareprovider,nvarchar,,Y,N
+781,44,View,v_pGetPatientAdmisionReportPrintForm,Patient,MiddleName,nvarchar,,N,
+798,44,View,v_pGetPatientAdmisionReportPrintForm,PatientVisit,BDCATUID,int,FK,N,
+799,44,View,v_pGetPatientAdmisionReportPrintForm,PatientVisit,PBLCTUID,int,FK,N,1118
+800,45,View,vAllBillableItemRates,BillableItemDetail,BillableItemUID,int,FK,Y,1
+801,45,View,vAllBillableItemRates,BillableItemDetail,ENTYPUID,int,FK,Y,1379
+802,45,View,vAllBillableItemRates,BillableItemDetail,PBLCTUID,int,FK,Y,1118
+803,45,View,vAllBillableItemRates,BillableItemDetail,ItemAmount,float,,Y,340
+804,45,View,vAllBillableItemRates,BillableItemDetail,StatusFlag,nvarchar,,Y,A
+805,45,View,vAllBillableItemRates,BillableItemDetail,ActiveFrom,datetime,,Y,May 28 2014  9:14PM
+806,45,View,vAllBillableItemRates,BillableItemDetail,ActiveTo,datetime,,N,
+809,45,View,vAllBillableItemRates,BillableItem,OwnerOrganisationUID,int,FK,Y,18
+813,46,View,vAllPayorAgreements,PayorAgreement,AGTYPUID,int,FK,N,
+814,46,View,vAllPayorAgreements,PayorAgreement,PrimaryPBLCTUID,int,FK,N,1118
+815,46,View,vAllPayorAgreements,PayorAgreement,SecondaryPBLCTUID,int,FK,N,98896
+816,46,View,vAllPayorAgreements,PayorAgreement,TertiaryPBLCTUID,int,FK,N,
+817,46,View,vAllPayorAgreements,AgreementDetail,UID,int,PK,Y,
+818,46,View,vAllPayorAgreements,AgreementDetail,PayorAgreementUID,int,FK,Y,
+819,46,View,vAllPayorAgreements,AgreementDetail,ServiceUID,int,FK,Y,
+820,46,View,vAllPayorAgreements,AgreementDetail,Amount,float,,Y,
+821,46,View,vAllPayorAgreements,AgreementDetail,DiscountLimit,float,,Y,
+822,46,View,vAllPayorAgreements,AgreementDetail,IsExcluded,nvarchar,,Y,
+823,46,View,vAllPayorAgreements,AgreementDetail,StatusFlag,nvarchar,,Y,
+824,46,View,vAllPayorAgreements,AgreementDetail,IsDiscountPerc,nvarchar,,N,
+825,46,View,vAllPayorAgreements,AgreementDetail,IsPackage,nvarchar,,N,
+826,46,View,vAllPayorAgreements,AgreementDetail,OrderSubCategoryUID,int,FK,N,
+827,46,View,vAllPayorAgreements,AgreementItem,AgreementDetailUID,int,FK,Y,
+828,46,View,vAllPayorAgreements,AgreementItem,BillableItemUID,int,FK,Y,
+829,46,View,vAllPayorAgreements,AgreementItem,DiscountLimit,float,,N,
+830,46,View,vAllPayorAgreements,AgreementItem,Amount,float,,N,
+831,46,View,vAllPayorAgreements,AgreementItem,IsExcluded,nvarchar,,N,
+832,46,View,vAllPayorAgreements,AgreementItem,StatusFlag,nvarchar,,Y,
+833,46,View,vAllPayorAgreements,AgreementItem,IsDiscountPerc,nvarchar,,N,
+834,46,View,vAllPayorAgreements,AgreementItem,IsPackage,nvarchar,,N,
+835,46,View,vAllPayorAgreements,AgreementItem,BillPackageUID,int,FK,N,
+836,46,View,vAllPayorAgreements,AgreementAccountDetail,UID,int,PK,Y,
+837,46,View,vAllPayorAgreements,AgreementAccountDetail,PayorAgreementUID,int,FK,Y,
+838,46,View,vAllPayorAgreements,AgreementAccountDetail,ServiceUID,int,FK,Y,
+839,46,View,vAllPayorAgreements,AgreementAccountDetail,Amount,float,,Y,
+840,46,View,vAllPayorAgreements,AgreementAccountDetail,DiscountLimit,float,,Y,
+841,46,View,vAllPayorAgreements,AgreementAccountDetail,IsExcluded,nvarchar,,Y,
+842,46,View,vAllPayorAgreements,AgreementAccountDetail,StatusFlag,nvarchar,,Y,
+843,46,View,vAllPayorAgreements,AgreementAccountDetail,IsDiscountPerc,nvarchar,,N,
+844,46,View,vAllPayorAgreements,AgreementAccountDetail,IsPackage,nvarchar,,N,
+845,46,View,vAllPayorAgreements,AgreementAccountDetail,OrderCategoryUID,int,FK,N,
+853,47,View,vAllPayorAgreementsDiscount,AgreementAccountDiscount,PayorAgreementUID,int,FK,Y,1
+854,47,View,vAllPayorAgreementsDiscount,AgreementAccountDiscount,ServiceUID,int,FK,Y,1
+855,47,View,vAllPayorAgreementsDiscount,AgreementAccountDiscount,Discount,float,,N,0
+856,47,View,vAllPayorAgreementsDiscount,AgreementAccountDiscount,IsPercentage,nvarchar,,N,N
+857,47,View,vAllPayorAgreementsDiscount,AgreementAccountDiscount,StatusFlag,nvarchar,,Y,A
+858,47,View,vAllPayorAgreementsDiscount,AgreementAccountDiscount,PBLCTUID,int,FK,N,1118
+859,47,View,vAllPayorAgreementsDiscount,AgreementAccountDiscount,ALLDIUID,int,FK,N,67294
+860,47,View,vAllPayorAgreementsDiscount,AgreementAccountDiscount,DateFrom,date,,N,4/23/2013
+861,47,View,vAllPayorAgreementsDiscount,AgreementAccountDiscount,DateTo,date,,N,
+862,47,View,vAllPayorAgreementsDiscount,AgreementDetailDiscount,PayorAgreementUID,int,FK,Y,8
+863,47,View,vAllPayorAgreementsDiscount,AgreementDetailDiscount,ServiceUID,int,FK,Y,34
+864,47,View,vAllPayorAgreementsDiscount,AgreementDetailDiscount,Discount,float,,N,50
+865,47,View,vAllPayorAgreementsDiscount,AgreementDetailDiscount,IsPercentage,nvarchar,,N,Y
+866,47,View,vAllPayorAgreementsDiscount,AgreementDetailDiscount,StatusFlag,nvarchar,,Y,A
+867,47,View,vAllPayorAgreementsDiscount,AgreementDetailDiscount,PBLCTUID,int,FK,N,1118
+868,47,View,vAllPayorAgreementsDiscount,AgreementDetailDiscount,ALLDIUID,int,FK,N,67294
+869,47,View,vAllPayorAgreementsDiscount,AgreementDetailDiscount,DateFrom,date,,N,8/31/2004
+870,47,View,vAllPayorAgreementsDiscount,AgreementDetailDiscount,DateTo,date,,N,
+871,47,View,vAllPayorAgreementsDiscount,AgreementItemDiscount,PayorAgreementUID,int,FK,Y,3067
+872,47,View,vAllPayorAgreementsDiscount,AgreementItemDiscount,BillableItemUID,bigint,FK,Y,2116
+873,47,View,vAllPayorAgreementsDiscount,AgreementItemDiscount,Discount,float,,Y,10
+874,47,View,vAllPayorAgreementsDiscount,AgreementItemDiscount,IsPercentage,nvarchar,,N,Y
+875,47,View,vAllPayorAgreementsDiscount,AgreementItemDiscount,StatusFlag,nvarchar,,Y,A
+876,47,View,vAllPayorAgreementsDiscount,AgreementItemDiscount,PBLCTUID,int,FK,N,1118
+877,47,View,vAllPayorAgreementsDiscount,AgreementItemDiscount,ALLDIUID,int,FK,N,67294
+878,47,View,vAllPayorAgreementsDiscount,AgreementItemDiscount,DateFrom,date,,N,4/10/2013
+879,47,View,vAllPayorAgreementsDiscount,AgreementItemDiscount,DateTo,date,,N,
+885,48,View,vAppointmentSummary,Patient,IsVIP,nvarchar,,Y,N
+886,48,View,vAppointmentSummary,Patient,RFRTPUID,int,FK,N,
+887,48,View,vAppointmentSummary,Booking,UID,int,PK,Y,0
+888,48,View,vAppointmentSummary,Booking,BKSTSUID,int,FK,Y,33990
+889,48,View,vAppointmentSummary,Booking,PatientUID,bigint,FK,Y,6
+890,48,View,vAppointmentSummary,Booking,CareproviderUID,int,FK,N,
+891,48,View,vAppointmentSummary,Booking,ServiceUID,int,FK,N,
+892,48,View,vAppointmentSummary,Booking,LocationUID,int,FK,N,3
+893,48,View,vAppointmentSummary,Booking,Comments,nvarchar,,N,___________ (Follow up appointment)
+894,48,View,vAppointmentSummary,Booking,MWhen,datetime,,Y,Jun  7 2014 11:12PM
+895,48,View,vAppointmentSummary,Booking,StatusFlag,nvarchar,,Y,A
+896,48,View,vAppointmentSummary,Booking,OwnerOrganisationUID,int,FK,Y,18
+897,48,View,vAppointmentSummary,Booking,AppointmentDttm,datetime,,Y,Jun  7 2014 12:00AM
+898,48,View,vAppointmentSummary,Booking,BookedServiceUID,int,FK,N,5535
+910,48,View,vAppointmentSummary,PatientVisit,BookingUID,int,FK,N,
+915,49,View,vBDMS_Final_BillableITemCheckMigration,BillableItemDetail,ItemAmountShare,float,,Y,0
+919,49,View,vBDMS_Final_BillableITemCheckMigration,OrderCategory,UID,int,PK,Y,1
+920,49,View,vBDMS_Final_BillableITemCheckMigration,OrderCategory,Name,nvarchar,,Y,Tablet
+921,49,View,vBDMS_Final_BillableITemCheckMigration,BDMSIncomeSource,UID,int,PK,Y,1
+922,49,View,vBDMS_Final_BillableITemCheckMigration,BDMSIncomeSource,NameInCome,nvarchar,,Y,_____
+923,49,View,vBDMS_Final_BillableITemCheckMigration,vBDMSTOOLAccout,UID,int,,Y,
+924,49,View,vBDMS_Final_BillableITemCheckMigration,vBDMSTOOLAccout,Description,nvarchar,,Y,
+925,49,View,vBDMS_Final_BillableITemCheckMigration,vBDMSTOOLAccout,Revenue,nvarchar,,Y,
+926,49,View,vBDMS_Final_BillableITemCheckMigration,vBDMSTOOLAccout,Discount,nvarchar,,Y,
+927,49,View,vBDMS_Final_BillableITemCheckMigration,vBDMSTOOLAccout,Accru,nvarchar,,Y,
+929,49,View,vBDMS_Final_BillableITemCheckMigration,BillableItem,BillingServiceUID,int,FK,N,
+937,49,View,vBDMS_Final_BillableITemCheckMigration,BillableItem,CollectionCenterUID,int,FK,N,
+939,49,View,vBDMS_Final_BillableITemCheckMigration,BillableItem,IsEditable,nvarchar,,N,
+940,49,View,vBDMS_Final_BillableITemCheckMigration,BillableItem,IsPackageItem,nvarchar,,N,N
+942,49,View,vBDMS_Final_BillableITemCheckMigration,BillableItem,MaxPrice,float,,N,
+943,49,View,vBDMS_Final_BillableITemCheckMigration,BillableItem,ItemCost,float,,N,
+945,49,View,vBDMS_Final_BillableITemCheckMigration,BillableItem,OrderSubCategoryUID,int,FK,N,
+947,49,View,vBDMS_Final_BillableITemCheckMigration,BillableItem,BDMSIncomeSourceUID,int,FK,N,53
+948,49,View,vBDMS_Final_BillableITemCheckMigration,BillableItem,IsAllowZeroPrice,nvarchar,,N,N
+949,49,View,vBDMS_Final_BillableITemCheckMigration,BillableItem,IsWithoutstock,nvarchar,,N,N
+950,49,View,vBDMS_Final_BillableITemCheckMigration,BillableItem,NoteOther,nvarchar,,N,
+954,49,View,vBDMS_Final_BillableITemCheckMigration,Service,Name,nvarchar,,N,Medical Supplies 1.1.2
+956,50,View,vBDMS_Final_BillableITemCheckMigration_R2C,OrderCategory,Code,nvarchar,,Y,101
+961,50,View,vBDMS_Final_BillableITemCheckMigration_R2C,vBDMSTOOLAccout,ServiceCode,nvarchar,,Y,
+969,50,View,vBDMS_Final_BillableITemCheckMigration_R2C,BillableItem,CWhen,datetime,,Y,May 28 2014  9:04PM
+970,50,View,vBDMS_Final_BillableITemCheckMigration_R2C,BillableItem,MWhen,datetime,,Y,Jun 30 2016  2:29PM
+987,50,View,vBDMS_Final_BillableITemCheckMigration_R2C,BillableItem,BillingServiceSAPUID,int,FK,N,371
+991,50,View,vBDMS_Final_BillableITemCheckMigration_R2C,ItemMaster,UID,int,PK,Y,2
+992,50,View,vBDMS_Final_BillableITemCheckMigration_R2C,ItemMaster,Code,nvarchar,,N,"KK07SMED-GAUZE3X3,12"
+996,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSetBillableItem,UID,int,PK,Y,2327
+997,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSetBillableItem,BillableItemUID,int,FK,Y,1
+998,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSetBillableItem,OrderSetUID,int,FK,Y,1
+999,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSetBillableItem,StatusFlag,nvarchar,,Y,A
+1000,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSetBillableItem,Quantity,float,,N,1
+1001,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSetBillableItem,DoseQty,float,,N,
+1002,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSetBillableItem,ProcessingNotes,nvarchar,,N,
+1004,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderCategory,Description,nvarchar,,N,Tablet
+1005,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderCategory,ParentUID,int,FK,N,98904
+1012,51,View,vBDMS_Final_OrderSetDeatailMaster,BDMSOrderSetItemPrice,OrderSetBillableItemUID,bigint,FK,Y,1291
+1013,51,View,vBDMS_Final_OrderSetDeatailMaster,BDMSOrderSetItemPrice,Amount,float,,N,11500
+1014,51,View,vBDMS_Final_OrderSetDeatailMaster,BDMSOrderSetItemPrice,PBLCTUID,bigint,FK,Y,98900
+1018,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSet,Description,nvarchar,,N,Change when used for LPRC (NAT)
+1022,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSet,OrderSubCategoryUID,int,FK,N,34
+1023,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSet,BillGroupUID,int,FK,N,
+1024,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSet,BillSubGroupUID,int,FK,N,
+1025,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSet,NOTAllowDiscount,nvarchar,,N,
+1026,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSet,IsDeleteAllItem,nvarchar,,N,
+1027,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSet,IsFixPrice,varchar,,N,
+1028,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSet,PBLCTUID,int,FK,N,
+1029,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSet,Duration,int,,N,
+1030,51,View,vBDMS_Final_OrderSetDeatailMaster,OrderSet,NoOfDay,int,,N,
+1032,51,View,vBDMS_Final_OrderSetDeatailMaster,Service,Description,nvarchar,,N,
+1035,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackage,TotalAmount,float,,Y,350
+1036,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackage,StatusFlag,nvarchar,,Y,A
+1037,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackage,ActiveFrom,datetime,,Y,Apr  2 2004 12:00AM
+1038,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackage,ActiveTo,datetime,,N,Jun 14 2014 12:00AM
+1039,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackage,OrderSubCategoryUID,int,FK,N,271
+1040,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackage,SubAccountUID,int,FK,N,0
+1041,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackage,Code,nvarchar,,Y,18S05020201A
+1053,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackageItem,UID,int,PK,Y,38546
+1054,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackageItem,BillPackageUID,int,FK,Y,0
+1055,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackageItem,Amount,float,,Y,2500
+1056,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackageItem,StatusFlag,nvarchar,,Y,A
+1057,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackageItem,BillableItemUID,int,FK,N,1
+1058,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackageItem,Quantity,int,,N,1
+1059,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackageItem,DoctorShare,float,,N,
+1060,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackageItem,ActiveFrom,datetime,,N,Apr  2 2004 12:00AM
+1061,52,View,vBDMS_Final_PACKAGEDETAIL,BillPackageItem,ActiveTo,datetime,,N,
+1065,53,View,vBDMS_Final_PACKAGEDETAIL_RoomRate,BDMSBillPackagePrice,BillPackageItemUID,bigint,FK,Y,9
+1066,53,View,vBDMS_Final_PACKAGEDETAIL_RoomRate,BDMSBillPackagePrice,Amount,float,,N,2600
+1067,53,View,vBDMS_Final_PACKAGEDETAIL_RoomRate,BDMSBillPackagePrice,PBLCTUID,bigint,FK,Y,98896
+1126,55,View,vBDMS_InvenGoLiveCheckDiffAmountTkBc,Store,Code,nvarchar,,Y,18PBB
+1127,55,View,vBDMS_InvenGoLiveCheckDiffAmountTkBc,StockGoLive,StoreUID,int,FK,Y,7
+1128,55,View,vBDMS_InvenGoLiveCheckDiffAmountTkBc,StockGoLive,ItemMasterUID,int,FK,Y,9657
+1129,55,View,vBDMS_InvenGoLiveCheckDiffAmountTkBc,StockGoLive,BatchID,nvarchar,,Y,BPX0000007
+1130,55,View,vBDMS_InvenGoLiveCheckDiffAmountTkBc,StockGoLive,Quantity,float,,Y,0
+1131,55,View,vBDMS_InvenGoLiveCheckDiffAmountTkBc,StockGoLive,IMUOMUID,int,FK,Y,80734
+1132,55,View,vBDMS_InvenGoLiveCheckDiffAmountTkBc,StockGoLive,ExpiryDttm,datetime,,N,Jan  1 2099 12:00AM
+1135,55,View,vBDMS_InvenGoLiveCheckDiffAmountTkBc,TkStockBalance,MaterialNo,nvarchar,,N,4.11041E+13
+1136,55,View,vBDMS_InvenGoLiveCheckDiffAmountTkBc,TkStockBalance,AvgCost,float,,N,42.8795
+1137,55,View,vBDMS_InvenGoLiveCheckDiffAmountTkBc,TkStockBalance,StoreLoc,nvarchar,,N,15SUP
+1138,55,View,vBDMS_InvenGoLiveCheckDiffAmountTkBc,TkStockBalance,BatchNo,nvarchar,,N,GN101151
+1139,55,View,vBDMS_InvenGoLiveCheckDiffAmountTkBc,TkStockBalance,ExpDate,nvarchar,,N,1/1/2099
+1140,55,View,vBDMS_InvenGoLiveCheckDiffAmountTkBc,TkStockBalance,OnHandQty,float,,N,15
+1141,55,View,vBDMS_InvenGoLiveCheckDiffAmountTkBc,TkStockBalance,UOM,nvarchar,,N,SET
+1142,56,View,vBDMS_Order_Toloc_Store,Store,LocationUID,int,FK,N,83
+1145,56,View,vBDMS_Order_Toloc_Store,LocationStore,StoreUID,int,FK,Y,1
+1146,56,View,vBDMS_Order_Toloc_Store,LocationStore,LocationUID,int,FK,Y,29
+1147,56,View,vBDMS_Order_Toloc_Store,LocationStore,ORDCTUID,int,FK,Y,0
+1148,56,View,vBDMS_Order_Toloc_Store,LocationStore,StatusFlag,nvarchar,,Y,A
+1149,56,View,vBDMS_Order_Toloc_Store,LocationStore,IdentifyingType,nvarchar,,N,
+1150,56,View,vBDMS_Order_Toloc_Store,LocationStore,OrderSubcategoryUID,int,FK,N,
+1158,57,View,vBDMS_OrderSetDeatailMaster,OrderSetBillableItem,OrderCatalogName,nvarchar,,N,Thermometer Cover Sheath
+1159,57,View,vBDMS_OrderSetDeatailMaster,OrderSetBillableItem,StartDttm,datetime,,N,Jan 12 2005 12:00AM
+1160,57,View,vBDMS_OrderSetDeatailMaster,OrderSetBillableItem,EndDttm,datetime,,N,
+1186,58,View,vBDMS_Recheck_OrdertoLocation_Cat,BDMSLocationOrderCat,OrderCatUID,int,FK,Y,
+1187,58,View,vBDMS_Recheck_OrdertoLocation_Cat,BDMSLocationOrderCat,RecLocUID,int,FK,Y,
+1188,58,View,vBDMS_Recheck_OrdertoLocation_Cat,BDMSLocationOrderCat,StatusFlag,nvarchar,,Y,
+1206,59,View,vBDMS_Report_VisitDoctor,patientvisit,UID,bigint,PK,Y,1
+1208,59,View,vBDMS_Report_VisitDoctor,patientvisit,PatientUID,bigint,FK,Y,0
+1210,59,View,vBDMS_Report_VisitDoctor,patientvisit,CareProviderUID,int,FK,N,
+1212,59,View,vBDMS_Report_VisitDoctor,patientvisit,LocationUID,int,FK,N,
+1213,59,View,vBDMS_Report_VisitDoctor,patientvisit,StartDTTM,datetime,,Y,Sep  1 2004 12:06AM
+1215,59,View,vBDMS_Report_VisitDoctor,patientvisit,CWhen,datetime,,Y,Jun  7 2014 11:07PM
+1216,59,View,vBDMS_Report_VisitDoctor,patientvisit,StatusFlag,nvarchar,,Y,A
+1218,59,View,vBDMS_Report_VisitDoctor,ServiceLocation,StatusFlag,nvarchar,,Y,A
+1219,59,View,vBDMS_Report_VisitDoctor,ServiceLocation,LocationUID,int,FK,Y,124
+1220,59,View,vBDMS_Report_VisitDoctor,ServiceLocation,ServiceUID,int,FK,Y,290
+1223,59,View,vBDMS_Report_VisitDoctor,Service,CareproviderUID,int,FK,N,
+1238,60,View,VBDMS_Tool_PlanDetail,InsurancePlan,PolicyMasterUID,int,FK,Y,1
+1245,61,View,vBDMSAdmission,PatientEmployerDetail,UID,bigint,PK,Y,18149
+1246,61,View,vBDMSAdmission,PatientEmployerDetail,PatientUID,bigint,FK,Y,139
+1247,61,View,vBDMSAdmission,PatientEmployerDetail,EmployeeNumber,nvarchar,,N,180534
+1248,61,View,vBDMSAdmission,PatientEmployerDetail,EmployeeName,nvarchar,,N,______ ________
+1249,61,View,vBDMSAdmission,PatientEmployerDetail,RLNTYUID,int,FK,N,1433
+1253,61,View,vBDMSAdmission,DischargeEvent,UID,bigint,PK,Y,184
+1256,61,View,vBDMSAdmission,DischargeEvent,MedicalDischargeDttm,datetime,,N,Jun 10 2014 12:24PM
+1257,61,View,vBDMSAdmission,DischargeEvent,ActualDischargeDttm,datetime,,Y,Jun  8 2014  3:23AM
+1258,61,View,vBDMSAdmission,DischargeEvent,RecordedBy,int,,Y,1053
+1259,61,View,vBDMSAdmission,DischargeEvent,DischargeComments,nvarchar,,N,
+1260,61,View,vBDMSAdmission,DischargeEvent,MDTRNUID,int,FK,Y,0
+1261,61,View,vBDMSAdmission,DischargeEvent,DSGDSUID,int,FK,N,
+1262,61,View,vBDMSAdmission,DischargeEvent,CUser,int,,Y,2441
+1263,61,View,vBDMSAdmission,DischargeEvent,CWhen,datetime,,Y,Jun  8 2014  3:23AM
+1264,61,View,vBDMSAdmission,DischargeEvent,MUser,int,,Y,2441
+1265,61,View,vBDMSAdmission,DischargeEvent,MWhen,datetime,,Y,Jun  8 2014  3:23AM
+1266,61,View,vBDMSAdmission,DischargeEvent,StatusFlag,nvarchar,,Y,D
+1267,61,View,vBDMSAdmission,DischargeEvent,OwnerOrganisationUID,int,FK,Y,18
+1268,61,View,vBDMSAdmission,DischargeEvent,DSCTYUID,int,FK,Y,1
+1269,61,View,vBDMSAdmission,DischargeEvent,ServiceUID,int,FK,Y,295
+1270,61,View,vBDMSAdmission,DischargeEvent,INFCTUID,int,FK,N,
+1289,62,View,vBDMSAllPayorAgreements,BDMSContactAgreementAccountItem,BDMSContactAgreementAccountDetailUID,int,FK,Y,25
+1290,62,View,vBDMSAllPayorAgreements,BDMSContactAgreementAccountItem,IdentifyingUID,int,FK,Y,46402
+1291,62,View,vBDMSAllPayorAgreements,BDMSContactAgreementAccountItem,StatusFlag,nvarchar,,Y,A
+1293,62,View,vBDMSAllPayorAgreements,PolicyMaster,AGTYPUID,int,FK,N,46101
+1294,62,View,vBDMSAllPayorAgreements,BDMSContactAgreementAccount,UID,int,PK,Y,1
+1295,62,View,vBDMSAllPayorAgreements,BDMSContactAgreementAccount,PolicyMasterUID,int,FK,Y,1
+1296,62,View,vBDMSAllPayorAgreements,BDMSContactAgreementAccount,IdentifyingUID,int,FK,Y,27
+1297,62,View,vBDMSAllPayorAgreements,BDMSContactAgreementAccount,IdentifyingType,nvarchar,,Y,BILLINGACCOUNT
+1298,62,View,vBDMSAllPayorAgreements,BDMSContactAgreementAccount,StatusFlag,nvarchar,,Y,A
+1301,62,View,vBDMSAllPayorAgreements,BDMSContactAgreementAccountDetail,UID,int,PK,Y,1
+1302,62,View,vBDMSAllPayorAgreements,BDMSContactAgreementAccountDetail,BDMSContactAgreementAccountUID,int,FK,Y,6
+1303,62,View,vBDMSAllPayorAgreements,BDMSContactAgreementAccountDetail,IdentifyingUID,int,FK,Y,69
+1304,62,View,vBDMSAllPayorAgreements,BDMSContactAgreementAccountDetail,StatusFlag,nvarchar,,Y,A
+1305,63,View,vBDMSAR,Payoragreement,UID,int,PK,Y,1840
+1309,63,View,vBDMSAR,Payoragreement,StatusFlag,nvarchar,,Y,A
+1311,63,View,vBDMSAR,Payoragreement,InsuranceCompanyUID,int,FK,N,108
+1316,63,View,vBDMSAR,PatientBilledItem,PatientPackageItemUID,bigint,FK,N,
+1317,63,View,vBDMSAR,payordetail,UID,int,PK,Y,2946
+1321,63,View,vBDMSAR,PayorDetail,Line3,nvarchar,,N,
+1322,63,View,vBDMSAR,PayorDetail,District,nvarchar,,N,
+1323,63,View,vBDMSAR,PayorDetail,STATEUID,int,FK,N,
+1324,63,View,vBDMSAR,PayorDetail,CITTYUID,int,FK,N,
+1325,63,View,vBDMSAR,PayorDetail,CNTRYUID,int,FK,N,
+1329,63,View,vBDMSAR,PayorDetail,AgentName,nvarchar,,N,
+1330,63,View,vBDMSAR,payordetail,CRDTRMUID,int,FK,N,45973
+1339,63,View,vBDMSAR,referencevalue,UID,int,PK,Y,55630
+1340,63,View,vBDMSAR,referencevalue,ValueCode,nvarchar,,Y,1
+1365,64,View,vBDMSARForReport,PatientBilledItem,Amount,float,,Y,120
+1370,64,View,vBDMSARForReport,PatientBilledItem,ConsultantDiscount,float,,N,
+1380,64,View,vBDMSARForReport,PAtient,UID,bigint,PK,Y,1
+1387,64,View,vBDMSARForReport,PAtient,PASID,nvarchar,,Y,18-00-000001
+1412,65,View,vBDMSAudit,PatientServiceEvent,DepartmentUID,int,FK,Y,0
+1413,65,View,vBDMSAudit,PatientServiceEvent,CUser,int,,Y,2451
+1414,65,View,vBDMSAudit,PatientServiceEvent,StatusFlag,nvarchar,,Y,A
+1415,65,View,vBDMSAudit,PatientServiceEvent,EventStartDttm,datetime,,N,Jun  8 2014  2:31AM
+1418,66,View,vBDMSBilItemMasDrugCatJoin,DrugTradeName,DrugCatalogItemUID,int,FK,Y,799
+1419,66,View,vBDMSBilItemMasDrugCatJoin,DrugTradeName,ItemMasterUID,int,FK,Y,4
+1432,66,View,vBDMSBilItemMasDrugCatJoin,DrugCatalogItem,UID,int,PK,Y,2
+1433,66,View,vBDMSBilItemMasDrugCatJoin,DrugCatalogItem,Name,nvarchar,,Y,(Cancel ) Atracurium Besylate-50 mg injection
+1434,66,View,vBDMSBilItemMasDrugCatJoin,DrugCatalogItem,Description,nvarchar,,N,(Cancel ) Atracurium Besylate-50 mg injection
+1435,66,View,vBDMSBilItemMasDrugCatJoin,DrugCatalogItem,StatusFlag,nvarchar,,Y,A
+1436,66,View,vBDMSBilItemMasDrugCatJoin,DrugCatalogItem,Code,nvarchar,,N,MRITRAC0050L
+1439,66,View,vBDMSBilItemMasDrugCatJoin,ItemMaster,Name,nvarchar,,N,(CANCEL) Enfalac A+ A.R. Powder (400 G.)
+1440,66,View,vBDMSBilItemMasDrugCatJoin,ItemMaster,Description,nvarchar,,N,(Cancel)Norcuron  4 Mg  Inj
+1441,66,View,vBDMSBilItemMasDrugCatJoin,ItemMaster,StatusFlag,nvarchar,,Y,A
+1442,66,View,vBDMSBilItemMasDrugCatJoin,ItemMaster,IsConsignmentItem,nvarchar,,N,
+1443,66,View,vBDMSBilItemMasDrugCatJoin,ItemMaster,IsStock,nvarchar,,N,Y
+1444,67,View,vBDMSBillableItemDetail,BillableItemDetail,UID,int,PK,Y,6
+1493,69,View,vBDMSBillableItemDetailAllTUM,BillableItem,QNUOMUID,int,FK,N,
+1498,69,View,vBDMSBillableItemDetailAllTUM,vBDMSToolBillingGrp,Row_Id_BillSub,int,,Y,
+1499,69,View,vBDMSBillableItemDetailAllTUM,vBDMSToolBillingGrp,Sub_Bill_Code,nvarchar,,Y,
+1500,69,View,vBDMSBillableItemDetailAllTUM,vBDMSToolBillingGrp,Sub_Bill_Desc,nvarchar,,Y,
+1501,69,View,vBDMSBillableItemDetailAllTUM,vBDMSToolBillingGrp,Grp_Bill_Code,nvarchar,,Y,
+1502,69,View,vBDMSBillableItemDetailAllTUM,vBDMSToolBillingGrp,Grp_Bill_Desc,nvarchar,,Y,
+1515,70,View,vBDMSBilledDATA,PatientEmployerDetail,EmployerName,nvarchar,,N,10189003
+1517,70,View,vBDMSBilledDATA,PatientEmployerDetail,CostCodeUID,int,FK,N,53
+1530,70,View,vBDMSBilledDATA,Patient,PBLCTUID,int,FK,N,1118
+1531,70,View,vBDMSBilledDATA,REFERENCEVALUE,UID,int,PK,Y,55630
+1534,70,View,vBDMSBilledDATA,REFERENCEVALUE,Description,nvarchar,,Y, 
+1536,70,View,vBDMSBilledDATA,REFERENCEVALUE,StatusFlag,nvarchar,,Y,A
+1537,70,View,vBDMSBilledDATA,REFERENCEVALUE,DomainCode,nvarchar,,N,ABCAN
+1562,71,View,vBDMSBilledRev,vBDMSToolCarepro,UID,int,,Y,
+1563,71,View,vBDMSBilledRev,vBDMSToolCarepro,DoctorOrderCode,nvarchar,,Y,
+1564,71,View,vBDMSBilledRev,vBDMSToolCarepro,DoctorOrderDesc,nvarchar,,Y,
+1565,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,UIDpatientBillableItem,bigint,,Y,
+1566,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,UIDpatientBilledItem,bigint,,Y,
+1567,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,UIDpatientOrder,bigint,,Y,
+1568,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,OrderLocationUID,int,FK,Y,
+1569,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,OrderToLocationUID,int,FK,Y,
+1570,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,BillingServiceUID,int,FK,Y,
+1571,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,Code,nvarchar,,Y,
+1572,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,ItemName,nvarchar,,Y,
+1573,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,BillingSubGroupID,int,,Y,
+1574,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,Override_Flag,nvarchar,,Y,
+1575,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,DF_Flag,nvarchar,,Y,
+1576,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,PatientBillUID,bigint,FK,Y,
+1577,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,EventOccuredDttm,datetime,,Y,
+1578,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,Amount,float,,Y,
+1579,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,Discount,float,,Y,
+1580,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,NetAmount,float,,Y,
+1581,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,SplitDiscount,float,,Y,
+1582,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,SpecialAmount,float,,Y,
+1583,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,Qty_Billed,float,,Y,
+1584,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,ServiceName,nvarchar,,Y,
+1585,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,Order_Status_Code,nvarchar,,Y,
+1586,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,Order_Status_Desc,nvarchar,,Y,
+1587,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,Flag_Cancelled,nvarchar,,Y,
+1588,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,OrderRaisedBy,int,,Y,
+1589,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,PatientUID,bigint,FK,Y,
+1590,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,PatientVisitUID,bigint,FK,Y,
+1591,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,StartDttm,datetime,,Y,
+1592,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,EndDttm,datetime,,Y,
+1593,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,IsPaymentComplete,nvarchar,,Y,
+1594,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,BillableItemUIDBilled,int,,Y,
+1595,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,PBLCTUID,int,FK,Y,
+1596,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,BillPackageUID,int,FK,Y,
+1597,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,PackageItemAmount,float,,Y,
+1598,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,IsStockItem,nvarchar,,Y,
+1599,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,SpecialDiscount,float,,Y,
+1600,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,IsConsiderItem,nvarchar,,Y,
+1601,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,PatientPackageUID,bigint,FK,Y,
+1602,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,PatientPackageItemItemName,nvarchar,,Y,
+1603,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,PatientPackageItemAmount,float,,Y,
+1604,71,View,vBDMSBilledRev,vBDMSToolOrderBilled,PatientPackageItemUID,bigint,FK,Y,
+1605,71,View,vBDMSBilledRev,vBDMSTOOLPayor_min,offcode,nvarchar,,Y,
+1606,71,View,vBDMSBilledRev,vBDMSTOOLPayor_min,offdesc,nvarchar,,Y,
+1607,71,View,vBDMSBilledRev,vBDMSTOOLPayor_min,Payoroffcode,nvarchar,,Y,
+1608,71,View,vBDMSBilledRev,vBDMSTOOLPayor_min,payoroffdesc,nvarchar,,Y,
+1609,71,View,vBDMSBilledRev,vBDMSTOOLPayor_min,PayorCode,nvarchar,,Y,
+1610,71,View,vBDMSBilledRev,vBDMSTOOLPayor_min,PayorDesc,nvarchar,,Y,
+1611,71,View,vBDMSBilledRev,vBDMSTOOLPayor_min,UID,int,,Y,
+1615,71,View,vBDMSBilledRev,vBDMSToolDEPLoc,UID,int,,Y,
+1616,71,View,vBDMSBilledRev,vBDMSToolDEPLoc,LocationCode,nvarchar,,Y,
+1617,71,View,vBDMSBilledRev,vBDMSToolDEPLoc,LocationNAme,nvarchar,,Y,
+1618,71,View,vBDMSBilledRev,vBDMSToolDEPLoc,DepCode,int,,Y,
+1619,71,View,vBDMSBilledRev,vBDMSToolDEPLoc,DepName,nvarchar,,Y,
+1620,71,View,vBDMSBilledRev,vBDMSToolPlanMin,Code,nvarchar,,Y,
+1621,71,View,vBDMSBilledRev,vBDMSToolPlanMin,Name,nvarchar,,Y,
+1622,71,View,vBDMSBilledRev,vBDMSToolPlanMin,UID,int,,Y,
+1623,71,View,vBDMSBilledRev,vBDMSToolPlanMin,TypeBill,nvarchar,,Y,
+1641,71,View,vBDMSBilledRev,PatientBill,PatientVisitPayorUID,bigint,FK,N,2
+1694,72,View,vBDMSBilledRev-BK,vBDMSToolPlanDetail,UIDpayoragreement,int,,Y,
+1695,72,View,vBDMSBilledRev-BK,vBDMSToolPlanDetail,PlanCode,nvarchar,,Y,
+1696,72,View,vBDMSBilledRev-BK,vBDMSToolPlanDetail,PlanName,nvarchar,,Y,
+1697,72,View,vBDMSBilledRev-BK,vBDMSToolPlanDetail,PayorCode,nvarchar,,Y,
+1698,72,View,vBDMSBilledRev-BK,vBDMSToolPlanDetail,PayorDesc,nvarchar,,Y,
+1699,72,View,vBDMSBilledRev-BK,vBDMSToolPlanDetail,PayorOffCode,nvarchar,,Y,
+1700,72,View,vBDMSBilledRev-BK,vBDMSToolPlanDetail,PayorOffDesc,nvarchar,,Y,
+1701,72,View,vBDMSBilledRev-BK,vBDMSToolPlanDetail,OffCode,nvarchar,,Y,
+1702,72,View,vBDMSBilledRev-BK,vBDMSToolPlanDetail,OffDesc,nvarchar,,Y,
+1703,72,View,vBDMSBilledRev-BK,vBDMSToolPlanDetail,TypeBill,nvarchar,,Y,
+1737,73,View,vBDMSCheckOrderSetMaster,BDMSOrderSetItemPrice,ActiveFrom,date,,Y,4/2/2004
+1738,73,View,vBDMSCheckOrderSetMaster,BDMSOrderSetItemPrice,ActiveTo,date,,N,
+1739,73,View,vBDMSCheckOrderSetMaster,BDMSOrderSetItemPrice,StatusFlag,varchar,,Y,P
+1756,74,View,vBDMSCHECKOrderSubcat_Location,BDMSLocationOrderSubCat,UID,int,PK,Y,1
+1757,74,View,vBDMSCHECKOrderSubcat_Location,BDMSLocationOrderSubCat,OrderSubCatUID,int,FK,Y,1
+1758,74,View,vBDMSCHECKOrderSubcat_Location,BDMSLocationOrderSubCat,OrderLocUID,int,FK,N,
+1759,74,View,vBDMSCHECKOrderSubcat_Location,BDMSLocationOrderSubCat,RecLocUID,int,FK,Y,88
+1760,74,View,vBDMSCHECKOrderSubcat_Location,BDMSLocationOrderSubCat,StatusFlag,varchar,,Y,A
+1761,74,View,vBDMSCHECKOrderSubcat_Location,BDMSLocationOrderSubCat,TimeFrom,time,,N,00:00.0
+1762,74,View,vBDMSCHECKOrderSubcat_Location,BDMSLocationOrderSubCat,Timeto,time,,N,59:59.0
+1763,74,View,vBDMSCHECKOrderSubcat_Location,BDMSLocationOrderSubCat,DefaultLocation,varchar,,N,N
+1782,75,View,vBDMSCRMPatientInfo,Patient,VIPTPUID,int,FK,N,
+1783,75,View,vBDMSCRMPatientInfo,Patient,IsAnonymous,nvarchar,,N,N
+1787,76,View,vBDMSDF1,vBDMSResultEnter,ResultEnteredUserCode,nvarchar,,Y,
+1788,76,View,vBDMSDF1,vBDMSResultEnter,ResultEnteredUser,nvarchar,,Y,
+1789,76,View,vBDMSDF1,vBDMSResultEnter,ResultEnteredUserGroupCode,nvarchar,,Y,
+1790,76,View,vBDMSDF1,vBDMSResultEnter,ResultEnteredUserGroup,nvarchar,,Y,
+1791,76,View,vBDMSDF1,vBDMSResultEnter,ResultEnteredDttm,datetime,,Y,
+1792,76,View,vBDMSDF1,vBDMSResultEnter,RequestDetailUID,bigint,FK,Y,
+1804,76,View,vBDMSDF1,vBDMSOrderBilledDF,PatientUID,bigint,FK,Y,
+1805,76,View,vBDMSDF1,vBDMSOrderBilledDF,PatientVisitUID,bigint,FK,Y,
+1806,76,View,vBDMSDF1,vBDMSOrderBilledDF,UIDpatientBilledItem,bigint,,Y,
+1807,76,View,vBDMSDF1,vBDMSOrderBilledDF,RecieptNumber,nvarchar,,Y,
+1808,76,View,vBDMSDF1,vBDMSOrderBilledDF,UIDPatientBill,bigint,,Y,
+1809,76,View,vBDMSDF1,vBDMSOrderBilledDF,Code,nvarchar,,Y,
+1810,76,View,vBDMSDF1,vBDMSOrderBilledDF,ItemName,nvarchar,,Y,
+1811,76,View,vBDMSDF1,vBDMSOrderBilledDF,DF_Flag,nvarchar,,Y,
+1812,76,View,vBDMSDF1,vBDMSOrderBilledDF,doctorshare,float,,Y,
+1813,76,View,vBDMSDF1,vBDMSOrderBilledDF,discountdoctorshare,int,,Y,
+1814,76,View,vBDMSDF1,vBDMSOrderBilledDF,OrderCategoryDesc,nvarchar,,Y,
+1815,76,View,vBDMSDF1,vBDMSOrderBilledDF,OrderSubCategoryDesc,nvarchar,,Y,
+1816,76,View,vBDMSDF1,vBDMSOrderBilledDF,ORDSTDESC,nvarchar,,Y,
+1817,76,View,vBDMSDF1,vBDMSOrderBilledDF,PatientOrderDetailMWhen,datetime,,Y,
+1818,76,View,vBDMSDF1,vBDMSOrderBilledDF,PatientOrderDttm,datetime,,Y,
+1819,76,View,vBDMSDF1,vBDMSOrderBilledDF,PatientOrderStartDttm,datetime,,Y,
+1820,76,View,vBDMSDF1,vBDMSOrderBilledDF,BillPackageUID,int,FK,Y,
+1821,76,View,vBDMSDF1,vBDMSOrderBilledDF,PackageName,nvarchar,,Y,
+1822,76,View,vBDMSDF1,vBDMSOrderBilledDF,LocOrderCode,nvarchar,,Y,
+1823,76,View,vBDMSDF1,vBDMSOrderBilledDF,LocOrderDesc,nvarchar,,Y,
+1824,76,View,vBDMSDF1,vBDMSOrderBilledDF,DepOrderCode,int,,Y,
+1825,76,View,vBDMSDF1,vBDMSOrderBilledDF,DepOrderDesc,nvarchar,,Y,
+1826,76,View,vBDMSDF1,vBDMSOrderBilledDF,LocRecCode,nvarchar,,Y,
+1827,76,View,vBDMSDF1,vBDMSOrderBilledDF,LocRecDesc,nvarchar,,Y,
+1828,76,View,vBDMSDF1,vBDMSOrderBilledDF,DepRecCode,int,,Y,
+1829,76,View,vBDMSDF1,vBDMSOrderBilledDF,DepRecDesc,nvarchar,,Y,
+1830,76,View,vBDMSDF1,vBDMSOrderBilledDF,OrderLocationUID,int,FK,Y,
+1831,76,View,vBDMSDF1,vBDMSOrderBilledDF,OrderToLocationUID,int,FK,Y,
+1832,76,View,vBDMSDF1,vBDMSOrderBilledDF,BillGeneratedDttm,datetime,,Y,
+1833,76,View,vBDMSDF1,vBDMSOrderBilledDF,BillNumber,nvarchar,,Y,
+1834,76,View,vBDMSDF1,vBDMSOrderBilledDF,PatientOrderUser,int,,Y,
+1835,76,View,vBDMSDF1,vBDMSOrderBilledDF,PatientOrderDetailUID,bigint,FK,Y,
+1836,76,View,vBDMSDF1,vBDMSOrderBilledDF,IdentifyingUID,bigint,FK,Y,
+1837,76,View,vBDMSDF1,vBDMSOrderBilledDF,IdentifyingType,varchar,,Y,
+1838,76,View,vBDMSDF1,vBDMSOrderBilledDF,PayorUID,int,FK,Y,
+1839,76,View,vBDMSDF1,vBDMSOrderBilledDF,PayorAgreementUID,int,FK,Y,
+1840,76,View,vBDMSDF1,vBDMSOrderBilledDF,DoctorOrderCode,nvarchar,,Y,
+1841,76,View,vBDMSDF1,vBDMSOrderBilledDF,DoctorOrderDesc,nvarchar,,Y,
+1842,76,View,vBDMSDF1,vBDMSOrderBilledDF,GroupCode,nvarchar,,Y,
+1843,76,View,vBDMSDF1,vBDMSOrderBilledDF,GroupName,nvarchar,,Y,
+1844,76,View,vBDMSDF1,vBDMSOrderBilledDF,IsExecuted,nvarchar,,Y,
+1845,76,View,vBDMSDF1,vBDMSOrderBilledDF,PatientOrderUID,bigint,FK,Y,
+1872,78,View,vBDMSDF3,vBDMSAdmission,UID,bigint,,Y,
+1873,78,View,vBDMSDF3,vBDMSAdmission,EmployeeCode,nvarchar,,Y,
+1874,78,View,vBDMSDF3,vBDMSAdmission,EmployeeName,nvarchar,,Y,
+1896,79,View,vBDMSDispensedItem,Prescription,UID,bigint,PK,Y,318272
+1897,79,View,vBDMSDispensedItem,Prescription,PatientUID,bigint,FK,N,6
+1898,79,View,vBDMSDispensedItem,Prescription,PatientVisitUID,bigint,FK,Y,127181
+1899,79,View,vBDMSDispensedItem,Prescription,PrescriptionNumber,nvarchar,,Y,I1406100001
+1900,79,View,vBDMSDispensedItem,Prescription,PrescribedDttm,datetime,,Y,Jan 24 2014  8:11AM
+1901,79,View,vBDMSDispensedItem,Prescription,CUser,int,,Y,1
+1902,79,View,vBDMSDispensedItem,Prescription,StatusFlag,nvarchar,,Y,A
+1903,79,View,vBDMSDispensedItem,Prescription,OrderLocationUID,int,FK,N,42
+1904,79,View,vBDMSDispensedItem,DispensedItem,PrescriptionItemUID,bigint,FK,Y,1
+1905,79,View,vBDMSDispensedItem,DispensedItem,StoreUID,int,FK,Y,3
+1906,79,View,vBDMSDispensedItem,DispensedItem,Quantity,float,,N,20
+1907,79,View,vBDMSDispensedItem,DispensedItem,ItemName,nvarchar,,N,Mucocin  8 Mg  Tab
+1908,79,View,vBDMSDispensedItem,DispensedItem,ItemMasterUID,int,FK,N,11078
+1909,79,View,vBDMSDispensedItem,DispensedItem,UOM,int,,N,112203
+1910,79,View,vBDMSDispensedItem,DispensedItem,BatchID,nvarchar,,N,Q56518
+1911,79,View,vBDMSDispensedItem,DispensedItem,ExpiryDttm,datetime,,N,Mar 18 2018 12:00AM
+1912,79,View,vBDMSDispensedItem,DispensedItem,StatusFlag,nvarchar,,Y,A
+1913,79,View,vBDMSDispensedItem,DispensedItem,DispensedDttm,datetime,,N,Jun  8 2014  2:46AM
+1914,79,View,vBDMSDispensedItem,PrescriptionItem,UID,bigint,PK,Y,1285112
+1916,79,View,vBDMSDispensedItem,PrescriptionItem,ClinicalComments,nvarchar,,N,
+1917,79,View,vBDMSDispensedItem,PrescriptionItem,StatusFlag,nvarchar,,Y,A
+1918,79,View,vBDMSDispensedItem,PrescriptionItem,PRSTSUID,int,FK,N,4414
+1920,80,View,vBDMSDrugCatalogItemMaster,DrugGroupItem,DrugGroupUID,int,FK,Y,14
+1921,80,View,vBDMSDrugCatalogItemMaster,DrugGroupItem,DrugCatalogItemUID,int,FK,Y,1
+1922,80,View,vBDMSDrugCatalogItemMaster,DrugGroupItem,StatusFlag,nvarchar,,Y,A
+1925,80,View,vBDMSDrugCatalogItemMaster,OrderCategory,StatusFlag,nvarchar,,Y,A
+1926,80,View,vBDMSDrugCatalogItemMaster,DrugGenericMaster,UID,int,PK,Y,1
+1927,80,View,vBDMSDrugCatalogItemMaster,DrugGenericMaster,Name,nvarchar,,N,(cancel)Estriol ( Ovestin )
+1928,80,View,vBDMSDrugCatalogItemMaster,DrugGenericMaster,StatusFlag,varchar,,Y,A
+1940,80,View,vBDMSDrugCatalogItemMaster,DrugCatalogItem,PDSTSUID,int,FK,N,112239
+1941,80,View,vBDMSDrugCatalogItemMaster,DrugCatalogItem,FREQNUID,int,FK,N,202
+1943,80,View,vBDMSDrugCatalogItemMaster,DrugCatalogItem,DrugGenericMasterUID,int,FK,N,
+1945,80,View,vBDMSDrugCatalogItemMaster,DrugGroup,UID,int,PK,Y,1
+1946,80,View,vBDMSDrugCatalogItemMaster,DrugGroup,Name,nvarchar,,Y,Alimentary System
+1947,80,View,vBDMSDrugCatalogItemMaster,DrugGroup,Description,nvarchar,,Y,1
+1948,80,View,vBDMSDrugCatalogItemMaster,DrugGroup,CUser,int,,Y,24
+1949,80,View,vBDMSDrugCatalogItemMaster,DrugGroup,CWhen,datetime,,Y,May 12 2014 12:33PM
+1950,80,View,vBDMSDrugCatalogItemMaster,DrugGroup,MUser,int,,Y,154
+1951,80,View,vBDMSDrugCatalogItemMaster,DrugGroup,MWhen,datetime,,Y,May 12 2014 12:33PM
+1952,80,View,vBDMSDrugCatalogItemMaster,DrugGroup,StatusFlag,nvarchar,,Y,A
+1953,80,View,vBDMSDrugCatalogItemMaster,DrugGroup,OwnerOrganisationUID,int,FK,Y,18
+1954,80,View,vBDMSDrugCatalogItemMaster,DrugGroup,TIMESTAMP,timestamp,,Y,
+1955,80,View,vBDMSDrugCatalogItemMaster,DrugGroup,ParentUID,int,FK,N,0
+1956,80,View,vBDMSDrugCatalogItemMaster,DrugGroup,ActiveFrom,datetime,,N,
+1957,80,View,vBDMSDrugCatalogItemMaster,DrugGroup,ActiveTo,datetime,,N,
+1958,80,View,vBDMSDrugCatalogItemMaster,DrugGroup,STSUID,int,FK,N,
+1959,80,View,vBDMSDrugCatalogItemMaster,DrugGroup,ALGSTSUID,int,FK,N,
+1963,80,View,vBDMSDrugCatalogItemMaster,ItemMaster,ActiveTo,datetime,,N,
+1965,80,View,vBDMSDrugCatalogItemMaster,ItemMaster,DrugCatalogItemUID,int,FK,N,
+1966,80,View,vBDMSDrugCatalogItemMaster,ItemMaster,PrescriptionUOM,int,,N,112124
+1970,81,View,vBDMSEClinicalPatientAllergy,PatientAllergy,ClosureDTTM,datetime,,N,
+1971,81,View,vBDMSEClinicalPatientAllergy,PatientAllergy,CWhen,datetime,,Y,Apr  4 2005 11:59AM
+1972,81,View,vBDMSEClinicalPatientAllergy,PatientAllergy,StatusFlag,nvarchar,,Y,N
+1981,82,View,vBDMSEClinicalPatientAppointment,fBDMSGetCareproviderInfoByPatientAppointment,Code,nvarchar,,Y,
+2018,84,View,vBDMSEClinicalPatientList,fBDMSGetCareproviderInfo,Code,nvarchar,,Y,
+2019,84,View,vBDMSEClinicalPatientList,fBDMSGetCareproviderInfo,Name,nvarchar,,Y,
+2020,84,View,vBDMSEClinicalPatientList,fBDMSGetCareproviderInfo,LicenseNo,nvarchar,,Y,
+2021,84,View,vBDMSEClinicalPatientList,fBDMSgetpatientvisitandconsult,LocationUID,int,FK,Y,
+2022,84,View,vBDMSEClinicalPatientList,fBDMSgetpatientvisitandconsult,CareproviderUID,int,FK,Y,
+2023,84,View,vBDMSEClinicalPatientList,fBDMSgetpatientvisitandconsult,TypeData,varchar,,Y,
+2024,84,View,vBDMSEClinicalPatientList,fBDMSGetFollowUpInfo,Condition,nvarchar,,Y,
+2025,84,View,vBDMSEClinicalPatientList,fBDMSGetFollowUpInfo,DischargeStatus,nvarchar,,Y,
+2051,86,View,vBDMSFinalOrderTolocationBillableitem,BDMSLocationBillableitem,BillableItemUID,bigint,FK,Y,2697
+2052,86,View,vBDMSFinalOrderTolocationBillableitem,BDMSLocationBillableitem,OrderLocUID,int,FK,N,
+2053,86,View,vBDMSFinalOrderTolocationBillableitem,BDMSLocationBillableitem,RecLocUID,int,FK,Y,96
+2054,86,View,vBDMSFinalOrderTolocationBillableitem,BDMSLocationBillableitem,StatusFlag,varchar,,Y,A
+2083,87,View,vBDMSFinalOrderTolocationSubat,BDMSLocationOrderSubCat,ActiveTo,date,,N,
+2093,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationBillableitem,Code,nvarchar,,Y,
+2094,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationBillableitem,Description,nvarchar,,Y,
+2095,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationBillableitem,Order Category Code,nvarchar,,Y,
+2096,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationBillableitem,Order Category Desc,nvarchar,,Y,
+2097,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationBillableitem,Order Sub Cat Code,nvarchar,,Y,
+2098,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationBillableitem,Order Order Sub Cat Name,nvarchar,,Y,
+2099,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationBillableitem,Patient Location_Code,nvarchar,,Y,
+2100,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationBillableitem,Patient Location Desc,nvarchar,,Y,
+2101,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationBillableitem,Receiving Location Code,nvarchar,,Y,
+2102,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationBillableitem,Receiving Location Desc,nvarchar,,Y,
+2103,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationBillableitem,BSMDDUID,int,FK,Y,
+2113,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationSubat,Code,nvarchar,,Y,
+2114,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationSubat,Description,nvarchar,,Y,
+2115,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationSubat,Order Category Code,nvarchar,,Y,
+2116,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationSubat,Order Category Desc,nvarchar,,Y,
+2117,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationSubat,Order Sub Cat Code,nvarchar,,Y,
+2118,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationSubat,Order Order Sub Cat Name,nvarchar,,Y,
+2119,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationSubat,Patient Location_Code,nvarchar,,Y,
+2120,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationSubat,Patient Location Desc,nvarchar,,Y,
+2121,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationSubat,Receiving Location Code,nvarchar,,Y,
+2122,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationSubat,Receiving Location Desc,nvarchar,,Y,
+2123,88,View,vBDMSFinalReceiving,vBDMSFinalOrderTolocationSubat,BSMDDUID,int,FK,Y,
+2134,89,View,vBDMSGenStandingOrder,PatientBillableItem,IPFillProcessUID,bigint,FK,N,
+2140,89,View,vBDMSGenStandingOrder,PatientOrder,StartDttm,datetime,,Y,Aug  4 2008 12:15AM
+2144,89,View,vBDMSGenStandingOrder,PatientOrder,ParentUID,bigint,FK,N,
+2159,89,View,vBDMSGenStandingOrder,PatientOrderDetail,IsStandingOrder,nvarchar,,N,
+2160,89,View,vBDMSGenStandingOrder,PatientOrderDetail,ParentUID,bigint,FK,N,
+2165,89,View,vBDMSGenStandingOrder,PatientVisit,ENSTAUID,int,FK,N,1403
+2169,90,View,vBDMSGetCareprovider,careprovider,SurName,nvarchar,,N,
+2170,90,View,vBDMSGetCareprovider,careprovider,MiddleName,nvarchar,,N,
+2171,90,View,vBDMSGetCareprovider,careprovider,ForeName,nvarchar,,N,
+2172,90,View,vBDMSGetCareprovider,careprovider,SEXXXUID,int,FK,Y,0
+2173,90,View,vBDMSGetCareprovider,careprovider,TITLEUID,int,FK,Y,0
+2174,90,View,vBDMSGetCareprovider,careprovider,CPTYPUID,int,FK,Y,215
+2175,90,View,vBDMSGetCareprovider,careprovider,Qualification,nvarchar,,N,
+2176,90,View,vBDMSGetCareprovider,careprovider,StatusFlag,nvarchar,,Y,A
+2177,90,View,vBDMSGetCareprovider,careprovider,IsCareprovider,nvarchar,,Y,N
+2178,90,View,vBDMSGetCareprovider,careprovider,IsSuregon,nvarchar,,N,N
+2179,90,View,vBDMSGetCareprovider,careprovider,Code,nvarchar,,N,
+2180,90,View,vBDMSGetCareprovider,careprovider,IsAnaesthetist,nvarchar,,N,N
+2181,90,View,vBDMSGetCareprovider,careprovider,LicenseNo,nvarchar,,N,
+2182,90,View,vBDMSGetCareprovider,careprovider,IsRadiologist,nvarchar,,N,
+2183,90,View,vBDMSGetCareprovider,careprovider,EnglishName,nvarchar,,N,
+2193,91,View,VBDMSgetVDrugSummarys,Prescription,PrescribedBy,int,,Y,1053
+2195,91,View,VBDMSgetVDrugSummarys,Prescription,PRSTYPUID,int,FK,N,
+2197,91,View,VBDMSgetVDrugSummarys,Prescription,PatientOrderUID,bigint,FK,N,
+2209,91,View,VBDMSgetVDrugSummarys,PatientOrderDetail,MUser,int,,Y,1805
+2211,91,View,VBDMSgetVDrugSummarys,PatientOrderDetail,DFORMUID,int,FK,N,
+2215,91,View,VBDMSgetVDrugSummarys,PatientOrderDetail,PDSTSUID,int,FK,N,
+2217,91,View,VBDMSgetVDrugSummarys,PrescriptionItem,DrugName,nvarchar,,N,Rabies Verorab (TRCS) Inj *Ref*
+2218,91,View,VBDMSgetVDrugSummarys,PrescriptionItem,FRQNCUID,int,FK,N,168
+2219,91,View,VBDMSgetVDrugSummarys,PrescriptionItem,DFORMUID,int,FK,N,99024
+2220,91,View,VBDMSgetVDrugSummarys,PrescriptionItem,Dosage,float,,N,1
+2221,91,View,VBDMSgetVDrugSummarys,PrescriptionItem,StartDttm,datetime,,Y,Jan 24 2014  8:11AM
+2222,91,View,VBDMSgetVDrugSummarys,PrescriptionItem,EndDttm,datetime,,N,Jan 25 2014  8:11AM
+2223,91,View,VBDMSgetVDrugSummarys,PrescriptionItem,MUser,int,,Y,1936
+2225,91,View,VBDMSgetVDrugSummarys,PrescriptionItem,Quantity,float,,N,1
+2226,91,View,VBDMSgetVDrugSummarys,PrescriptionItem,IsOwnMedicine,nvarchar,,N,
+2229,91,View,VBDMSgetVDrugSummarys,PrescriptionItem,InstructionText,nvarchar,,N,
+2230,91,View,VBDMSgetVDrugSummarys,PrescriptionItem,PDSTSUID,int,FK,N,112277
+2231,91,View,VBDMSgetVDrugSummarys,PrescriptionItem,ItemMasterUID,int,FK,N,
+2232,91,View,VBDMSgetVDrugSummarys,PrescriptionItem,BillableitemUID,int,FK,N,
+2241,92,View,vBDMSInvenAdj,Store,ExternalID,nvarchar,,N,3034
+2242,92,View,vBDMSInvenAdj,StockAdjustment,UID,int,PK,Y,403
+2243,92,View,vBDMSInvenAdj,StockAdjustment,StoreUID,int,FK,Y,1
+2244,92,View,vBDMSInvenAdj,StockAdjustment,ItemMasterUID,int,FK,Y,2
+2245,92,View,vBDMSInvenAdj,StockAdjustment,CUser,int,,Y,1
+2246,92,View,vBDMSInvenAdj,StockAdjustment,CWhen,datetime,,Y,Jun  8 2014  3:31AM
+2247,92,View,vBDMSInvenAdj,StockAdjustment,StatusFlag,nvarchar,,Y,A
+2248,92,View,vBDMSInvenAdj,StockAdjustment,OwnerOrganisationUID,int,FK,Y,18
+2249,92,View,vBDMSInvenAdj,StockAdjustment,StockAdjustmentID,nvarchar,,Y,STA877
+2250,92,View,vBDMSInvenAdj,StockAdjustment,QuantityAdjusted,float,,N,-1222
+2251,92,View,vBDMSInvenAdj,StockAdjustment,ItemCost,float,,N,1.85
+2255,92,View,vBDMSInvenAdj,ItemMaster,ITMTYPUID,int,FK,Y,1594
+2256,92,View,vBDMSInvenAdj,ItemMaster,ActiveFrom,datetime,,Y,May  8 2014  1:21PM
+2258,92,View,vBDMSInvenAdj,ItemMaster,SalesUOM,int,,N,112124
+2259,92,View,vBDMSInvenAdj,ItemMaster,STGRPUID,int,FK,N,99273
+2271,93,View,vBDMSInvenDispose,DisposeStock,UID,int,PK,Y,
+2272,93,View,vBDMSInvenDispose,DisposeStock,StoreUID,int,FK,Y,
+2273,93,View,vBDMSInvenDispose,DisposeStock,DisposeID,nvarchar,,Y,
+2274,93,View,vBDMSInvenDispose,DisposeStock,DisposeDttm,datetime,,Y,
+2275,93,View,vBDMSInvenDispose,DisposeStock,StatusFlag,nvarchar,,Y,
+2276,93,View,vBDMSInvenDispose,DisposeStock,OwnerOrganisationUID,int,FK,Y,
+2277,93,View,vBDMSInvenDispose,DisposeItemList,DisposeStockUID,int,FK,Y,
+2278,93,View,vBDMSInvenDispose,DisposeItemList,ItemMasterUID,int,FK,Y,
+2279,93,View,vBDMSInvenDispose,DisposeItemList,DisposedQty,float,,Y,
+2280,93,View,vBDMSInvenDispose,DisposeItemList,ItemCost,float,,Y,
+2281,93,View,vBDMSInvenDispose,DisposeItemList,CUser,int,,Y,
+2282,93,View,vBDMSInvenDispose,DisposeItemList,StatusFlag,nvarchar,,Y,
+2283,93,View,vBDMSInvenDispose,DisposeItemList,OwnerOrganisationUID,int,FK,Y,
+2289,94,View,vBDMSInvenIssue,CostCode,StatusFlag,nvarchar,,Y,A
+2290,94,View,vBDMSInvenIssue,CostCode,OwnerOrganisationUID,int,FK,Y,18
+2291,94,View,vBDMSInvenIssue,ItemIssue,UID,int,PK,Y,4
+2292,94,View,vBDMSInvenIssue,ItemIssue,StoreUID,int,FK,Y,1
+2293,94,View,vBDMSInvenIssue,ItemIssue,ItemIssuedDttm,datetime,,Y,Jun  8 2014  7:48AM
+2294,94,View,vBDMSInvenIssue,ItemIssue,ItemIssueID,nvarchar,,Y,IMI10988
+2295,94,View,vBDMSInvenIssue,ItemIssue,IsStockTransfer,nvarchar,,Y,Y
+2296,94,View,vBDMSInvenIssue,ItemIssue,CUser,int,,Y,788
+2297,94,View,vBDMSInvenIssue,ItemIssue,StatusFlag,nvarchar,,Y,A
+2298,94,View,vBDMSInvenIssue,ItemIssue,OwnerOrganisationUID,int,FK,Y,18
+2299,94,View,vBDMSInvenIssue,ItemIssue,LocationUID,int,FK,N,
+2300,94,View,vBDMSInvenIssue,ItemIssue,PatientUID,bigint,FK,N,
+2301,94,View,vBDMSInvenIssue,IssuedItemList,ItemIssueUID,int,FK,Y,1
+2302,94,View,vBDMSInvenIssue,IssuedItemList,ItemMasterUID,int,FK,Y,-14584
+2303,94,View,vBDMSInvenIssue,IssuedItemList,Quantity,float,,Y,5
+2304,94,View,vBDMSInvenIssue,IssuedItemList,StatusFlag,nvarchar,,Y,A
+2305,94,View,vBDMSInvenIssue,IssuedItemList,OwnerOrganisationUID,int,FK,Y,18
+2306,94,View,vBDMSInvenIssue,IssuedItemList,InternalCost,float,,N,59.3478
+2318,94,View,vBDMSInvenIssue,Location,OwnerOrganisationUID,int,FK,Y,18
+2320,95,View,vBDMSInvenIssuePtn,PatientBillableItem,PatientUID,bigint,FK,Y,0
+2321,95,View,vBDMSInvenIssuePtn,PatientBillableItem,IdentifyingType,nvarchar,,Y,BillableEvent
+2322,95,View,vBDMSInvenIssuePtn,PatientBillableItem,CUser,int,,Y,1
+2324,95,View,vBDMSInvenIssuePtn,PatientBillableItem,OwnerOrganisationUID,int,FK,Y,18
+2325,95,View,vBDMSInvenIssuePtn,PatientBillableItem,BillableItemUID,int,FK,N,
+2326,95,View,vBDMSInvenIssuePtn,PatientBillableItem,ItemMultiplier,float,,N,1
+2327,95,View,vBDMSInvenIssuePtn,PatientBillableItem,EventOccuredDttm,datetime,,N,Jun  8 2014 12:00AM
+2328,95,View,vBDMSInvenIssuePtn,PatientBillableItem,StoreUID,int,FK,N,
+2334,95,View,vBDMSInvenIssuePtn,PatientBilledItem,OwnerOrganisationUID,int,FK,Y,18
+2340,95,View,vBDMSInvenIssuePtn,Stock,StoreUID,int,FK,Y,1
+2341,95,View,vBDMSInvenIssuePtn,Stock,ItemMasterUID,int,FK,Y,2
+2342,95,View,vBDMSInvenIssuePtn,Stock,StatusFlag,nvarchar,,Y,A
+2343,95,View,vBDMSInvenIssuePtn,Stock,InternalCost,float,,N,0
+2358,95,View,vBDMSInvenIssuePtn,PatientBill,OwnerOrganisationUID,int,FK,Y,18
+2359,95,View,vBDMSInvenIssuePtn,PatientBill,IdentifyingUID,bigint,FK,N,
+2360,95,View,vBDMSInvenIssuePtn,PatientBill,IdentifyingType,nvarchar,,N,
+2365,96,View,vBDMSInvenIssuePtnCancel,PatientBillableItem,MWhen,datetime,,Y,Jun 11 2014  3:48PM
+2376,96,View,vBDMSInvenIssuePtnCancel,STOCK,ItemMasterUID,int,FK,Y,2
+2377,96,View,vBDMSInvenIssuePtnCancel,STOCK,ItemCost,float,,Y,0
+2378,96,View,vBDMSInvenIssuePtnCancel,STOCK,StatusFlag,nvarchar,,Y,A
+2439,98,View,vBDMSInvenManu,ItemManufacturerDetail,UID,int,PK,Y,3649
+2440,98,View,vBDMSInvenManu,ItemManufacturerDetail,ItemMasterUID,int,FK,Y,2
+2441,98,View,vBDMSInvenManu,ItemManufacturerDetail,StatusFlag,nvarchar,,Y,A
+2442,98,View,vBDMSInvenManu,ItemManufacturerDetail,OwnerOrganisationUID,int,FK,Y,18
+2443,98,View,vBDMSInvenManu,ItemManufacturerDetail,ItemAmount,float,,N,0
+2444,98,View,vBDMSInvenManu,ItemManufacturerDetail,ManufactureReceiptUID,int,FK,N,
+2445,98,View,vBDMSInvenManu,ItemManufacturerDetail,Qty,float,,N,
+2446,98,View,vBDMSInvenManu,ItemManufacturerDetail,INGRTPUID,int,FK,N,
+2447,98,View,vBDMSInvenManu,ItemManufacturerDetail,MRPCost,float,,N,
+2448,98,View,vBDMSInvenManu,ManufactureReceipt,UID,int,PK,Y,1
+2449,98,View,vBDMSInvenManu,ManufactureReceipt,StoreUID,int,FK,Y,3
+2450,98,View,vBDMSInvenManu,ManufactureReceipt,LocationUID,int,FK,N,88
+2451,98,View,vBDMSInvenManu,ManufactureReceipt,PreparedDttm,datetime,,Y,Jun 10 2014  3:14PM
+2452,98,View,vBDMSInvenManu,ManufactureReceipt,CUser,int,,Y,1025
+2453,98,View,vBDMSInvenManu,ManufactureReceipt,StatusFlag,nvarchar,,Y,A
+2454,98,View,vBDMSInvenManu,ManufactureReceipt,OwnerOrganisationUID,int,FK,Y,18
+2482,99,View,vBDMSInvenSaleReturn,PatientBilledItem,CWhen,datetime,,Y,Jun  8 2014  3:25AM
+2486,99,View,vBDMSInvenSaleReturn,PatientBilledItem,StoreUID,int,FK,N,
+2490,99,View,vBDMSInvenSaleReturn,STOCK,StoreUID,int,FK,Y,1
+2494,99,View,vBDMSInvenSaleReturn,STOCK,InternalCost,float,,N,0
+2523,100,View,vBDMSInvenSummary,PatientBillableItem,ReceiptNumber,nvarchar,,N,
+2530,100,View,vBDMSInvenSummary,GRNItemList,GRNDetailUID,int,FK,Y,1
+2531,100,View,vBDMSInvenSummary,GRNItemList,ItemMasterUID,int,FK,Y,7
+2532,100,View,vBDMSInvenSummary,GRNItemList,Quantity,float,,Y,2500
+2533,100,View,vBDMSInvenSummary,GRNItemList,ItemCost,float,,Y,1.1999
+2534,100,View,vBDMSInvenSummary,GRNItemList,StatusFlag,nvarchar,,Y,A
+2535,100,View,vBDMSInvenSummary,GRNItemList,OwnerOrganisationUID,int,FK,Y,18
+2536,100,View,vBDMSInvenSummary,GRNItemList,Total,float,,N,
+2539,100,View,vBDMSInvenSummary,ItemIssue,RequestedByStoreUID,int,FK,Y,0
+2562,100,View,vBDMSInvenSummary,OpenStock,UID,int,PK,Y,1
+2563,100,View,vBDMSInvenSummary,OpenStock,StoreUID,int,FK,Y,9
+2564,100,View,vBDMSInvenSummary,OpenStock,StockOpenID,nvarchar,,Y,STK0
+2565,100,View,vBDMSInvenSummary,OpenStock,StockOpenDttm,datetime,,Y,May  8 2014  1:47PM
+2566,100,View,vBDMSInvenSummary,OpenStock,StatusFlag,nvarchar,,Y,A
+2567,100,View,vBDMSInvenSummary,OpenStock,OwnerOrganisationUID,int,FK,Y,18
+2577,100,View,vBDMSInvenSummary,GRNDetail,UID,int,PK,Y,6444
+2578,100,View,vBDMSInvenSummary,GRNDetail,GRNNumber,nvarchar,,Y,5000539448
+2579,100,View,vBDMSInvenSummary,GRNDetail,RecievedStoreUID,int,FK,Y,6
+2580,100,View,vBDMSInvenSummary,GRNDetail,RecievedDttm,datetime,,Y,Jun  8 2014 10:24AM
+2581,100,View,vBDMSInvenSummary,GRNDetail,CUser,int,,Y,1
+2582,100,View,vBDMSInvenSummary,GRNDetail,StatusFlag,nvarchar,,Y,A
+2583,100,View,vBDMSInvenSummary,GRNDetail,OwnerOrganisationUID,int,FK,Y,18
+2584,100,View,vBDMSInvenSummary,StockItemList,OpenStockUID,int,FK,Y,0
+2585,100,View,vBDMSInvenSummary,StockItemList,ItemMasterUID,int,FK,Y,4
+2586,100,View,vBDMSInvenSummary,StockItemList,Quantity,float,,Y,50
+2587,100,View,vBDMSInvenSummary,StockItemList,ItemCost,float,,Y,3.19137
+2588,100,View,vBDMSInvenSummary,StockItemList,CUser,int,,Y,154
+2589,100,View,vBDMSInvenSummary,StockItemList,StatusFlag,nvarchar,,Y,A
+2590,100,View,vBDMSInvenSummary,StockItemList,OwnerOrganisationUID,int,FK,Y,18
+2599,101,View,vBDMSInvenTransfer,ItemIssue,Comments,nvarchar,,N,
+2605,101,View,vBDMSInvenTransfer,ItemIssue,ISSTPUID,int,FK,N,46157
+2611,101,View,vBDMSInvenTransfer,IssuedItemList,BatchID,nvarchar,,Y,M2B83
+2613,101,View,vBDMSInvenTransfer,IssuedItemList,ExpiryDttm,datetime,,N,Feb 14 2015 12:00AM
+2675,103,View,vBDMSItemMasterStoreBin,Store,StatusFlag,nvarchar,,Y,A
+2679,103,View,vBDMSItemMasterStoreBin,StoreBin,UID,int,PK,Y,1
+2680,103,View,vBDMSItemMasterStoreBin,StoreBin,BinLocation,nvarchar,,Y,A  1-2-5
+2681,103,View,vBDMSItemMasterStoreBin,StoreBin,StatusFlag,nvarchar,,Y,A
+2682,103,View,vBDMSItemMasterStoreBin,StoreItem,UID,int,PK,Y,45678
+2683,103,View,vBDMSItemMasterStoreBin,StoreItem,StoreBinUID,int,FK,Y,0
+2684,103,View,vBDMSItemMasterStoreBin,StoreItem,ItemMasterUID,int,FK,Y,4
+2685,103,View,vBDMSItemMasterStoreBin,StoreItem,StoreUID,int,FK,Y,1
+2686,103,View,vBDMSItemMasterStoreBin,StoreItem,MaxStockLevel,int,,N,
+2687,103,View,vBDMSItemMasterStoreBin,StoreItem,ReOrderLevel,int,,N,
+2688,103,View,vBDMSItemMasterStoreBin,StoreItem,MinStockLevel,int,,N,
+2689,103,View,vBDMSItemMasterStoreBin,StoreItem,IsStockItem,nvarchar,,Y,Y
+2690,103,View,vBDMSItemMasterStoreBin,StoreItem,StatusFlag,nvarchar,,Y,A
+2691,103,View,vBDMSItemMasterStoreBin,StoreItem,IsOwner,nvarchar,,N,N
+2692,103,View,vBDMSItemMasterStoreBin,StoreItem,ReOrderQuantity,int,,N,
+2702,104,View,VBDMSLocationByBillableItem,BDMSLocationBillableitem,UID,bigint,PK,Y,10
+2706,104,View,VBDMSLocationByBillableItem,BDMSLocationBillableitem,ActiveFrom,date,,N,5/30/2014
+2707,104,View,VBDMSLocationByBillableItem,BDMSLocationBillableitem,ActiveTo,date,,N,
+2709,104,View,VBDMSLocationByBillableItem,BDMSLocationBillableitem,DefaultLocation,varchar,,N,N
+2740,105,View,vBDMSOnWard,DischargeEvent,TIMESTAMP,timestamp,,Y,
+2795,107,View,vBDMSOrderBillable,PatientOrder,ORDCTUID,int,FK,Y,0
+2796,107,View,vBDMSOrderBillable,PatientOrder,IdentifyingType,nvarchar,,N,
+2799,107,View,vBDMSOrderBillable,store,UID,int,PK,Y,1
+2800,107,View,vBDMSOrderBillable,store,LocationUID,int,FK,N,83
+2809,107,View,vBDMSOrderBillable,vBDMSToolEpisode,UIDVisit,bigint,,Y,
+2810,107,View,vBDMSOrderBillable,vBDMSToolEpisode,RegLocCode,nvarchar,,Y,
+2811,107,View,vBDMSOrderBillable,vBDMSToolEpisode,RegLocDesc,nvarchar,,Y,
+2812,107,View,vBDMSOrderBillable,vBDMSToolEpisode,RegDepCode,int,,Y,
+2813,107,View,vBDMSOrderBillable,vBDMSToolEpisode,RegDepDesc,nvarchar,,Y,
+2814,107,View,vBDMSOrderBillable,vBDMSToolEpisode,RegDateTime,datetime,,Y,
+2815,107,View,vBDMSOrderBillable,vBDMSToolEpisode,TypeEpiCode,nvarchar,,Y,
+2816,107,View,vBDMSOrderBillable,vBDMSToolEpisode,EndDttm,datetime,,Y,
+2823,107,View,vBDMSOrderBillable,PatientOrderDetail,IsStockItem,nvarchar,,N,
+2824,107,View,vBDMSOrderBillable,PatientOrderDetail,PatientBDMSFixPriceUID,int,FK,N,
+2825,107,View,vBDMSOrderBillable,PatientOrderDetail,MainFixPrice,varchar,,N,
+2836,107,View,vBDMSOrderBillable,vBDMSToolHN,Forename,nvarchar,,Y,
+2837,107,View,vBDMSOrderBillable,vBDMSToolHN,Surname,nvarchar,,Y,
+2838,107,View,vBDMSOrderBillable,vBDMSToolHN,FlyExpatCode,nvarchar,,Y,
+2839,107,View,vBDMSOrderBillable,vBDMSToolHN,NationCode,nvarchar,,Y,
+2840,107,View,vBDMSOrderBillable,vBDMSToolHN,NationDesc,nvarchar,,Y,
+2841,107,View,vBDMSOrderBillable,vBDMSToolHN,UIDpatient,bigint,,Y,
+2842,107,View,vBDMSOrderBillable,vBDMSToolHN,HN,nvarchar,,Y,
+2843,107,View,vBDMSOrderBillable,vBDMSToolHN,EmployeeNumber,nvarchar,,Y,
+2844,107,View,vBDMSOrderBillable,vBDMSToolHN,EMPDEPCODE,int,,Y,
+2845,107,View,vBDMSOrderBillable,vBDMSToolHN,EMPDEPDESC,nvarchar,,Y,
+2847,108,View,vBDMSOrderBillableForPE,OrderCatalogItem,Code,nvarchar,,Y,/SSH18A0705A000O-03
+2877,108,View,vBDMSOrderBillableForPE,vBDMSToolEpisode,EpiNumber,nvarchar,,Y,
+2915,109,View,vBDMSOrderBilledDF,PatientOrder,ORDSTUID,int,FK,Y,4412
+2917,109,View,vBDMSOrderBilledDF,PatientOrder,EndDttm,datetime,,Y,Aug  4 2008 12:15AM
+2932,109,View,vBDMSOrderBilledDF,PatientBilledItem,SpecialAmount,float,,N,
+2933,109,View,vBDMSOrderBilledDF,PatientBilledItem,IsRefunded,nvarchar,,N,
+2935,109,View,vBDMSOrderBilledDF,PatientBilledItem,SplitDiscount,float,,N,
+2942,109,View,vBDMSOrderBilledDF,PatientPaymentDetail,RecieptNumber,nvarchar,,N,18-DO14000001
+2979,109,View,vBDMSOrderBilledDF,patientvisit,ENTYPUID,int,FK,Y,1379
+3002,112,View,vBDMSOrWorkList,PatientProcedure,UID,bigint,PK,Y,1
+3003,112,View,vBDMSOrWorkList,PatientProcedure,PatientVisitUID,bigint,FK,N,127181
+3004,112,View,vBDMSOrWorkList,PatientProcedure,StatusFlag,nvarchar,,Y,A
+3005,112,View,vBDMSOrWorkList,PatientProcedure,StartDateTime,datetime,,N,Jun  8 2014  3:03AM
+3006,112,View,vBDMSOrWorkList,PatientProcedure,EndDateTime,datetime,,N,Jun  8 2014  3:05AM
+3007,112,View,vBDMSOrWorkList,PatientProcedure,ProcedureID,nvarchar,,N,PR2153
+3008,112,View,vBDMSOrWorkList,PatientProcedure,TourniquetFromDttm,datetime,,N,
+3009,112,View,vBDMSOrWorkList,PatientProcedure,TourniquetToDttm,datetime,,N,
+3010,112,View,vBDMSOrWorkList,fBDMSgetAnesthssiaandMethod,DoctorAnes,nvarchar,,Y,
+3011,112,View,vBDMSOrWorkList,fBDMSgetAnesthssiaandMethod,MethodAnes,nvarchar,,Y,
+3012,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,TPimage,varbinary,,Y,
+3013,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,PatientVisitUID,bigint,FK,Y,
+3014,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,HN,nvarchar,,Y,
+3015,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,EN,nvarchar,,Y,
+3016,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,Fullname,nvarchar,,Y,
+3017,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,BED,nvarchar,,Y,
+3018,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,DateVisit,datetime,,Y,
+3019,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,DOB,datetime,,Y,
+3020,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,sex,nvarchar,,Y,
+3021,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,Age,nvarchar,,Y,
+3022,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,Allergy,nvarchar,,Y,
+3023,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,Doctor,nvarchar,,Y,
+3024,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,Location,nvarchar,,Y,
+3025,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,licensennumber,nvarchar,,Y,
+3026,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,Medical Discharge Date,date,,Y,
+3027,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,Medical Discharge Time,datetime,,Y,
+3028,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,Financial Discharge Date,date,,Y,
+3029,112,View,vBDMSOrWorkList,vBDMSReportHeaderForDiscSUM,Financial Discharge Time,datetime,,Y,
+3087,115,View,vBDMSPatientApp,Booking,VISTYUID,int,FK,Y,13720
+3089,115,View,vBDMSPatientApp,Booking,SlotStartDttm,datetime,,Y,Jun  7 2014  8:20AM
+3090,115,View,vBDMSPatientApp,Booking,SlotEndDttm,datetime,,N,Jun  7 2014  8:40AM
+3093,115,View,vBDMSPatientApp,Booking,SessionDefinitionUID,int,FK,N,
+3095,115,View,vBDMSPatientApp,SessionDefinition,UID,int,PK,Y,359
+3100,116,View,vBDMSPatientBillableItem,PatientBillableItem,IdentifyingUID,int,FK,Y,1
+3103,116,View,vBDMSPatientBillableItem,PatientBillableItem,BSMDDUID,int,FK,Y,0
+3110,116,View,vBDMSPatientBillableItem,PatientBillableItem,ItemName,nvarchar,,N,____________________________
+3111,116,View,vBDMSPatientBillableItem,PatientBillableItem,CareProviderUID,int,FK,N,
+3113,116,View,vBDMSPatientBillableItem,PatientBillableItem,QNUOMUID,int,FK,N,
+3114,116,View,vBDMSPatientBillableItem,PatientBillableItem,PatientVisitPayorUID,bigint,FK,N,
+3116,116,View,vBDMSPatientBillableItem,PatientBillableItem,BillPackageUID,int,FK,N,
+3117,116,View,vBDMSPatientBillableItem,PatientBillableItem,BLTYPUID,int,FK,N,
+3118,116,View,vBDMSPatientBillableItem,PatientBillableItem,OrderType,nvarchar,,N,
+3120,116,View,vBDMSPatientBillableItem,PatientBillableItem,ORDSTUID,int,FK,N,
+3129,116,View,vBDMSPatientBillableItem,PatientPackage,UID,bigint,PK,Y,1
+3130,116,View,vBDMSPatientBillableItem,PatientPackage,PackageName,nvarchar,,Y,Package C/S plus 49
+3163,117,View,vBDMSPatientBilledItem,PatientVisitPayor,PatientUID,bigint,FK,Y,6
+3166,117,View,vBDMSPatientBilledItem,PatientVisitPayor,PayorAgreementUID,int,FK,N,
+3178,117,View,vBDMSPatientBilledItem,PatientBill,BLTYPUID,int,FK,N,2159
+3179,117,View,vBDMSPatientBilledItem,PatientBill,Comments,nvarchar,,N,
+3182,117,View,vBDMSPatientBilledItem,PatientBill,AuthCode,nvarchar,,N,
+3201,119,View,vBDMSPatientDetails,PatientVisitPayor,CorporateUID,int,FK,N,1835
+3202,119,View,vBDMSPatientDetails,PatientVisitPayor,IDCardNumber,nvarchar,,N,
+3203,119,View,vBDMSPatientDetails,PatientVisitPayor,PAYRTPUID,int,FK,N,67186
+3219,119,View,vBDMSPatientDetails,PatientVisit,Comments,nvarchar,,N,
+3221,120,View,vBDMSPatientImage,PATIENT,UID,bigint,PK,Y,1
+3222,120,View,vBDMSPatientImage,PATIENT,StatusFlag,nvarchar,,Y,A
+3223,120,View,vBDMSPatientImage,PATIENT,PASID,nvarchar,,Y,18-00-000001
+3224,120,View,vBDMSPatientImage,PATIENTIMAGE,PatientUID,bigint,FK,Y,0
+3225,120,View,vBDMSPatientImage,PATIENTIMAGE,ImageContent,varbinary,,Y,
+3226,120,View,vBDMSPatientImage,PATIENTIMAGE,StatusFlag,nvarchar,,Y,A
+3227,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,PatientUID,bigint,FK,Y,111084
+3228,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,PatientVisitUID,bigint,FK,Y,132729
+3229,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,LMPDttm,datetime,,N,Sep 25 2014 12:00AM
+3230,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,ExpectedDeliveryDttm,datetime,,N,Jun 13 2014 12:00AM
+3231,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,LabourOnsetDttm,datetime,,N,Jun 13 2014 12:00AM
+3232,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,Complication,nvarchar,,N,
+3233,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,DELMDUID,int,FK,N,
+3234,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,ObstetricianUID,int,FK,Y,1374
+3235,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,StatusFlag,nvarchar,,Y,A
+3236,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,AbortionDetail,nvarchar,,N,
+3237,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,BithCount,int,,N,
+3238,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,Comments,nvarchar,,N,
+3239,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,Gravida,nvarchar,,N,
+3240,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,ATTNURUID,int,FK,N,
+3241,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,LABURUID,int,FK,N,
+3242,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,MembranesRupturedDt,datetime,,N,
+3243,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,MembranesRupturedTm,datetime,,N,
+3244,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,AMFLDUID,int,FK,N,
+3245,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,LabourOnsetTm,datetime,,N,
+3246,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,FullDialationDT,datetime,,N,
+3247,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,FullDialationTm,datetime,,N,
+3248,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,BirthOfChildDt,datetime,,N,
+3249,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,BirthOfChildTm,datetime,,N,
+3250,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,BirthOfPlacentaDT,datetime,,N,
+3251,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,BirthOfPlacentaTm,datetime,,N,
+3252,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,EPISIUID,int,FK,N,
+3253,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,LACERUID,int,FK,N,
+3254,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,ANESTUID,int,FK,N,
+3255,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,AnalgesiaTime,datetime,,N,
+3256,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,PLMEMUID,int,FK,N,
+3257,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,CordLength,varchar,,N,
+3258,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,CordWeight,varchar,,N,
+3259,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,GRSAPUID,int,FK,N,
+3260,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,PPCONUID,int,FK,N,
+3261,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,PostPartumDtl,nvarchar,,N,
+3262,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,OXYDGUID,int,FK,N,
+3263,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,OxytocinDrgDtl,nvarchar,,N,
+3264,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,PastPresentHistory,nvarchar,,N,
+3265,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,PRSNTUID,int,FK,N,
+3266,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,INDCTUID,int,FK,N,
+3267,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,AnesthesiologistUID,int,FK,N,
+3268,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,GRSARUID,int,FK,N,
+3269,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,AssistantUID,int,FK,N,
+3270,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,PastDeliveryDate,nvarchar,,N,
+3271,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,Para,nvarchar,,N,
+3272,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,Fullterm,nvarchar,,N,
+3273,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,Premature,nvarchar,,N,
+3274,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,Living,nvarchar,,N,
+3275,121,View,vBDMSPatientLabourDetail,PatientDeliveryDetail,StillBirth,nvarchar,,N,
+3276,122,View,vBDMSPatientMaster,PatientOtherContact,Line1,nvarchar,,Y,
+3277,122,View,vBDMSPatientMaster,PatientOtherContact,CNTYPUID,int,FK,N,3
+3278,122,View,vBDMSPatientMaster,PatientOtherContact,PatientUID,bigint,FK,Y,3
+3285,122,View,vBDMSPatientMaster,Patient,OCCUPUID,int,FK,N,
+3293,122,View,vBDMSPatientMaster,PatientID,Identifier,nvarchar,,Y,
+3294,122,View,vBDMSPatientMaster,PatientID,PITYPUID,int,FK,Y,0
+3295,122,View,vBDMSPatientMaster,PatientID,PatientUID,bigint,FK,Y,0
+3309,123,View,vBDMSPatientNewBorn,PatientBirthRegister,UID,bigint,PK,Y,1
+3310,123,View,vBDMSPatientNewBorn,PatientBirthRegister,PatientVisitUID,bigint,FK,Y,127338
+3311,123,View,vBDMSPatientNewBorn,PatientBirthRegister,PatientUID,bigint,FK,Y,439791
+3312,123,View,vBDMSPatientNewBorn,PatientBirthRegister,DLYMDUID,int,FK,Y,46047
+3313,123,View,vBDMSPatientNewBorn,PatientBirthRegister,SEXXXUID,int,FK,Y,55630
+3314,123,View,vBDMSPatientNewBorn,PatientBirthRegister,BirthWeight,float,,N,2215
+3315,123,View,vBDMSPatientNewBorn,PatientBirthRegister,BirthHeight,float,,N,46
+3316,123,View,vBDMSPatientNewBorn,PatientBirthRegister,HeadCircumference,float,,N,32
+3317,123,View,vBDMSPatientNewBorn,PatientBirthRegister,BirthDttm,datetime,,Y,Jun  7 2014 12:00AM
+3318,123,View,vBDMSPatientNewBorn,PatientBirthRegister,BirthTime,datetime,,N,Jun  7 2014  9:53PM
+3319,123,View,vBDMSPatientNewBorn,PatientBirthRegister,StatusFlag,nvarchar,,Y,A
+3320,123,View,vBDMSPatientNewBorn,PatientBirthRegister,OUTCMUID,int,FK,N,4684
+3321,123,View,vBDMSPatientNewBorn,PatientBirthRegister,APGAR2UID,int,FK,N,9
+3322,123,View,vBDMSPatientNewBorn,PatientBirthRegister,APGAR3UID,int,FK,N,10
+3323,123,View,vBDMSPatientNewBorn,PatientBirthRegister,APGAR4UID,int,FK,N,10
+3324,123,View,vBDMSPatientNewBorn,PatientBirthRegister,BLOODUID,int,FK,N,
+3325,123,View,vBDMSPatientNewBorn,PatientBirthRegister,ChestCircumference,float,,N,29
+3326,123,View,vBDMSPatientNewBorn,PatientBirthRegister,PATANUSUID,int,FK,N,
+3327,123,View,vBDMSPatientNewBorn,PatientBirthRegister,STOOLUID,int,FK,N,
+3328,123,View,vBDMSPatientNewBorn,PatientBirthRegister,UMBCTYPUID,int,FK,N,5080
+3329,123,View,vBDMSPatientNewBorn,PatientBirthRegister,CBFTPUID,int,FK,N,
+3330,123,View,vBDMSPatientNewBorn,PatientBirthRegister,CBFTPText,nvarchar,,N,
+3331,123,View,vBDMSPatientNewBorn,PatientBirthRegister,BabyPatientUID,bigint,FK,N,562420
+3332,123,View,vBDMSPatientNewBorn,PatientBirthRegister,BTLR,nvarchar,,N,36.8
+3333,123,View,vBDMSPatientNewBorn,PatientBirthRegister,BTNSY,nvarchar,,N,36.1
+3334,123,View,vBDMSPatientNewBorn,PatientBirthRegister,YESNOUID,int,FK,N,108
+3335,123,View,vBDMSPatientNewBorn,PatientBirthRegister,PediatricianUID,int,FK,N,1598
+3336,123,View,vBDMSPatientNewBorn,BirthScore,PatientBirthRegisterUID,bigint,FK,Y,1
+3337,123,View,vBDMSPatientNewBorn,BirthScore,SIGNUID,int,FK,N,5092
+3338,123,View,vBDMSPatientNewBorn,BirthScore,SCORE0UID,int,FK,N,5067
+3339,123,View,vBDMSPatientNewBorn,BirthScore,SCORE1UID,int,FK,N,5067
+3340,123,View,vBDMSPatientNewBorn,BirthScore,SCORE2UID,int,FK,N,5067
+3341,123,View,vBDMSPatientNewBorn,BirthScore,StatusFlag,nvarchar,,Y,A
+3342,124,View,vBDMSPatientOrder,ItemAverageCost,ItemMasterUID,int,FK,Y,2
+3343,124,View,vBDMSPatientOrder,ItemAverageCost,AvgCost,float,,Y,240
+3357,124,View,vBDMSPatientOrder,PatientOrder,IdentifyingUID,bigint,FK,N,
+3370,124,View,vBDMSPatientOrder,Prescription,PRSSTUID,int,FK,N,67963
+3372,124,View,vBDMSPatientOrder,Request,UID,bigint,PK,Y,59605
+3373,124,View,vBDMSPatientOrder,Request,StatusFlag,nvarchar,,Y,A
+3374,124,View,vBDMSPatientOrder,Request,RequestNumber,nvarchar,,N,
+3407,124,View,vBDMSPatientOrder,PatientOrderDetail,OwnerOrganisationUID,int,FK,Y,18
+3417,124,View,vBDMSPatientOrder,PatientOrderDetail,Discount,float,,N,
+3443,124,View,vBDMSPatientOrder,Speciality,Name,nvarchar,,N,______ (ORTHOPAEDIST)
+3457,125,View,vBDMSPatientOrderDetail,PAtientBillableItem,StatusFlag,nvarchar,,Y,A
+3460,125,View,vBDMSPatientOrderDetail,PAtientBillableItem,ItemMultiplier,float,,N,1
+3461,125,View,vBDMSPatientOrderDetail,PatientBillableItem,PayorUID,int,FK,N,
+3462,125,View,vBDMSPatientOrderDetail,PAtientBillableItem,PatientOrderDetailUID,bigint,FK,N,
+3479,125,View,vBDMSPatientOrderDetail,PatientOrder,IsIPFill,nvarchar,,N,
+3487,125,View,vBDMSPatientOrderDetail,Prescription,VerifiedByUserUID,int,FK,N,
+3488,125,View,vBDMSPatientOrderDetail,Prescription,VerifiedDttm,datetime,,N,
+3517,125,View,vBDMSPatientOrderDetail,PatientOrderDetail,InstructionText,nvarchar,,N,
+3522,125,View,vBDMSPatientOrderDetail,PatientOrderDetail,PatientPackageUID,bigint,FK,N,
+3536,125,View,vBDMSPatientOrderDetail,PatientOrderDetailHistory,UID,bigint,PK,Y,45630
+3537,125,View,vBDMSPatientOrderDetail,PatientOrderDetailHistory,PatientOrderDetailUID,bigint,FK,Y,0
+3538,125,View,vBDMSPatientOrderDetail,PatientOrderDetailHistory,Comments,nvarchar,,N,
+3539,125,View,vBDMSPatientOrderDetail,PatientOrderDetailHistory,StatusFlag,nvarchar,,Y,A
+3599,127,View,vBDMSPatientPresEng,DrugInstruction,DrugCatalogItemUID,int,FK,Y,1
+3600,127,View,vBDMSPatientPresEng,DrugInstruction,INSTYPUID,int,FK,Y,4849
+3601,127,View,vBDMSPatientPresEng,DrugInstruction,InstructionText,nvarchar,,N,Keep In Refrigerator
+3602,127,View,vBDMSPatientPresEng,DrugInstruction,StatusFlag,nvarchar,,Y,A
+3612,127,View,vBDMSPatientPresEng,Prescription,OrderToLocationUID,int,FK,N,
+3616,127,View,vBDMSPatientPresEng,PrescriptionItem,IdentifyingOID,int,,Y,39
+3618,127,View,vBDMSPatientPresEng,PrescriptionItem,ROUTEUID,int,FK,N,67967
+3625,127,View,vBDMSPatientPresEng,PrescriptionItem,DrugDuration,nvarchar,,N,1
+3634,127,View,vBDMSPatientPresEng,Itemmaster,UID,int,PK,Y,2
+3636,127,View,vBDMSPatientPresEng,Itemmaster,StatusFlag,nvarchar,,Y,A
+3638,127,View,vBDMSPatientPresEng,Itemmaster,DrugCatalogItemUID,int,FK,N,
+3709,129,View,vBDMSPatientPresEngFromOrderItem,PatientOrder,AuthorizedByUID,int,FK,N,
+3721,129,View,vBDMSPatientPresEngFromOrderItem,PatientOrderDetail,ROUTEUID,int,FK,N,
+3725,129,View,vBDMSPatientPresEngFromOrderItem,PatientOrderDetail,DrugDuration,nvarchar,,N,1
+3747,130,View,vBDMSPatientPresThai,DrugInstruction,LocalInstructionText,nvarchar,,N,_______________
+3793,131,View,vBDMSPatientVisit,PatientServiceEvent,UID,bigint,PK,Y,6893900
+3796,131,View,vBDMSPatientVisit,PatientServiceEvent,CWhen,datetime,,Y,Jan  6 2017 11:15AM
+3797,131,View,vBDMSPatientVisit,PatientServiceEvent,MWhen,datetime,,Y,Jun  8 2014  2:31AM
+3847,131,View,vBDMSPatientVisit,PatientVisit,ReferredBy,nvarchar,,N,
+3852,131,View,vBDMSPatientVisit,PatientVisit,CurrentServiceUID,int,FK,N,
+3853,131,View,vBDMSPatientVisit,PatientVisit,IsBillFinalized,nvarchar,,N,
+3937,133,View,vBDMSPatientVisitList,PatientVisit,ConsultationDttm,datetime,,N,
+3940,133,View,vBDMSPatientVisitList,PatientVisit,CurrentCareProviderUID,int,FK,N,
+3952,134,View,vBDMSPatientVisitPayor,PayorAgreement,OPDCoverPerDay,float,,N,
+3954,134,View,vBDMSPatientVisitPayor,PayorAgreement,IsLimitAfterDiscount,nvarchar,,N,Y
+3963,134,View,vBDMSPatientVisitPayor,PatientVisitPayor,EligibileAmount,float,,N,
+3966,134,View,vBDMSPatientVisitPayor,PatientVisitPayor,PBLCTUID,int,FK,Y,0
+3969,134,View,vBDMSPatientVisitPayor,PatientVisitPayor,ActiveFrom,datetime,,N,Jun  8 2014  2:31AM
+3970,134,View,vBDMSPatientVisitPayor,PatientVisitPayor,ActiveTo,datetime,,N,
+3971,134,View,vBDMSPatientVisitPayor,PatientVisitPayor,ClaimPercentage,float,,N,100
+3972,134,View,vBDMSPatientVisitPayor,PatientVisitPayor,FixedCopayAmount,float,,N,
+3979,135,View,vBDMSPaymentDetail,PatientPaymentDetail,PatientUID,bigint,FK,N,6
+3986,135,View,vBDMSPaymentDetail,PatientPaymentDetail,CardExpiryDttm,datetime,,N,
+3989,135,View,vBDMSPaymentDetail,PatientPaymentDetail,BankName,nvarchar,,N,
+3990,135,View,vBDMSPaymentDetail,PatientPaymentDetail,RefundReceiptNumber,nvarchar,,N,
+3991,135,View,vBDMSPaymentDetail,PatientPaymentDetail,Comments,nvarchar,,N,Test Bconnect war room
+3992,135,View,vBDMSPaymentDetail,PatientPaymentDetail,IsAdvance,nvarchar,,N,Y
+4005,136,View,vBDMSPayorOfficePlanPayor,PayorDetail,MWhen,datetime,,Y,Apr  1 2016  2:08AM
+4030,137,View,vBDMSPayorPlan,PayorAgreement,ClaimPercentage,float,,N,100
+4054,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,UID,int,PK,Y,
+4055,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,PrescriptionItemUID,int,FK,Y,
+4056,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,PatientName,nvarchar,,N,
+4057,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,Quantity,int,,N,
+4058,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,DrugName,nvarchar,,N,
+4059,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,LabelText,nvarchar,,N,
+4060,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,Dosage,float,,N,
+4061,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,ItemUOM,nvarchar,,N,
+4062,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,Frequency,nvarchar,,N,
+4063,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,PatientInstruction,nvarchar,,N,
+4064,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,DoctorInstruction,nvarchar,,N,
+4065,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,CUser,int,,Y,
+4066,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,CWhen,datetime,,Y,
+4067,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,MUser,int,,Y,
+4068,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,MWhen,datetime,,Y,
+4069,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,StatusFlag,varchar,,Y,
+4070,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,IdentifyingType,nvarchar,,N,
+4071,139,View,vBDMSPharHistorySticker,BDMSPharHistorySticker,OwnerOrganisationUID,int,FK,Y,
+4077,140,View,vBDMSPrescription,Prescription,PRITYUID,int,FK,Y,169
+4082,140,View,vBDMSPrescription,Prescription,Comments,nvarchar,,Y,
+4084,140,View,vBDMSPrescription,Prescription,OwnerOrganisationUID,int,FK,Y,18
+4085,140,View,vBDMSPrescription,Prescription,DispensedDttm,datetime,,N,
+4090,140,View,vBDMSPrescription,Prescription,IsIPFill,nvarchar,,N,
+4106,141,View,VBDMSPresItemOwnMed,PrescriptionItem,MWhen,datetime,,Y,Jun  8 2014  3:53AM
+4112,141,View,VBDMSPresItemOwnMed,PrescriptionItem,LocalInstructionText,nvarchar,,N,
+4123,142,View,vBDMSR2CDEBIT,PatientPaymentDetail,CUser,int,,Y,2441
+4125,142,View,vBDMSR2CDEBIT,PatientPaymentDetail,OwnerOrganisationUID,int,FK,Y,18
+4130,142,View,vBDMSR2CDEBIT,PatientPaymentDetail,ParentBillNumber,nvarchar,,N,
+4131,142,View,vBDMSR2CDEBIT,PatientPaymentDetail,ParentReceiptNumber,nvarchar,,N,
+4132,142,View,vBDMSR2CDEBIT,PatientPaymentDetail,OpticalOrderUID,bigint,FK,N,
+4133,142,View,vBDMSR2CDEBIT,PatientPaymentDetail,BankUID,int,FK,N,
+4134,142,View,vBDMSR2CDEBIT,PatientPaymentDetail,Branch,nvarchar,,N,
+4140,142,View,vBDMSR2CDEBIT,Patient,DOBComputed,nvarchar,,Y,0
+4165,143,View,vBDMSR2CITemPatientBillableitem,PatientBillableItem,OrderSetUID,int,FK,N,
+4170,143,View,vBDMSR2CITemPatientBillableitem,BillingService,UID,int,PK,Y,1
+4171,143,View,vBDMSR2CITemPatientBillableitem,BillingService,ServiceCode,nvarchar,,Y,410101
+4172,143,View,vBDMSR2CITemPatientBillableitem,BillingService,Description,nvarchar,,N,_________________(Drugs/Medicine)
+4173,143,View,vBDMSR2CITemPatientBillableitem,fBDMSGetDoctorR2C,Order Item Order Doctor Unique Number,int,,Y,
+4174,143,View,vBDMSR2CITemPatientBillableitem,fBDMSGetDoctorR2C,Order Item Order Doctor Code,nvarchar,,Y,
+4175,143,View,vBDMSR2CITemPatientBillableitem,fBDMSGetDoctorR2C,Order Item Order Doctor Description,nvarchar,,Y,
+4176,143,View,vBDMSR2CITemPatientBillableitem,fBDMSGetDoctorR2C,Order Item Executed Date,varchar,,Y,
+4177,143,View,vBDMSR2CITemPatientBillableitem,fBDMSGetDoctorR2C,Order Item Executed Time,varchar,,Y,
+4178,143,View,vBDMSR2CITemPatientBillableitem,fBDMSGetDoctorR2C,Order Item Executed Doctor Unique Number,int,,Y,
+4179,143,View,vBDMSR2CITemPatientBillableitem,fBDMSGetDoctorR2C,Order Item Executed Doctor Code,nvarchar,,Y,
+4180,143,View,vBDMSR2CITemPatientBillableitem,fBDMSGetDoctorR2C,Order Item Executed Doctor Description,nvarchar,,Y,
+4181,143,View,vBDMSR2CITemPatientBillableitem,fBDMSGetDoctorR2C,Order Item Verified Date,varchar,,Y,
+4182,143,View,vBDMSR2CITemPatientBillableitem,fBDMSGetDoctorR2C,Order Item Verified Time,varchar,,Y,
+4183,143,View,vBDMSR2CITemPatientBillableitem,fBDMSGetDoctorR2C,Order Item Verified Doctor Unique Number,int,,Y,
+4184,143,View,vBDMSR2CITemPatientBillableitem,fBDMSGetDoctorR2C,Order Item Verified Doctor Code,nvarchar,,Y,
+4185,143,View,vBDMSR2CITemPatientBillableitem,fBDMSGetDoctorR2C,Order Item Verified Doctor Description,nvarchar,,Y,
+4186,143,View,vBDMSR2CITemPatientBillableitem,fBDMSgetReferencevalue,ValueCode,nvarchar,,Y,
+4187,143,View,vBDMSR2CITemPatientBillableitem,fBDMSgetReferencevalue,DescriptionName,nvarchar,,Y,
+4189,143,View,vBDMSR2CITemPatientBillableitem,PatientPackage,BillPackageUID,int,FK,N,45
+4194,143,View,vBDMSR2CITemPatientBillableitem,PatientOrderDetail,CWhen,datetime,,Y,Jun  8 2014  2:31AM
+4207,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolBillingroup,SubBillUID,int,FK,Y,
+4208,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolBillingroup,SubBillCode,nvarchar,,Y,
+4209,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolBillingroup,SubBillName,nvarchar,,Y,
+4210,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolBillingroup,GrpBillUID,int,FK,Y,
+4211,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolBillingroup,GrpBillCode,nvarchar,,Y,
+4212,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolBillingroup,GrpBillName,nvarchar,,Y,
+4213,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolLocation,UIDLocation,int,,Y,
+4214,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolLocation,Codelocation,nvarchar,,Y,
+4215,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolLocation,NameLocation,nvarchar,,Y,
+4216,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolLocation,UIDDepartment,int,,Y,
+4217,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolLocation,CodeDepartment,int,,Y,
+4218,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolLocation,NameDepartment,nvarchar,,Y,
+4221,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderSet,UIDOrderSet,int,,Y,
+4222,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderSet,CodeOrderSet,nvarchar,,Y,
+4223,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderSet,NameOrderSet,nvarchar,,Y,
+4224,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderSet,UIDOrdetSetSubcatOrderSet,int,,Y,
+4225,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderSet,CodeOrdetSetSubcatOrderSet,nvarchar,,Y,
+4226,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderSet,NameOrdetSetSubcatOrderSet,nvarchar,,Y,
+4227,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderSet,UIDOrderCatOrderSet,int,,Y,
+4228,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderSet,CodeOrderCatOrderSet,nvarchar,,Y,
+4229,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderSet,NameOrderCatOrderSet,nvarchar,,Y,
+4230,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderSet,UIDBillSubOrderSet,int,,Y,
+4231,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderSet,CodeBillSubOrderSet,nvarchar,,Y,
+4232,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderSet,NameBillSubOrderSet,nvarchar,,Y,
+4233,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderSet,UIDBillGrpOrderSet,int,,Y,
+4234,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderSet,CodeBillGrpOrderSet,nvarchar,,Y,
+4235,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderSet,NameBillGrpOrderSet,nvarchar,,Y,
+4236,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderCatSubcat,SubCatUID,int,FK,Y,
+4237,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderCatSubcat,SubCatCode,nvarchar,,Y,
+4238,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderCatSubcat,SubcatName,nvarchar,,Y,
+4239,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderCatSubcat,OrderCatUID,int,FK,Y,
+4240,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderCatSubcat,OrderCatCode,nvarchar,,Y,
+4241,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolOrderCatSubcat,OrderCatName,nvarchar,,Y,
+4242,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolPackage,UIDPackage,int,,Y,
+4243,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolPackage,CodePackage,nvarchar,,Y,
+4244,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolPackage,NamePackage,nvarchar,,Y,
+4245,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolPackage,UIDSubcatPackage,int,,Y,
+4246,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolPackage,CodeSubcatPackage,nvarchar,,Y,
+4247,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolPackage,NameSubcatPackage,nvarchar,,Y,
+4248,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolPackage,UIDCatPackage,int,,Y,
+4249,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolPackage,CodeCatPackage,nvarchar,,Y,
+4250,143,View,vBDMSR2CITemPatientBillableitem,vBDMSR2CToolPackage,NameCatPackage,nvarchar,,Y,
+4259,144,View,vBDMSR2CITemPatientBilleditemBilled,PatientBilleditem,UID,bigint,PK,Y,267
+4260,144,View,vBDMSR2CITemPatientBilleditemBilled,PatientBilleditem,PatientBillUID,bigint,FK,Y,1
+4261,144,View,vBDMSR2CITemPatientBilleditemBilled,PatientBilleditem,EventOccuredDttm,datetime,,Y,Jun  8 2014  2:34AM
+4262,144,View,vBDMSR2CITemPatientBilleditemBilled,PatientBilleditem,ServiceName,nvarchar,,Y,Lab Test
+4263,144,View,vBDMSR2CITemPatientBilleditemBilled,PatientBilleditem,BillableItemUID,int,FK,Y,0
+4264,144,View,vBDMSR2CITemPatientBilleditemBilled,PatientBilleditem,StatusFlag,nvarchar,,Y,A
+4265,144,View,vBDMSR2CITemPatientBilleditemBilled,PatientBilleditem,PatientBillableItemUID,bigint,FK,N,0
+4266,144,View,vBDMSR2CITemPatientBilleditemBilled,PatientBilleditem,Discount,float,,N,0
+4267,144,View,vBDMSR2CITemPatientBilleditemBilled,PatientBilleditem,NetAmount,float,,N,120
+4268,144,View,vBDMSR2CITemPatientBilleditemBilled,PatientBilleditem,ItemMultiplier,float,,N,1
+4269,144,View,vBDMSR2CITemPatientBilleditemBilled,PatientBilleditem,ItemName,nvarchar,,N,Chest AP Upright
+4270,144,View,vBDMSR2CITemPatientBilleditemBilled,PatientBilleditem,BillPackageUID,int,FK,N,
+4271,144,View,vBDMSR2CITemPatientBilleditemBilled,PatientBilleditem,PatientOrderDetailUID,int,FK,N,
+4471,146,View,vBDMSR2CITemPatientBilleditemBilledSaleReturn,PatientBilledItem,PatientOrderDetailUID,int,FK,N,
+4472,146,View,vBDMSR2CITemPatientBilleditemBilledSaleReturn,SaleReturnList,SaleReturnUID,int,FK,Y,1
+4473,146,View,vBDMSR2CITemPatientBilleditemBilledSaleReturn,SaleReturnList,Quantity,float,,Y,3
+4474,146,View,vBDMSR2CITemPatientBilleditemBilledSaleReturn,SaleReturnList,StatusFlag,nvarchar,,Y,A
+4475,146,View,vBDMSR2CITemPatientBilleditemBilledSaleReturn,SaleReturnList,PatientBilledItemUID,bigint,FK,N,
+4516,146,View,vBDMSR2CITemPatientBilleditemBilledSaleReturn,SaleReturn,UID,int,PK,Y,140
+4517,146,View,vBDMSR2CITemPatientBilleditemBilledSaleReturn,SaleReturn,ReturnDttm,datetime,,Y,Jun  8 2014  3:47AM
+4518,146,View,vBDMSR2CITemPatientBilleditemBilledSaleReturn,SaleReturn,StatusFlag,nvarchar,,Y,A
+4519,146,View,vBDMSR2CITemPatientBilleditemBilledSaleReturn,SaleReturn,ReturnID,nvarchar,,N,SRT36498
+4670,148,View,vBDMSR2CPatientBill,PatientBilledItem,BDMSPatientBillableItemUID,int,FK,N,
+4683,148,View,vBDMSR2CPatientBill,PatientBill,MWhen,datetime,,Y,Jun  8 2014  3:28AM
+4689,148,View,vBDMSR2CPatientBill,PatientBill,RefundBillNumber,nvarchar,,N,
+4693,148,View,vBDMSR2CPatientBill,PatientBill,ARFLAG,varchar,,N,
+4694,148,View,vBDMSR2CPatientBill,PatientBill,ClaimAmount,decimal,,N,
+4695,148,View,vBDMSR2CPatientBill,PatientBill,InsuranceNumber,varchar,,N,
+4696,148,View,vBDMSR2CPatientBill,PatientBill,CancelledDttm,datetime,,N,
+4817,156,View,vBDMSR2CVisitDetail,PatientEmployerDetail,StatusFlag,nvarchar,,Y,O
+4820,156,View,vBDMSR2CVisitDetail,PatientEmployerDetail,EMPSTUID,int,FK,N,46126
+4834,156,View,vBDMSR2CVisitDetail,fBDMSGetMEDandFinanceByVisitUIDR2C,Medical Discharge Date,varchar,,Y,
+4835,156,View,vBDMSR2CVisitDetail,fBDMSGetMEDandFinanceByVisitUIDR2C,Medical Discharge Time,varchar,,Y,
+4836,156,View,vBDMSR2CVisitDetail,fBDMSGetMEDandFinanceByVisitUIDR2C,Financial Discharge Date,varchar,,Y,
+4837,156,View,vBDMSR2CVisitDetail,fBDMSGetMEDandFinanceByVisitUIDR2C,Financial Discharge Time,varchar,,Y,
+4848,156,View,vBDMSR2CVisitDetail,PatientVisit,CurrentBedUID,int,FK,N,
+4850,156,View,vBDMSR2CVisitDetail,Location,ParentLocationUID,int,FK,N,
+4854,157,View,vBDMSReceivePurchase,GRNItemList,UID,int,PK,Y,1
+4858,157,View,vBDMSReceivePurchase,GRNItemList,IMUOMUID,int,FK,Y,112007
+4859,157,View,vBDMSReceivePurchase,GRNItemList,BatchID,nvarchar,,Y,
+4863,157,View,vBDMSReceivePurchase,GRNItemList,Discount,float,,N,
+4873,157,View,vBDMSReceivePurchase,GRNDetail,ManufacturerUID,int,FK,Y,3867
+4877,157,View,vBDMSReceivePurchase,GRNDetail,Comments,nvarchar,,N,FF 18SUP 0100001196
+4881,157,View,vBDMSReceivePurchase,GRNDetail,GRNStatusUID,int,FK,N,5410
+4882,157,View,vBDMSReceivePurchase,GRNDetail,GRNTYPUID,int,FK,N,13773
+4883,158,View,vBDMSreport_VSVH_ADMTRN,PatientConsultation,UID,bigint,PK,Y,1
+4884,158,View,vBDMSreport_VSVH_ADMTRN,PatientConsultation,CareproviderUID,int,FK,Y,1053
+4885,158,View,vBDMSreport_VSVH_ADMTRN,PatientConsultation,StatusFlag,nvarchar,,Y,D
+4886,158,View,vBDMSreport_VSVH_ADMTRN,PatientConsultation,StartDttm,datetime,,N,Jun  8 2014  3:04AM
+4887,158,View,vBDMSreport_VSVH_ADMTRN,PatientConsultation,EndDttm,datetime,,N,
+4894,159,View,vBDMSreport_VSVH_APP1,Booking,CWhen,datetime,,Y,Jun  7 2014 11:12PM
+4930,160,View,vBDMSreport_VSVH_PHAORD,PatientOrderDetail,CUser,int,,Y,1
+4935,160,View,vBDMSreport_VSVH_PHAORD,PatientOrderDetail,OverwritePrice,float,,N,
+4977,163,View,vBDMSReportHeaderForDiscSUM,Patient,OwnerOrganisationUID,int,FK,Y,18
+4978,163,View,vBDMSReportHeaderForDiscSUM,fBDMSGetMEDandFinanceByVisitUID,Medical Discharge Date,date,,Y,
+4979,163,View,vBDMSReportHeaderForDiscSUM,fBDMSGetMEDandFinanceByVisitUID,Medical Discharge Time,datetime,,Y,
+4980,163,View,vBDMSReportHeaderForDiscSUM,fBDMSGetMEDandFinanceByVisitUID,Financial Discharge Date,date,,Y,
+4981,163,View,vBDMSReportHeaderForDiscSUM,fBDMSGetMEDandFinanceByVisitUID,Financial Discharge Time,datetime,,Y,
+5023,167,View,vBDMSResultEnter,Request,LRQSTUID,int,FK,N,5060
+5024,167,View,vBDMSResultEnter,ResultComponent,UID,bigint,PK,Y,20
+5025,167,View,vBDMSResultEnter,ResultComponent,ResultUID,bigint,FK,Y,1
+5027,167,View,vBDMSResultEnter,RequestDetail,RequestUID,bigint,FK,Y,1
+5028,167,View,vBDMSResultEnter,RequestDetail,StatusFlag,nvarchar,,Y,A
+5029,167,View,vBDMSResultEnter,RequestDetail,RequestItemName,nvarchar,,N,Chest AP Upright
+5030,167,View,vBDMSResultEnter,RequestDetail,PreparedDttm,datetime,,N,Jun 12 2014  1:28PM
+5031,167,View,vBDMSResultEnter,RequestDetail,CareProviderGroupUID,int,FK,N,
+5035,167,View,vBDMSResultEnter,Result,UID,bigint,PK,Y,974832
+5036,167,View,vBDMSResultEnter,Result,RequestDetailUID,bigint,FK,Y,1
+5037,167,View,vBDMSResultEnter,Result,ResultEnteredDttm,datetime,,N,Jun  8 2014  9:40AM
+5038,167,View,vBDMSResultEnter,Result,RSSTSUID,int,FK,Y,67168
+5039,167,View,vBDMSResultEnter,Result,CWhen,datetime,,Y,Jun  8 2014  2:56AM
+5040,167,View,vBDMSResultEnter,Result,StatusFlag,nvarchar,,Y,-
+5041,167,View,vBDMSResultEnter,Result,RadiologistUID,int,FK,N,2453
+5046,167,View,vBDMSResultEnter,ResultTextual,UID,bigint,PK,Y,570
+5047,167,View,vBDMSResultEnter,ResultTextual,ResultComponentUID,bigint,FK,Y,0
+5048,167,View,vBDMSResultEnter,CareProviderGroup,UID,int,PK,Y,1
+5049,167,View,vBDMSResultEnter,CareProviderGroup,CareproviderUID,int,FK,Y,2172
+5050,167,View,vBDMSResultEnter,CareProviderGroup,GroupCode,nvarchar,,Y,18ANE001A
+5051,167,View,vBDMSResultEnter,CareProviderGroup,GroupName,nvarchar,,Y,ANE001A ________ ______
+5056,168,View,vBDMSRoleProfile,Role,UID,int,PK,Y,1
+5057,168,View,vBDMSRoleProfile,Role,Name,nvarchar,,Y,Admin
+5058,168,View,vBDMSRoleProfile,Role,StatusFlag,nvarchar,,Y,A
+5062,168,View,vBDMSRoleProfile,Roleprofile,LocationUID,int,FK,N,3
+5067,168,View,vBDMSRoleProfile,Careprovider,Qualification,nvarchar,,N,
+5068,168,View,vBDMSRoleProfile,Careprovider,ActiveFrom,datetime,,Y,May 19 2014 11:03AM
+5069,168,View,vBDMSRoleProfile,Careprovider,ActiveTo,datetime,,N,
+5072,168,View,vBDMSRoleProfile,Careprovider,IsSuregon,nvarchar,,N,N
+5074,168,View,vBDMSRoleProfile,Careprovider,IsAnaesthetist,nvarchar,,N,N
+5075,168,View,vBDMSRoleProfile,Careprovider,LicenseNo,nvarchar,,N,
+5076,168,View,vBDMSRoleProfile,Careprovider,IsRadiologist,nvarchar,,N,
+5079,169,View,vBDMSRoleSecurity,SecurityGroupRole,SecurityGroupUID,int,FK,Y,1
+5080,169,View,vBDMSRoleSecurity,SecurityGroupRole,RoleUID,int,FK,Y,1
+5081,169,View,vBDMSRoleSecurity,SecurityGroupRole,StatusFlag,nvarchar,,Y,A
+5082,169,View,vBDMSRoleSecurity,UIView,Code,nvarchar,,Y,ABDOMEN
+5083,169,View,vBDMSRoleSecurity,UIView,StatusFlag,nvarchar,,Y,A
+5085,169,View,vBDMSRoleSecurity,Role,Code,nvarchar,,N,Admin
+5087,169,View,vBDMSRoleSecurity,SecuredItem,UID,int,PK,Y,1557
+5088,169,View,vBDMSRoleSecurity,SecuredItem,ResourceName,nvarchar,,Y,ABDOMEN
+5089,169,View,vBDMSRoleSecurity,SecuredItem,ResourceType,nvarchar,,Y,UIVIEW
+5090,169,View,vBDMSRoleSecurity,SecuredItem,StatusFlag,nvarchar,,Y,A
+5091,169,View,vBDMSRoleSecurity,SecuredItemPermission,UID,int,PK,Y,6730
+5092,169,View,vBDMSRoleSecurity,SecuredItemPermission,PermissionUID,int,FK,Y,1
+5093,169,View,vBDMSRoleSecurity,SecuredItemPermission,SecuredItemUID,int,FK,Y,29
+5094,169,View,vBDMSRoleSecurity,SecuredItemPermission,StatusFlag,nvarchar,,Y,A
+5095,169,View,vBDMSRoleSecurity,SecurityGroupPermission,SecurityGroupUID,int,FK,Y,1
+5096,169,View,vBDMSRoleSecurity,SecurityGroupPermission,StatusFlag,nvarchar,,Y,A
+5097,169,View,vBDMSRoleSecurity,SecurityGroupPermission,SecuredItemPermissionUID,int,FK,Y,6549
+5098,169,View,vBDMSRoleSecurity,ReportTemplate,ClassName,nvarchar,,Y,CPIWC
+5099,169,View,vBDMSRoleSecurity,ReportTemplate,StatusFlag,nvarchar,,Y,A
+5100,169,View,vBDMSRoleSecurity,ReportTemplate,IsHidden,nvarchar,,Y,N
+5101,169,View,vBDMSRoleSecurity,SecurityGroup,UID,int,PK,Y,1
+5102,169,View,vBDMSRoleSecurity,SecurityGroup,StatusFlag,nvarchar,,Y,A
+5105,170,View,VBDMSRoomPackage,BDMSBillPackagePrice,ActiveFrom,date,,Y,1/1/2011
+5112,170,View,VBDMSRoomPackage,BillPackage,ENTYPUID,int,FK,N,
+5113,170,View,VBDMSRoomPackage,BillPackage,BDCATUID,int,FK,N,0
+5127,171,View,vBDMSSecureItemDetail,UIView,UID,int,PK,Y,560
+5128,171,View,vBDMSSecureItemDetail,UIView,UIModuleUID,int,FK,Y,0
+5130,171,View,vBDMSSecureItemDetail,UIView,ViewName,nvarchar,,N,CC / HPI
+5131,171,View,vBDMSSecureItemDetail,UIView,AppCode,nvarchar,,Y,EPR
+5133,171,View,vBDMSSecureItemDetail,UIView,ParentUID,int,FK,N,
+5134,171,View,vBDMSSecureItemDetail,UIModule,UID,int,PK,Y,107
+5135,171,View,vBDMSSecureItemDetail,UIModule,ModuleName,nvarchar,,Y,Demographics
+5136,171,View,vBDMSSecureItemDetail,UIModule,Code,nvarchar,,Y,ALLTPARPT
+5137,171,View,vBDMSSecureItemDetail,UIModule,AppCode,nvarchar,,Y,EPR
+5138,171,View,vBDMSSecureItemDetail,UIModule,StatusFlag,nvarchar,,Y,A
+5143,171,View,vBDMSSecureItemDetail,SecuredItem,ParentUID,int,FK,N,
+5152,171,View,vBDMSSecureItemDetail,ReportTemplate,Name,nvarchar,,Y,Current Patient In Ward For Cashier
+5155,171,View,vBDMSSecureItemDetail,ReportTemplate,RTMGPUID,int,FK,Y,67106
+5156,172,View,vBDMSServiceChargePrice,BDMSBillableEvent,UID,bigint,PK,Y,1
+5157,172,View,vBDMSServiceChargePrice,BDMSBillableEvent,Code,nvarchar,,Y,111
+5158,172,View,vBDMSServiceChargePrice,BDMSBillableEvent,Name,nvarchar,,Y,OPD Service
+5159,172,View,vBDMSServiceChargePrice,BDMSBillableEvent,ENTYPUID,int,FK,Y,1705
+5160,172,View,vBDMSServiceChargePrice,BDMSBillableEvent,LocationUID,int,FK,N,0
+5161,172,View,vBDMSServiceChargePrice,BDMSBillableEvent,ActiveFrom,datetime,,Y,Jul 12 2013 12:00AM
+5162,172,View,vBDMSServiceChargePrice,BDMSBillableEvent,ActiveTo,datetime,,N,Jan  5 2014 12:00AM
+5163,172,View,vBDMSServiceChargePrice,BDMSBillableEvent,StatusFlag,nvarchar,,Y,D
+5164,172,View,vBDMSServiceChargePrice,BDMSBillableEvent,Timefrom,time,,N,00:00.0
+5165,172,View,vBDMSServiceChargePrice,BDMSBillableEvent,TimeTo,time,,N,59:00.0
+5166,172,View,vBDMSServiceChargePrice,BDMSBillableEventNation,BillableEventItemUID,int,FK,Y,20
+5167,172,View,vBDMSServiceChargePrice,BDMSBillableEventNation,NationUID,int,FK,Y,79331
+5168,172,View,vBDMSServiceChargePrice,BDMSBillableEventNation,Amount,float,,Y,200
+5169,172,View,vBDMSServiceChargePrice,BDMSBillableEventNation,StatusFlag,varchar,,Y,D
+5170,172,View,vBDMSServiceChargePrice,BDMSBillableEventItem,UID,bigint,PK,Y,11
+5171,172,View,vBDMSServiceChargePrice,BDMSBillableEventItem,BillableEventUID,bigint,FK,Y,1
+5172,172,View,vBDMSServiceChargePrice,BDMSBillableEventItem,BillableItemUID,int,FK,Y,12719
+5173,172,View,vBDMSServiceChargePrice,BDMSBillableEventItem,StatusFlag,nvarchar,,Y,D
+5174,172,View,vBDMSServiceChargePrice,BDMSBillableEventItem,Amount,float,,N,150
+5181,173,View,vBDMSStockOnhand,Stock,ManufacturerUID,int,FK,Y,0
+5182,173,View,vBDMSStockOnhand,Stock,Quantity,float,,Y,0
+5213,175,View,vBDMSStockOnhandWithBatch,Stock,ItemName,nvarchar,,N,(Cancel) Rinato Guide Wire 0.014x175 Cm
+5215,175,View,vBDMSStockOnhandWithBatch,Stock,BatchID,nvarchar,,Y,0
+5217,175,View,vBDMSStockOnhandWithBatch,Stock,IMUOMUID,int,FK,Y,111619
+5218,175,View,vBDMSStockOnhandWithBatch,Stock,ExpiryDttm,datetime,,N,May  8 2019  1:47PM
+5233,176,View,vBDMSTOOLAccout,BillingService,AccruAccount,nvarchar,,N,410102
+5234,176,View,vBDMSTOOLAccout,BillingService,DiscountAccount,nvarchar,,N,410190
+5235,176,View,vBDMSTOOLAccout,BillingService,RevAccount,nvarchar,,N,410101
+5236,177,View,vBDMSTOOLAccout_BEG,BillingServiceDetailBDMS,BillingServiceUID,int,FK,Y,
+5237,177,View,vBDMSTOOLAccout_BEG,BillingServiceDetailBDMS,Revenue,varchar,,N,
+5238,177,View,vBDMSTOOLAccout_BEG,BillingServiceDetailBDMS,Discount,varchar,,N,
+5239,177,View,vBDMSTOOLAccout_BEG,BillingServiceDetailBDMS,Accru,varchar,,N,
+5282,182,View,vBDMSToolHN,PatientEmployerDetail,Comments,nvarchar,,N,From Doctor(New)
+5302,183,View,vBDMSToolOrderBilled,PatientOrder,ORDPRUID,int,FK,Y,169
+5329,183,View,vBDMSToolOrderBilled,PatientPackageItem,UID,bigint,PK,Y,36
+5330,183,View,vBDMSToolOrderBilled,PatientPackageItem,PatientPackageUID,bigint,FK,Y,1
+5331,183,View,vBDMSToolOrderBilled,PatientPackageItem,BillableItemUID,int,FK,Y,1
+5332,183,View,vBDMSToolOrderBilled,PatientPackageItem,ItemName,nvarchar,,N,CART Alcohol Sheet
+5333,183,View,vBDMSToolOrderBilled,PatientPackageItem,Amount,float,,Y,3
+5337,183,View,vBDMSToolOrderBilled,PatientPackage,PackageCreatedDttm,datetime,,Y,Jun  8 2014  5:07AM
+5338,183,View,vBDMSToolOrderBilled,PatientPackage,IsConsiderItem,nvarchar,,N,N
+5358,183,View,vBDMSToolOrderBilled,PatientBill,PBLCTUID,int,FK,N,46191
+5507,188,View,vBDMSToolPlanDetail,PayorDetail,ActiveFrom,datetime,,N,May 28 2014  2:39PM
+5508,188,View,vBDMSToolPlanDetail,PayorDetail,ActiveTo,datetime,,N,Mar 31 2016 12:00AM
+5536,190,View,vBDMSVisitCareProv,PatientVisitCareProvider,CUser,int,,Y,1721
+5537,190,View,vBDMSVisitCareProv,PatientVisitCareProvider,CWhen,datetime,,Y,Jun  8 2014  5:58AM
+5538,190,View,vBDMSVisitCareProv,PatientVisitCareProvider,MUser,int,,Y,236
+5539,190,View,vBDMSVisitCareProv,PatientVisitCareProvider,MWhen,datetime,,Y,Jun  8 2014 11:59AM
+5542,190,View,vBDMSVisitCareProv,PatientVisitCareProvider,SeenDttm,datetime,,N,
+5545,190,View,vBDMSVisitCareProv,PatientVisitCareProvider,BookingUID,int,FK,N,
+5558,191,View,VBDMSVisitPayor,PatientVisitPayor,Comments,nvarchar,,N,
+5563,191,View,VBDMSVisitPayor,PolicyMaster,Description,nvarchar,,Y,01.Cover all
+5581,192,View,vBDMSVitalSignQUIP,patient,UID,bigint,PK,Y,1
+5582,192,View,vBDMSVitalSignQUIP,patient,StatusFlag,nvarchar,,Y,A
+5583,192,View,vBDMSVitalSignQUIP,patient,PASID,nvarchar,,Y,18-00-000001
+5584,192,View,vBDMSVitalSignQUIP,PatientOrderResult,UID,int,PK,Y,413985
+5585,192,View,vBDMSVitalSignQUIP,PatientOrderResult,ResultEnteredDttm,datetime,,Y,Jun  8 2014  2:36AM
+5586,192,View,vBDMSVitalSignQUIP,PatientOrderResult,PatientUID,bigint,FK,Y,6
+5587,192,View,vBDMSVitalSignQUIP,PatientOrderResult,PatientVisitUID,bigint,FK,N,0
+5588,192,View,vBDMSVitalSignQUIP,PatientOrderResult,StatusFlag,varchar,,Y,A
+5622,194,View,vBNHPatientImage,PatientImage,PatientUID,bigint,FK,Y,0
+5623,194,View,vBNHPatientImage,PatientImage,ImageContent,varbinary,,Y,
+5624,194,View,vBNHPatientImage,PatientImage,StatusFlag,nvarchar,,Y,A
+5652,196,View,vDiagnosisSummary,PatientProblem,OnsetDttm,datetime,,N,Jun  8 2014 12:00AM
+5654,196,View,vDiagnosisSummary,PatientProblem,CERTYUID,int,FK,N,
+5655,196,View,vDiagnosisSummary,PatientProblem,ClosureDttm,datetime,,N,
+5657,196,View,vDiagnosisSummary,PatientProblem,ProblemName,nvarchar,,N,Bronchitis
+5658,196,View,vDiagnosisSummary,PatientProblem,ProblemCode,nvarchar,,N,J40
+5669,197,View,vDissum,PatientAddress,UID,bigint,PK,Y,1
+5687,198,View,vGLS2_ICD10,PatientPersonalCarer,PatientUID,bigint,FK,N,
+5688,198,View,vGLS2_ICD10,PatientPersonalCarer,Line3,nvarchar,,N,14/1 _.11
+5689,198,View,vGLS2_ICD10,PatientPersonalCarer,CITTYUID,int,FK,N,
+5690,198,View,vGLS2_ICD10,PatientPersonalCarer,STATEUID,int,FK,N,110662
+5691,198,View,vGLS2_ICD10,PatientPersonalCarer,MobileNo,nvarchar,,N,819963842
+5692,198,View,vGLS2_ICD10,PatientPersonalCarer,AREAUID,int,FK,N,100746
+5729,198,View,vGLS2_ICD10,PatientVisit,CUser,int,,Y,273470
+5737,199,View,vGLSG2_Admission,PatientPersonalCarer,Surname,nvarchar,,N,___________
+5738,199,View,vGLSG2_Admission,PatientPersonalCarer,Forename,nvarchar,,N,____
+5739,199,View,vGLSG2_Admission,PatientPersonalCarer,TITLEUID,int,FK,N,112427
+5740,199,View,vGLSG2_Admission,PatientPersonalCarer,Line2,nvarchar,,N,
+5742,199,View,vGLSG2_Admission,PatientPersonalCarer,Line4,nvarchar,,N,
+5745,199,View,vGLSG2_Admission,PatientPersonalCarer,CNTRYUID,int,FK,N,46512
+5746,199,View,vGLSG2_Admission,PatientPersonalCarer,Pincode,nvarchar,,N,24150
+5776,199,View,vGLSG2_Admission,Careprovider,EnglishName,nvarchar,,N,
+5880,203,View,vGLSG2_PatientBill,PatientBillableItem,Description,nvarchar,,N,
+5956,203,View,vGLSG2_PatientBill,CareProvider,UID,int,PK,Y,1
+5957,203,View,vGLSG2_PatientBill,CareProvider,StatusFlag,nvarchar,,Y,A
+5958,203,View,vGLSG2_PatientBill,CareProvider,Code,nvarchar,,N,
+5961,203,View,vGLSG2_PatientBill,REFERENCEVALUE,ValueCode,nvarchar,,Y,1
+5968,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,UID,bigint,,Y,
+5969,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,DOB,datetime,,Y,
+5970,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,HN,nvarchar,,Y,
+5971,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,Name,nvarchar,,Y,
+5972,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,FirstName,nvarchar,,Y,
+5973,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,MiddleName,nvarchar,,Y,
+5974,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,LastName,nvarchar,,Y,
+5975,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,Title,nvarchar,,Y,
+5976,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,Sex,nvarchar,,Y,
+5977,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,SexCode,nvarchar,,Y,
+5978,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,ZipCode,nvarchar,,Y,
+5979,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,Province,nvarchar,,Y,
+5980,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,ProvinceCode,nvarchar,,Y,
+5981,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,City,nvarchar,,Y,
+5982,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,CityArea,nvarchar,,Y,
+5983,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,Age,int,,Y,
+5984,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,Email,nvarchar,,Y,
+5985,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,IDCardNo,nvarchar,,Y,
+5986,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,OfficePhoneNumber,int,,Y,
+5987,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,PhoneNumber,nvarchar,,Y,
+5988,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,Address1,nvarchar,,Y,
+5989,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,Deceased,int,,Y,
+5990,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,Nationality,nvarchar,,Y,
+5991,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,NationalityCode,nvarchar,,Y,
+5992,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,MaritalStatus,nvarchar,,Y,
+5993,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,MarritalStatusCode,nvarchar,,Y,
+5994,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,OccupationCode,nvarchar,,Y,
+5995,203,View,vGLSG2_PatientBill,vBDMSPatientMaster,Occupation,nvarchar,,Y,
+6024,203,View,vGLSG2_PatientBill,service,UID,int,PK,Y,1
+6025,203,View,vGLSG2_PatientBill,service,Code,nvarchar,,N,
+6172,205,View,vGLSG2_PatientBillableItemDetail,PatientProblem,PatientUID,bigint,FK,Y,6
+6437,210,View,vGLSG2_VS_Diagnos,PatientProblem,CUser,int,,Y,1053
+6442,211,View,vGLSG2_VS_OperationDataWH,PatientProcedureTeam,PatientProcedureUID,bigint,FK,Y,1
+6443,211,View,vGLSG2_VS_OperationDataWH,PatientProcedureTeam,CareproviderUID,int,FK,N,1
+6444,211,View,vGLSG2_VS_OperationDataWH,PatientProcedureTeam,OwnerOrganisationUID,int,FK,Y,18
+6445,211,View,vGLSG2_VS_OperationDataWH,PatientProcedureList,PatientProcedureUID,bigint,FK,Y,1
+6446,211,View,vGLSG2_VS_OperationDataWH,PatientProcedureList,ProcedureUID,int,FK,Y,1447
+6447,211,View,vGLSG2_VS_OperationDataWH,PatientProcedureList,ProcedureName,nvarchar,,N,Laparoscopic appendectomy
+6450,211,View,vGLSG2_VS_OperationDataWH,PatientProcedure,AnesthesiaStartDttm,datetime,,N,Jun  8 2014  3:05AM
+6451,211,View,vGLSG2_VS_OperationDataWH,PatientProcedure,AnesthesiaEndDttm,datetime,,N,Jun  8 2014 12:00AM
+6452,211,View,vGLSG2_VS_OperationDataWH,PatientProcedure,TheaterInDttm,datetime,,N,Jun  8 2014  3:00AM
+6453,211,View,vGLSG2_VS_OperationDataWH,PatientProcedure,TheaterOutDttm,datetime,,N,Jun  8 2014  3:09AM
+6454,211,View,vGLSG2_VS_OperationDataWH,PatientProcedure,PPSTSUID,int,FK,N,68069
+6455,211,View,vGLSG2_VS_OperationDataWH,PatientAnestheticsDetail,PatientProcedureUID,bigint,FK,Y,1
+6456,211,View,vGLSG2_VS_OperationDataWH,PatientAnestheticsDetail,AnesthesiaID,nvarchar,,Y,2129
+6457,211,View,vGLSG2_VS_OperationDataWH,PatientAnestheticsDetail,ANSASAUID,int,FK,N,68078
+6549,213,View,vGLSG2_Vw_PtAddress,Vw_AdmissionEvent,DSCSTUID,int,FK,Y,68041
+6550,213,View,vGLSG2_Vw_PtAddress,Vw_AdmissionEvent,PatientVisitUID,bigint,FK,Y,127181
+6661,216,View,VieweClinical_PatientOrderitem,Billableitem,UID,int,PK,Y,46362
+6662,216,View,VieweClinical_PatientOrderitem,Billableitem,ItemName,nvarchar,,Y,-
+6663,216,View,VieweClinical_PatientOrderitem,Billableitem,BSMDDUID,int,FK,Y,4358
+6664,216,View,VieweClinical_PatientOrderitem,Billableitem,Code,nvarchar,,N,/SSH18A0705A000O-03
+6672,217,View,vInventorySummary,SaleReturnList,ItemMasterUID,int,FK,Y,7
+6674,217,View,vInventorySummary,SaleReturnList,QNUOMUID,int,FK,Y,112203
+6676,217,View,vInventorySummary,SaleReturnList,OwnerOrganisationUID,int,FK,Y,18
+6682,217,View,vInventorySummary,DispensedItem,UID,bigint,PK,Y,3
+6688,217,View,vInventorySummary,DispensedItem,DISSTUID,int,FK,N,67166
+6690,217,View,vInventorySummary,DispensedItem,OwnerOrganisationUID,int,FK,Y,18
+6695,217,View,vInventorySummary,StockAdjustment,AdjustedUOM,int,,Y,112031
+6704,217,View,vInventorySummary,ItemManufacturerDetail,CUser,int,,Y,154
+6710,217,View,vInventorySummary,ItemManufacturerDetail,IMUOMUID,int,FK,N,
+6741,217,View,vInventorySummary,IssuedItemList,ItemCost,float,,Y,59.3478
+6743,217,View,vInventorySummary,IssuedItemList,IMUOMUID,int,FK,Y,110727
+6749,217,View,vInventorySummary,SaleReturn,CUser,int,,Y,1
+6751,217,View,vInventorySummary,SaleReturn,OwnerOrganisationUID,int,FK,Y,18
+6753,217,View,vInventorySummary,SaleReturn,PatientUID,bigint,FK,N,559229
+6754,217,View,vInventorySummary,SaleReturn,StoreUID,int,FK,N,1
+6759,217,View,vInventorySummary,ItemMaster,SLUOMUID,int,FK,Y,112124
+6783,217,View,vInventorySummary,DisposeItemList,IMUOMUID,int,FK,Y,
+6790,217,View,vInventorySummary,StockItemList,IMUOMUID,int,FK,Y,110727
+6854,218,View,vInventorySummary1,PrescriptionItem,CWhen,datetime,,Y,Jun  8 2014  2:39AM
+6943,219,View,vInventorySummary2,PatientBilledItem,QNUOMUID,int,FK,N,
+7053,220,View,vLabTestSummary,Request,PatientVisitUID,bigint,FK,Y,127181
+7054,220,View,vLabTestSummary,Request,RequestedDttm,datetime,,Y,Jun  8 2014  2:39AM
+7056,220,View,vLabTestSummary,Request,OwnerOrganisationUID,int,FK,Y,18
+7060,220,View,vLabTestSummary,ResultComponent,ResultValue,nvarchar,,N,
+7061,220,View,vLabTestSummary,ResultComponent,ReferenceRange,nvarchar,,N,
+7062,220,View,vLabTestSummary,ResultComponent,StatusFlag,nvarchar,,Y,A
+7063,220,View,vLabTestSummary,ResultComponent,ResultItemName,nvarchar,,N,Chest AP Upright (Result)
+7069,220,View,vLabTestSummary,Patient,ReferredBy,nvarchar,,N,
+7109,221,View,vOptometrySummary,PatientOptometry,PatientUID,bigint,FK,Y,
+7110,221,View,vOptometrySummary,PatientOptometry,PatientVisitUID,bigint,FK,Y,
+7111,221,View,vOptometrySummary,PatientOptometry,VMOD,int,,N,
+7112,221,View,vOptometrySummary,PatientOptometry,VLOD,int,,N,
+7113,221,View,vOptometrySummary,PatientOptometry,ACCLOD,float,,N,
+7114,221,View,vOptometrySummary,PatientOptometry,ACCMOD,float,,N,
+7115,221,View,vOptometrySummary,PatientOptometry,ACCROD,float,,N,
+7116,221,View,vOptometrySummary,PatientOptometry,ACCOD,int,,N,
+7117,221,View,vOptometrySummary,PatientOptometry,ADDLOD,float,,N,
+7118,221,View,vOptometrySummary,PatientOptometry,ADDOD,int,,N,
+7119,221,View,vOptometrySummary,PatientOptometry,IdentifyingType,nvarchar,,Y,
+7120,221,View,vOptometrySummary,PatientOptometry,OwnerOrganisationUID,int,FK,Y,
+7121,221,View,vOptometrySummary,PatientOptometry,StatusFlag,nvarchar,,Y,
+7122,221,View,vOptometrySummary,PatientOptometry,LIOP,int,,N,
+7123,221,View,vOptometrySummary,PatientOptometry,RIOP,int,,N,
+7124,222,View,vPAtientBillSummary,OpticalOrder,UID,bigint,PK,Y,
+7125,222,View,vPAtientBillSummary,OpticalOrder,StatusFlag,nvarchar,,Y,
+7126,222,View,vPAtientBillSummary,OpticalOrder,OwnerOrganisationUID,int,FK,Y,
+7127,222,View,vPAtientBillSummary,OpticalOrder,PatientBillUID,bigint,FK,N,
+7136,222,View,vPAtientBillSummary,PatientBill,BLCATUID,int,FK,N,4322
+7137,222,View,vPAtientBillSummary,PatientBill,ServiceTax,float,,N,
+7138,222,View,vPAtientBillSummary,PatientBill,EducationCess,float,,N,
+7139,222,View,vPAtientBillSummary,PatientBill,HigherEducationCess,float,,N,
+7140,222,View,vPAtientBillSummary,PatientBill,RoundOffValue,float,,N,0
+7145,223,View,vPatientMaster,Patient,CWhen,datetime,,Y,Jun  7 2014 10:39PM
+7148,223,View,vPatientMaster,Patient,RegisteredOrganisationUID,int,FK,N,18
+7158,223,View,vPatientMaster,PatientAddress,District,nvarchar,,N,
+7167,224,View,vPatientSummary,Patient,ReferredByUID,int,FK,N,
+7180,225,View,vProcedureSummary,PatientProcedureList,CWhen,datetime,,Y,Jun  8 2014  3:12AM
+7181,225,View,vProcedureSummary,PatientProcedureList,StatusFlag,nvarchar,,Y,A
+7182,225,View,vProcedureSummary,PatientProcedureList,OwnerOrganisationUID,int,FK,Y,18
+7184,225,View,vProcedureSummary,PatientProcedure,PatientUID,bigint,FK,Y,6
+7283,228,View,vRevBillDetail_BEG,PatientBilledItem,CUser,int,,Y,2441
+7309,228,View,vRevBillDetail_BEG,PatientVisit,CWhen,datetime,,Y,Jun  7 2014 11:07PM
+7390,232,View,vRevHEMO_BPL,vBDMSBilledRev,PatientUID,bigint,FK,Y,
+7391,232,View,vRevHEMO_BPL,vBDMSBilledRev,PatientVisitUID,bigint,FK,Y,
+7392,232,View,vRevHEMO_BPL,vBDMSBilledRev,Amount,float,,Y,
+7393,232,View,vRevHEMO_BPL,vBDMSBilledRev,Discount,float,,Y,
+7394,232,View,vRevHEMO_BPL,vBDMSBilledRev,NetAmount,float,,Y,
+7395,232,View,vRevHEMO_BPL,vBDMSBilledRev,EventOccuredDttm,datetime,,Y,
+7396,232,View,vRevHEMO_BPL,vBDMSBilledRev,CodeAcct,nvarchar,,Y,
+7397,232,View,vRevHEMO_BPL,vBDMSBilledRev,DepOrderCode,int,,Y,
+7398,232,View,vRevHEMO_BPL,vBDMSBilledRev,DepRecCode,int,,Y,
+7399,232,View,vRevHEMO_BPL,vBDMSBilledRev,DoctorOrderDesc,nvarchar,,Y,
+7400,232,View,vRevHEMO_BPL,vBDMSBilledRev,NameItem,nvarchar,,Y,
+7401,232,View,vRevHEMO_BPL,vBDMSBilledRev,PayorCode,nvarchar,,Y,
+7402,232,View,vRevHEMO_BPL,vBDMSBilledRev,PayorDesc,nvarchar,,Y,
+7421,234,View,VS_Admission,PatientOrderResultItem,UID,bigint,PK,Y,1
+7422,234,View,VS_Admission,PatientOrderResultItem,OrderResultItemUID,int,FK,Y,1
+7423,234,View,VS_Admission,PatientOrderResultItem,ResultItemName,nvarchar,,Y,Height
+7424,234,View,VS_Admission,PatientOrderResultItem,ResultValue,nvarchar,,N,156
+7425,234,View,VS_Admission,PatientOrderResultItem,StatusFlag,nvarchar,,Y,A
+7445,235,View,VS_AdmissionStat,AdmissionEvent,AdmissionDttm,datetime,,Y,Jun  8 2014  3:04AM
+7451,235,View,VS_AdmissionStat,DischargeEvent,DischargeAdviceDttm,datetime,,N,
+7455,236,View,vs_audit,,,,,,
+7478,237,View,VS_CurrentInWard,PatientVisit,CurrentBDCATUID,int,FK,N,
+7525,239,View,VSVH_PhaOrd,FrequencyDefinition,UID,int,PK,Y,142
+7526,239,View,VSVH_PhaOrd,FrequencyDefinition,Code,nvarchar,,Y,Breaskfast
+7527,239,View,VSVH_PhaOrd,FrequencyDefinition,Name,nvarchar,,Y,________
+7528,239,View,VSVH_PhaOrd,FrequencyDefinition,NoOfTimes,int,,N,1
+7529,239,View,VSVH_PhaOrd,FrequencyDefinition,Comments,nvarchar,,N,Breakfast
+7559,240,View,vTakePatientImage,PatientImage,UID,bigint,PK,Y,1
+7561,241,View,vTest,vBDMSDF1,BusinessUnit,varchar,,Y,
+7562,241,View,vTest,vBDMSDF1,EpisodeType,varchar,,Y,
+7563,241,View,vTest,vBDMSDF1,DocumentNo,nvarchar,,Y,
+7564,241,View,vTest,vBDMSDF1,ReceiptType,varchar,,Y,
+7565,241,View,vTest,vBDMSDF1,PatientNumber(HN),nvarchar,,Y,
+7566,241,View,vTest,vBDMSDF1,PatientName,nvarchar,,Y,
+7567,241,View,vTest,vBDMSDF1,EpisodeNumber,nvarchar,,Y,
+7568,241,View,vTest,vBDMSDF1,PayorOfficeCode,nvarchar,,Y,
+7569,241,View,vTest,vBDMSDF1,PayorDescription,nvarchar,,Y,
+7570,241,View,vTest,vBDMSDF1,PayorOfficeCategory,nvarchar,,Y,
+7571,241,View,vTest,vBDMSDF1,PayorOfficeCategory Desc,nvarchar,,Y,
+7572,241,View,vTest,vBDMSDF1,Charge Type,varchar,,Y,
+7573,241,View,vTest,vBDMSDF1,Order Item Code,nvarchar,,Y,
+7574,241,View,vTest,vBDMSDF1,Order Item Description,nvarchar,,Y,
+7575,241,View,vTest,vBDMSDF1,Care Provider Group,nvarchar,,Y,
+7576,241,View,vTest,vBDMSDF1,Care Provider Group Desc,nvarchar,,Y,
+7577,241,View,vTest,vBDMSDF1,Care Provider Code,nvarchar,,Y,
+7578,241,View,vTest,vBDMSDF1,Care Provider Name,nvarchar,,Y,
+7579,241,View,vTest,vBDMSDF1,Standard Charged Amount,float,,Y,
+7580,241,View,vTest,vBDMSDF1,Discount Amount,int,,Y,
+7581,241,View,vTest,vBDMSDF1,PatientOrderDate,varchar,,Y,
+7582,241,View,vTest,vBDMSDF1,PatientOrderTime,varchar,,Y,
+7583,241,View,vTest,vBDMSDF1,Nationality Code,nvarchar,,Y,
+7584,241,View,vTest,vBDMSDF1,Nationality Description,nvarchar,,Y,
+7585,241,View,vTest,vBDMSDF1,Patient Location,nvarchar,,Y,
+7586,241,View,vTest,vBDMSDF1,Patient Location Description,nvarchar,,Y,
+7587,241,View,vTest,vBDMSDF1,Patient Location Dept Group,int,,Y,
+7588,241,View,vTest,vBDMSDF1,Patient Location Dept Group Desc,nvarchar,,Y,
+7589,241,View,vTest,vBDMSDF1,Receiving Location,nvarchar,,Y,
+7590,241,View,vTest,vBDMSDF1,Receiving Location Desc,nvarchar,,Y,
+7591,241,View,vTest,vBDMSDF1,Receiving Location Dept Group,int,,Y,
+7592,241,View,vTest,vBDMSDF1,Receiving Location Dept Group Desc,nvarchar,,Y,
+7593,241,View,vTest,vBDMSDF1,Accession Number,varchar,,Y,
+7594,241,View,vTest,vBDMSDF1,Verified Date,nvarchar,,Y,
+7595,241,View,vTest,vBDMSDF1,Verified Time,nvarchar,,Y,
+7596,241,View,vTest,vBDMSDF1,Invoice Total Amount,float,,Y,
+7597,241,View,vTest,vBDMSDF1,BillGeneratedDttm,datetime,,Y,
+7598,241,View,vTest,vBDMSDF1,ordercategorydesc,nvarchar,,Y,
+7599,241,View,vTest,vBDMSDF1,ordersubcategorydesc,nvarchar,,Y,
+7600,241,View,vTest,vBDMSDF1,BillPackageUID,int,FK,Y,
+7635,243,View,vw_Admission,SS_USER,SSUSR_Name,nvarchar,,Y, Administrator
+7636,243,View,vw_Admission,SS_USER,UID,int,,Y,1
+7669,243,View,vw_Admission,vw_PacDESC,Code,nvarchar,,Y,B0003000S023
+7670,243,View,vw_Admission,vw_PacDESC,Name,nvarchar,,Y,IPD Cash 50%____
+7671,243,View,vw_Admission,vw_PacDESC,Description,nvarchar,,Y,AIA Health Care
+7672,243,View,vw_Admission,vw_PacDESC,UID,bigint,,Y,127181
+7693,246,View,vw_AliasName_MedAndSup,DrugGenericMaster,Description,nvarchar,,N,(cancel)Estriol ( Ovestin )
+7711,247,View,VW_Allergy,PAtientAllergy,AllergyDescription,nvarchar,,N,#NAME?
+7712,247,View,VW_Allergy,PAtientAllergy,ALGTYUID,int,FK,N,95
+7713,247,View,VW_Allergy,PAtientAllergy,PatientUID,bigint,FK,Y,6
+7714,247,View,VW_Allergy,PAtientAllergy,StatusFlag,nvarchar,,Y,N
+7715,247,View,VW_Allergy,PAtientAllergy,AllergicTo,nvarchar,,N,Sulfa group 
+7716,247,View,VW_Allergy,PAtientAllergy,ALGSTUID,int,FK,N,46027
+7778,250,View,vw_BConnect_Check_SAP,ItemMaster,IsBatchIDMandatory,nvarchar,,N,Y
+7789,251,View,vw_BillableItemActiveTo_MedAndSup,BillingService,StatusFlag,nvarchar,,Y,T
+7795,251,View,vw_BillableItemActiveTo_MedAndSup,BDMSIncomeSource,CodeIncome,nvarchar,,Y,101
+7797,251,View,vw_BillableItemActiveTo_MedAndSup,BDMSIncomeSource,StatusFlag,nvarchar,,Y,A
+7814,251,View,vw_BillableItemActiveTo_MedAndSup,Service,HealthOrganisationUID,int,FK,N,
+7817,251,View,vw_BillableItemActiveTo_MedAndSup,Service,ActiveFrom,datetime,,Y,May 28 2014  1:47PM
+7818,251,View,vw_BillableItemActiveTo_MedAndSup,Service,ActiveTo,datetime,,N,
+7819,251,View,vw_BillableItemActiveTo_MedAndSup,Service,CUser,int,,Y,4
+7820,251,View,vw_BillableItemActiveTo_MedAndSup,Service,MUser,int,,Y,2525
+7821,251,View,vw_BillableItemActiveTo_MedAndSup,Service,CWhen,datetime,,Y,May 28 2014  1:47PM
+7822,251,View,vw_BillableItemActiveTo_MedAndSup,Service,MWhen,datetime,,Y,May 28 2014  1:47PM
+7824,251,View,vw_BillableItemActiveTo_MedAndSup,Service,OwnerOrganisationUID,int,FK,Y,18
+7825,251,View,vw_BillableItemActiveTo_MedAndSup,Service,TIMESTAMP,timestamp,,Y,
+7826,251,View,vw_BillableItemActiveTo_MedAndSup,Service,RICATUID,int,FK,N,
+7827,251,View,vw_BillableItemActiveTo_MedAndSup,Service,DisplayOrder,int,,N,4
+7828,251,View,vw_BillableItemActiveTo_MedAndSup,Service,Duration,int,,N,
+7829,251,View,vw_BillableItemActiveTo_MedAndSup,Service,LANUGUID,int,FK,N,
+7830,251,View,vw_BillableItemActiveTo_MedAndSup,Service,VISTYUID,int,FK,N,
+7832,251,View,vw_BillableItemActiveTo_MedAndSup,Service,IsAllowDisc,nvarchar,,N,
+8004,256,View,vw_CareproviderAndLogin,Careprovider,MiddleName,nvarchar,,N,
+8006,256,View,vw_CareproviderAndLogin,Careprovider,TITLEUID,int,FK,Y,0
+8014,257,View,VW_CheckRadiologyItem,RequestItem,UID,int,PK,Y,1
+8015,257,View,VW_CheckRadiologyItem,RequestItem,ItemDescription,nvarchar,,N, Bursa
+8016,257,View,VW_CheckRadiologyItem,RequestItem,ItemCode,nvarchar,,N,02N043
+8017,257,View,VW_CheckRadiologyItem,RequestItem,EffectiveFrom,datetime,,Y,May 28 2014  7:56PM
+8018,257,View,VW_CheckRadiologyItem,RequestItem,EffectiveTo,datetime,,N,
+8019,257,View,VW_CheckRadiologyItem,RequestItem,Statusflag,nvarchar,,Y,A
+8020,257,View,VW_CheckRadiologyItem,RequestResultLink,UID,int,PK,Y,11056
+8021,257,View,VW_CheckRadiologyItem,RequestResultLink,ResultItemUID,int,FK,Y,0
+8022,257,View,VW_CheckRadiologyItem,RequestResultLink,RequestItemUID,int,FK,Y,0
+8023,257,View,VW_CheckRadiologyItem,RequestResultLink,Statusflag,nvarchar,,Y,A
+8024,257,View,VW_CheckRadiologyItem,RequestResultLink,ResultItemName,nvarchar,,N,Ristocetin(1.20 mg/mL)
+8025,257,View,VW_CheckRadiologyItem,RequestResultLink,IsMandatory,nvarchar,,N,N
+8036,257,View,VW_CheckRadiologyItem,ResultItem,UID,int,PK,Y,4794
+8037,257,View,VW_CheckRadiologyItem,ResultItem,Description,nvarchar,,N, Amylase (Urine 24 Hrs.)
+8038,257,View,VW_CheckRadiologyItem,ResultItem,Code,nvarchar,,N,02N043
+8039,257,View,VW_CheckRadiologyItem,ResultItem,Statusflag,nvarchar,,Y,A
+8040,257,View,VW_CheckRadiologyItem,ResultItem,RVTYPUID,int,FK,N,1519
+8041,258,View,VW_CheckupInet,PatientPersonalCArer,PatientUID,bigint,FK,N,
+8042,258,View,VW_CheckupInet,PatientPersonalCArer,Surname,nvarchar,,N,___________
+8043,258,View,VW_CheckupInet,PatientPersonalCArer,Forename,nvarchar,,N,____
+8044,258,View,VW_CheckupInet,PatientPersonalCArer,StatusFlag,nvarchar,,Y,A
+8045,258,View,VW_CheckupInet,PatientPersonalCArer,Line3,nvarchar,,N,14/1 _.11
+8046,258,View,VW_CheckupInet,PatientPersonalCArer,CITTYUID,int,FK,N,
+8047,258,View,VW_CheckupInet,PatientPersonalCArer,STATEUID,int,FK,N,110662
+8048,258,View,VW_CheckupInet,PatientPersonalCArer,Pincode,nvarchar,,N,24150
+8052,258,View,VW_CheckupInet,PatientOtherContact,StatusFlag,nvarchar,,Y,A
+8076,258,View,VW_CheckupInet,PAtientADdress,STATEUID,int,FK,N,110648
+8081,258,View,VW_CheckupInet,PAtientADdress,CITTYUID,int,FK,N,109693
+8101,259,View,VW_ChivaNewVersion,Patient,Occupation,nvarchar,,N,
+8188,262,View,VW_CRM,PatientBillableItem,SplitDiscount,float,,N,1
+8192,262,View,VW_CRM,PatientOrder,OwnerOrganisationUID,int,FK,Y,18
+8221,263,View,vw_DeptAndLocation,BDMSRevDep,DEPTCODE,varchar,,N,1002
+8222,263,View,vw_DeptAndLocation,BDMSRevDep,FLAGREV,varchar,,N,Y
+8238,265,View,vw_DrugName,DrugTradeName,TradeName,nvarchar,,N,(Cancel)Norcuron  4 Mg  Inj
+8239,265,View,vw_DrugName,DrugTradeName,StatusFlag,nvarchar,,Y,A
+8243,265,View,vw_DrugName,DrugCatalogItem,GenericName,nvarchar,,N,
+8267,266,View,VW_HN,PatientPersonalCarer,RLNTYUID,int,FK,N,
+8363,267,View,vw_MasterRole,Permission,UID,int,PK,Y,1
+8364,267,View,vw_MasterRole,Permission,StatusFlag,nvarchar,,Y,A
+8367,268,View,vw_MedCertExaminationForm,PatientExaminationData,UID,bigint,PK,Y,1
+8368,268,View,vw_MedCertExaminationForm,PatientExaminationData,DataAttributeUID,int,FK,Y,45
+8369,268,View,vw_MedCertExaminationForm,PatientExaminationData,AttributeValue,nvarchar,,N,
+8370,268,View,vw_MedCertExaminationForm,PatientExaminationData,DisplayOrder,int,,N,
+8371,268,View,vw_MedCertExaminationForm,PatientExaminationData,StatusFlag,nvarchar,,Y,A
+8372,268,View,vw_MedCertExaminationForm,PatientExaminationData,PatientExaminationSectionUID,bigint,FK,Y,1
+8373,268,View,vw_MedCertExaminationForm,DataAttribute,UID,int,PK,Y,1
+8374,268,View,vw_MedCertExaminationForm,DataAttribute,Name,nvarchar,,Y,Body Weight
+8375,268,View,vw_MedCertExaminationForm,DataAttribute,DisplayText,nvarchar,,Y,3
+8376,268,View,vw_MedCertExaminationForm,DataAttribute,StatusFlag,nvarchar,,Y,A
+8377,268,View,vw_MedCertExaminationForm,PatientExaminationSection,UID,bigint,PK,Y,1
+8378,268,View,vw_MedCertExaminationForm,PatientExaminationSection,PatientExaminationFormUID,bigint,FK,Y,1
+8379,268,View,vw_MedCertExaminationForm,PatientExaminationSection,SectionName,nvarchar,,Y,Arrival Detials
+8380,268,View,vw_MedCertExaminationForm,PatientExaminationSection,DisplayOrder,int,,Y,0
+8381,268,View,vw_MedCertExaminationForm,PatientExaminationSection,StatusFlag,nvarchar,,Y,A
+8382,268,View,vw_MedCertExaminationForm,PatientExaminationForm,UID,bigint,PK,Y,1
+8383,268,View,vw_MedCertExaminationForm,PatientExaminationForm,DataTemplateName,nvarchar,,Y,Examination
+8384,269,View,VW_Operation,TheaterProcedureList,TheaterBookingUID,int,FK,Y,1
+8385,269,View,VW_Operation,TheaterProcedureList,SurgeonUID,int,FK,N,1
+8386,269,View,VW_Operation,TheaterProcedureList,AnaesthetistUID,int,FK,N,0
+8390,269,View,VW_Operation,PatientProcedure,CarproviderUID,int,FK,N,0
+8398,269,View,VW_Operation,PatientProcedure,PACUInDttm,datetime,,N,Jun  8 2014  3:07AM
+8399,269,View,VW_Operation,PatientProcedure,PACUOutDttm,datetime,,N,Jun  8 2014  3:09AM
+8400,269,View,VW_Operation,PatientProcedure,TheaterBookingUID,int,FK,N,1
+8401,269,View,VW_Operation,TheaterBooking,UID,int,PK,Y,1
+8402,269,View,VW_Operation,TheaterBooking,AppointmentDttm,datetime,,Y,Jun  8 2014 12:00AM
+8403,269,View,VW_Operation,TheaterBooking,BKSTSUID,int,FK,Y,46094
+8404,269,View,VW_Operation,TheaterBooking,SURTYPUID,int,FK,N,2014
+8417,270,View,Vw_OrderLocation_doctor,PatientBilledItem,BSMDDUID,int,FK,N,1160
+8424,270,View,Vw_OrderLocation_doctor,patientorderdetail,PatientOrderUID,bigint,FK,Y,0
+8454,272,View,Vw_PatientAdmit_BEG,AdmissionEvent,PatientUID,bigint,FK,Y,559229
+8455,272,View,Vw_PatientAdmit_BEG,AdmissionEvent,RequestingLocationUID,int,FK,N,63
+8782,284,View,vw_PharmacyItemMaster,DrugInstruction,UID,int,PK,Y,1
+8787,284,View,vw_PharmacyItemMaster,DrugInstruction,CUser,int,,Y,154
+8788,284,View,vw_PharmacyItemMaster,DrugInstruction,CWhen,datetime,,Y,May  8 2014 12:54PM
+8789,284,View,vw_PharmacyItemMaster,DrugInstruction,MUser,int,,Y,154
+8790,284,View,vw_PharmacyItemMaster,DrugInstruction,MWhen,datetime,,Y,May  8 2014 12:54PM
+8792,284,View,vw_PharmacyItemMaster,DrugInstruction,OwnerOrganisationUID,int,FK,Y,18
+8793,284,View,vw_PharmacyItemMaster,DrugInstruction,TIMESTAMP,timestamp,,Y,
+8805,284,View,vw_PharmacyItemMaster,DrugCatalogItem,FORMMUID,int,FK,Y,99023
+8808,284,View,vw_PharmacyItemMaster,DrugCatalogItem,DoseQuantity,float,,N,1
+8851,286,View,Vw_RISMod,RequestItem,DisplyName,nvarchar,,N, Bursa
+8852,286,View,Vw_RISMod,RadiologyModality,RequestItemUID,int,FK,N,2101
+8853,286,View,Vw_RISMod,RadiologyModality,Code,nvarchar,,N,03XCT223
+8854,286,View,Vw_RISMod,RadiologyModality,RIMTYPUID,int,FK,N,82401
+8863,287,View,VW_SSH_AdmissionBook,IPBooking,UID,int,PK,Y,1
+8864,287,View,VW_SSH_AdmissionBook,IPBooking,RequestedLocationUID,int,FK,N,63
+8872,287,View,VW_SSH_AdmissionBook,AdmissionEvent,IPBookingUID,int,FK,N,1
+8909,288,View,VW_SSH_AEAdmission,PatientAEAdmission,PatientVisitUID,bigint,FK,Y,127185
+8910,288,View,VW_SSH_AEAdmission,PatientAEAdmission,CWhen,datetime,,Y,Jun  8 2014  3:18AM
+8911,288,View,VW_SSH_AEAdmission,PatientAEAdmission,EMGTPUID,int,FK,N,
+8912,288,View,VW_SSH_AEAdmission,PatientAEAdmission,EMGCDUID,int,FK,N,
+8916,288,View,VW_SSH_AEAdmission,vBDMSPatientVisit,PatientID,nvarchar,,Y,
+8917,288,View,VW_SSH_AEAdmission,vBDMSPatientVisit,Title,nvarchar,,Y,
+8918,288,View,VW_SSH_AEAdmission,vBDMSPatientVisit,Forename,nvarchar,,Y,
+8919,288,View,VW_SSH_AEAdmission,vBDMSPatientVisit,Surname,nvarchar,,Y,
+8920,288,View,VW_SSH_AEAdmission,vBDMSPatientVisit,Age,int,,Y,
+8921,288,View,VW_SSH_AEAdmission,vBDMSPatientVisit,Age_All,nvarchar,,Y,
+8923,288,View,VW_SSH_AEAdmission,vBDMSPatientVisit,VisitCareProvider,nvarchar,,Y,
+8927,288,View,VW_SSH_AEAdmission,vBDMSPatientVisit,VisitLocationCode,nvarchar,,Y,
+8928,288,View,VW_SSH_AEAdmission,vBDMSPatientVisit,VisitLocation,nvarchar,,Y,
+8929,288,View,VW_SSH_AEAdmission,vBDMSPatientVisit,CurrentLocationCode,nvarchar,,Y,
+8930,288,View,VW_SSH_AEAdmission,vBDMSPatientVisit,CurrentLocation,nvarchar,,Y,
+8931,288,View,VW_SSH_AEAdmission,vBDMSPatientVisit,Bed,nvarchar,,Y,
+8932,288,View,VW_SSH_AEAdmission,vBDMSPatientVisit,MedicalDischargeDateEvent,datetime,,Y,
+8933,288,View,VW_SSH_AEAdmission,vBDMSPatientVisit,SendDoctor_Date,datetime,,Y,
+8982,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,PatientUID,bigint,FK,Y,159169
+8983,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,PatientID,nvarchar,,Y,18-06-020927
+8984,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,PatientName,nvarchar,,Y,______ ____  __________
+8985,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,PatientVisitUID,bigint,FK,Y,127202
+8986,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,EpisodeNumber,nvarchar,,Y,E18-14-012400
+8987,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,OrderCategoryUID,int,FK,Y,98954
+8988,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,OrderCategory,nvarchar,,Y,_____________ _
+8989,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,OrderSubCategoryUID,int,FK,Y,87
+8990,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,OrderSubCategory,nvarchar,,Y,_____________ _
+8991,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,BillingGroupUID,int,FK,Y,13
+8992,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,BillingGroupDesc,nvarchar,,Y,Packaged Medical Charge 1.1.14
+8993,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,BillingSubGroupUID,int,FK,Y,145
+8994,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,BillingSubGroupDesc,nvarchar,,Y,Other Medical Service Charges 1.1.14(2)
+8995,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,ItemNameDesc,nvarchar,,Y,____________________________
+8996,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,Code,nvarchar,,Y,18023
+8997,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,StartDttm,datetime,,Y,Jun  8 2014  3:26AM
+8998,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,EndDttm,datetime,,Y,Jun  8 2014  3:26AM
+8999,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,OriginalUnitPrice,float,,Y,100
+9000,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,UnitPrice,float,,Y,100
+9001,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,BillableItemUID,int,FK,Y,54326
+9002,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,BillPackageUID,int,FK,Y,0
+9003,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,BillPackageName,nvarchar,,Y,
+9004,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,StatusOrder,nvarchar,,Y,Raised
+9005,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,Quantity,float,,Y,0.3732
+9006,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,Amount,float,,Y,100
+9007,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,NetAmount,float,,Y,37.32
+9008,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,Discount,float,,Y,0
+9009,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,PatientVisitPayorUID,bigint,FK,Y,
+9010,292,View,VW_SSH_BDMSPatientOrderTariff,VW_SSH_PatientBillableItem,StartDTTMAdmit,datetime,,Y,Jun  8 2014  3:26AM
+9011,293,View,VW_SSH_BDMSPatientVisitPayor,vBDMSPatientVisitPayor,PatientVisitPayorUID,bigint,FK,Y,
+9012,293,View,VW_SSH_BDMSPatientVisitPayor,vBDMSPatientVisitPayor,PayorUID,int,FK,Y,
+9013,293,View,VW_SSH_BDMSPatientVisitPayor,vBDMSPatientVisitPayor,PayorName,nvarchar,,Y,
+9014,293,View,VW_SSH_BDMSPatientVisitPayor,vBDMSPatientVisitPayor,PatientVisitUID,bigint,FK,Y,
+9015,293,View,VW_SSH_BDMSPatientVisitPayor,vBDMSPatientVisitPayor,CompanyName,nvarchar,,Y,
+9016,293,View,VW_SSH_BDMSPatientVisitPayor,vBDMSPatientVisitPayor,PayorAgreementName,nvarchar,,Y,
+9017,293,View,VW_SSH_BDMSPatientVisitPayor,vBDMSPatientVisitPayor,PYRACATUID,int,FK,Y,
+9018,293,View,VW_SSH_BDMSPatientVisitPayor,vBDMSPatientVisitPayor,CodePayor,nvarchar,,Y,
+9019,293,View,VW_SSH_BDMSPatientVisitPayor,vBDMSPatientVisitPayor,PayorOffice,nvarchar,,Y,
+9020,293,View,VW_SSH_BDMSPatientVisitPayor,vBDMSPatientVisitPayor,CoderAgreement,nvarchar,,Y,
+9025,293,View,VW_SSH_BDMSPatientVisitPayor,vBDMSPatientVisit,PatientName,nvarchar,,Y,
+9026,293,View,VW_SSH_BDMSPatientVisitPayor,vBDMSPatientVisit,DateOfBirth,datetime,,Y,
+9028,293,View,VW_SSH_BDMSPatientVisitPayor,vBDMSPatientVisit,Gender,nvarchar,,Y,
+9031,293,View,VW_SSH_BDMSPatientVisitPayor,vBDMSPatientVisit,VisitType,nvarchar,,Y,
+9050,294,View,VW_SSH_BDMSPatientVisitPayor_Billableitem,VW_SSH_StrokMasterlinkBillableItem,UID,int,,Y,7
+9051,294,View,VW_SSH_BDMSPatientVisitPayor_Billableitem,VW_SSH_StrokMasterlinkBillableItem,ItemAverageCost,float,,Y,
+9085,294,View,VW_SSH_BDMSPatientVisitPayor_Billableitem,VW_SSH_PatientBillableItem,ItemUID,int,FK,Y,7968
+9128,295,View,VW_SSH_BDMSPatientVisitPayor_Billableitem_LinkSBUID,VW_SSH_PatientBillableItem,ItemUID_S,int,,Y,
+9182,297,View,Vw_SSH_BillableItemDetail,BillableItem,CUser,int,,Y,1
+9237,300,View,VW_SSH_BookOR,TheaterProcedureList,ANEASUID,int,FK,N,82495
+9246,300,View,VW_SSH_BookOR,TheaterBooking,PatientUID,bigint,FK,N,6
+9247,300,View,VW_SSH_BookOR,TheaterBooking,StartDttm,datetime,,Y,Jun  8 2014  9:00AM
+9255,301,View,VW_SSH_Careprovider,CareproviderService,CareproviderUID,int,FK,Y,49
+9256,301,View,VW_SSH_Careprovider,CareproviderService,ServiceUID,int,FK,Y,2170
+9273,302,View,VW_SSH_ChecktariffDouble_Billableitem,VW_SSH_BDMSBillableItemDetail,Description,nvarchar,,Y,Complete Blood Count
+9274,302,View,VW_SSH_ChecktariffDouble_Billableitem,VW_SSH_BDMSBillableItemDetail,Tariff,nvarchar,,Y,OPD Tariff
+9275,302,View,VW_SSH_ChecktariffDouble_Billableitem,VW_SSH_BDMSBillableItemDetail,Code,nvarchar,,Y,A010
+9302,305,View,VW_SSH_IPBOOKING,IPBooking,PatientUID,bigint,FK,Y,559229
+9303,305,View,VW_SSH_IPBOOKING,IPBooking,LocationUID,int,FK,Y,119
+9304,305,View,VW_SSH_IPBOOKING,IPBooking,AdmissionDttm,datetime,,Y,Jun  8 2014  3:04AM
+9305,305,View,VW_SSH_IPBOOKING,IPBooking,BKSTSUID,int,FK,Y,823
+9306,305,View,VW_SSH_IPBOOKING,IPBooking,CWhen,datetime,,Y,Jun  8 2014  3:01AM
+9307,305,View,VW_SSH_IPBOOKING,IPBooking,StatusFlag,nvarchar,,Y,A
+9308,305,View,VW_SSH_IPBOOKING,IPBooking,BookingNumber,nvarchar,,N,IP150
+9326,306,View,VW_SSH_MobileBook,Booking,CUser,int,,Y,3278954
+9327,306,View,VW_SSH_MobileBook,Booking,BookingNumber,nvarchar,,N,
+9481,311,View,VW_SSH_PatientBillableItem,PatientOrderDetail,PatientVisitPayorUID,bigint,FK,N,
+9482,311,View,VW_SSH_PatientBillableItem,PatientOrderDetail,AltBillableItemName,nvarchar,,N,
+9483,311,View,VW_SSH_PatientBillableItem,VW_SSH_PatientVisitID,PatientUID,bigint,FK,Y,143623
+9484,311,View,VW_SSH_PatientBillableItem,VW_SSH_PatientVisitID,PatientVisitUID,bigint,FK,Y,1
+9485,311,View,VW_SSH_PatientBillableItem,VW_SSH_PatientVisitID,PatientID,nvarchar,,Y,18-00-000008
+9486,311,View,VW_SSH_PatientBillableItem,VW_SSH_PatientVisitID,StartDTTM,datetime,,Y,Dec 17 2005  2:57PM
+9492,311,View,VW_SSH_PatientBillableItem,BillableItem,SpecialRate,float,,N,
+9506,312,View,VW_SSH_PatientBillCancel,PatientBillStatus,PatientBillUID,bigint,FK,Y,1
+9507,312,View,VW_SSH_PatientBillCancel,PatientBillStatus,CancelledBy,int,,Y,2441
+9508,312,View,VW_SSH_PatientBillCancel,PatientBillStatus,DocumentNo,nvarchar,,N,10716
+9509,312,View,VW_SSH_PatientBillCancel,PatientBillStatus,CancelledDttm,datetime,,N,Jun  8 2014  3:28AM
+9519,312,View,VW_SSH_PatientBillCancel,PatientBill,CancelReason,nvarchar,,N,Etc.
+9581,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,CareProviderUID,int,FK,Y,
+9584,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,VISTYUID,int,FK,Y,
+9587,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,ArriveDttm,datetime,,Y,
+9589,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,Organisation,nvarchar,,Y,
+9590,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,ReferredBy,nvarchar,,Y,
+9592,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,PhoneNumber,nvarchar,,Y,
+9593,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,MobileNumber,nvarchar,,Y,
+9594,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,EmailAddress,nvarchar,,Y,
+9595,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,Address,nvarchar,,Y,
+9596,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,CityArea,nvarchar,,Y,
+9597,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,City,nvarchar,,Y,
+9598,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,State,nvarchar,,Y,
+9599,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,Country,nvarchar,,Y,
+9600,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,Pincode,nvarchar,,Y,
+9601,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,MedicalDischargeDate,datetime,,Y,
+9607,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,CurrentService,nvarchar,,Y,
+9612,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,DepartmentUID,int,FK,Y,
+9613,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,DepartmentCode,nvarchar,,Y,
+9614,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,DepartmentName,nvarchar,,Y,
+9615,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,DeptCode,int,,Y,
+9616,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,RegistrationDTTM,datetime,,Y,
+9617,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,Occupation,nvarchar,,Y,
+9618,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,IsDeceased,int,,Y,
+9619,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,MartialStatus,nvarchar,,Y,
+9620,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,IsVIP,nvarchar,,Y,
+9621,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,VIPCategory,nvarchar,,Y,
+9622,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,Speciality,nvarchar,,Y,
+9623,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,NewOldStatus,nvarchar,,Y,
+9624,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,NationalityCode,nvarchar,,Y,
+9625,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,Nationality,nvarchar,,Y,
+9626,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,DischargeCommect,nvarchar,,Y,
+9627,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,PATTPUID,int,FK,Y,
+9628,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,PatientType,nvarchar,,Y,
+9629,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,EpisodeNumber,nvarchar,,Y,
+9630,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,IsBillFinalized,nvarchar,,Y,
+9632,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,MedicalDischargeStatus,nvarchar,,Y,
+9634,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,Consultation_Started_Date,datetime,,Y,
+9635,315,View,VW_SSH_PatientConsult,vBDMSPatientVisit,AddressFull,nvarchar,,Y,
+9636,315,View,VW_SSH_PatientConsult,AppointmentRequest,AppointmentDttm,datetime,,Y,Jun  8 2014  5:59AM
+9637,315,View,VW_SSH_PatientConsult,AppointmentRequest,LocationUID,int,FK,N,43
+9638,315,View,VW_SSH_PatientConsult,AppointmentRequest,PatientVisitUID,bigint,FK,N,127341
+9643,316,View,VW_SSH_PatientExamination,PatientExaminationData,CUser,int,,Y,1972
+9644,316,View,VW_SSH_PatientExamination,PatientExaminationData,CWhen,datetime,,Y,Jun  8 2014  7:12AM
+9645,316,View,VW_SSH_PatientExamination,PatientExaminationData,MUser,int,,Y,1972
+9646,316,View,VW_SSH_PatientExamination,PatientExaminationData,MWhen,datetime,,Y,Jun  8 2014  7:12AM
+9662,316,View,VW_SSH_PatientExamination,PatientExaminationForm,PatientUID,bigint,FK,Y,193016
+9663,316,View,VW_SSH_PatientExamination,PatientExaminationForm,PatientVisitUID,bigint,FK,Y,127368
+9665,316,View,VW_SSH_PatientExamination,PatientExaminationForm,StatusFlag,nvarchar,,Y,A
+9671,317,View,VW_SSH_PatientImage,PatientImage,CUser,int,,Y,9898
+9672,317,View,VW_SSH_PatientImage,PatientImage,CWhen,datetime,,Y,Jun  6 2014  6:34PM
+9673,317,View,VW_SSH_PatientImage,PatientImage,MUser,int,,Y,9898
+9674,317,View,VW_SSH_PatientImage,PatientImage,MWhen,datetime,,Y,Jun  6 2014  6:34PM
+9676,317,View,VW_SSH_PatientImage,PatientImage,OwnerOrganisationUID,int,FK,Y,18
+9677,317,View,VW_SSH_PatientImage,PatientImage,TimeStamp,timestamp,,Y,
+9678,317,View,VW_SSH_PatientImage,PatientImage,ImageExtn,nvarchar,,N,
+9679,317,View,VW_SSH_PatientImage,PatientImage,IMGTPUID,int,FK,N,
+9681,318,View,VW_SSH_PatientLAB,ResultComponent,ResultItemUID,int,FK,Y,0
+9684,318,View,VW_SSH_PatientLAB,ResultComponent,IsAbnormal,nvarchar,,N,-
+9688,318,View,VW_SSH_PatientLAB,Result,PatientUID,bigint,FK,Y,6
+9689,318,View,VW_SSH_PatientLAB,Result,PatientVisitUID,bigint,FK,N,127181
+9690,318,View,VW_SSH_PatientLAB,Result,RequestItemName,nvarchar,,N,Chest AP Upright
+9691,318,View,VW_SSH_PatientLAB,Result,RequestItemCode,nvarchar,,N,
+9792,320,View,VW_SSH_PatientPayor_Ref_Lab,VW_SSH_PatientVisitID,Identifier,nvarchar,,Y,E18-14-012398
+9841,322,View,VW_SSH_PatientVisitICD9,PatientProcedureList,RSLVLUID,int,FK,N,2016
+9842,322,View,VW_SSH_PatientVisitICD9,PatientProcedureList,PROTYPUID,int,FK,N,4019
+9846,322,View,VW_SSH_PatientVisitICD9,PatientProcedure,Comments,nvarchar,,N,package
+9847,322,View,VW_SSH_PatientVisitICD9,PatientProcedure,PRMEDUID,int,FK,Y,82495
+9849,322,View,VW_SSH_PatientVisitICD9,PatientProcedure,LocationUID,int,FK,N,3042
+9987,325,View,VW_SSH_PatientVisitPrivateCase,PatientVisit,BDMSReferralUID,int,FK,N,
+9988,325,View,VW_SSH_PatientVisitPrivateCase,PatientVisit,BDMSReferredByUID,int,FK,N,
+9999,326,View,VW_SSH_Procedure,PatientProcedureList,ProblemName,nvarchar,,N,Acute appendicitis with generalized peritonitis
+10000,326,View,VW_SSH_Procedure,PatientProcedureList,IsPostOPDiagnosis,nvarchar,,Y,Y
+10004,326,View,VW_SSH_Procedure,PatientProcedureList,AltProcedureCode,nvarchar,,N,
+10010,326,View,VW_SSH_Procedure,PatientProcedure,CUser,int,,Y,2436
+10011,326,View,VW_SSH_Procedure,PatientProcedure,CWhen,datetime,,Y,Jun  8 2014  3:12AM
+10012,326,View,VW_SSH_Procedure,PatientProcedure,MUser,int,,Y,2436
+10013,326,View,VW_SSH_Procedure,PatientProcedure,MWhen,datetime,,Y,Jun  8 2014  3:13AM
+10034,326,View,VW_SSH_Procedure,PatientAnestheticsDetail,AnesthetistUID,int,FK,Y,2446
+10035,326,View,VW_SSH_Procedure,PatientAnestheticsDetail,ANSTYPUIDs,nvarchar,,Y,77
+10037,326,View,VW_SSH_Procedure,PatientAnestheticsDetail,INTBRTUID,int,FK,N,
+10038,326,View,VW_SSH_Procedure,PatientAnestheticsDetail,INTBGRDUID,int,FK,N,
+10039,326,View,VW_SSH_Procedure,PatientAnestheticsDetail,INTBSZUID,int,FK,N,
+10040,326,View,VW_SSH_Procedure,PatientAnestheticsDetail,AreaInDttm,datetime,,N,
+10041,326,View,VW_SSH_Procedure,PatientAnestheticsDetail,AreaOutDttm,datetime,,N,
+10042,326,View,VW_SSH_Procedure,PatientAnestheticsDetail,ANSMNDVUIDs,nvarchar,,N,
+10065,326,View,VW_SSH_Procedure,PatientVisit,TokenNumber,nvarchar,,N,
+10118,328,View,VW_SSH_RoomPackageAmount,BDMSBillPackagePrice,ActiveTo,date,,N,4/30/2015
+10124,328,View,VW_SSH_RoomPackageAmount,BillPackage,OrderCategoryUID,int,FK,N,98904
+10160,329,View,VW_SSH_StockMaster,ItemMaster,PurchaseUOM,int,,N,112124
+10161,329,View,VW_SSH_StockMaster,ItemMaster,IsExpiryDateMandatory,nvarchar,,N,Y
+10163,329,View,VW_SSH_StockMaster,ItemMaster,STCATUID,int,FK,N,99133
+10169,330,View,VW_SSH_StrokMasterlinkBillableItem,vw_StockMaster,Stock Code,nvarchar,,Y,
+10170,330,View,VW_SSH_StrokMasterlinkBillableItem,vw_StockMaster,Stock Description,nvarchar,,Y,
+10171,330,View,VW_SSH_StrokMasterlinkBillableItem,vw_StockMaster,Storage Location,nvarchar,,Y,
+10172,330,View,VW_SSH_StrokMasterlinkBillableItem,vw_StockMaster,Main Store,nvarchar,,Y,
+10173,330,View,VW_SSH_StrokMasterlinkBillableItem,vw_StockMaster,IsConsignmentFlag,nvarchar,,Y,N
+10174,330,View,VW_SSH_StrokMasterlinkBillableItem,vw_StockMaster,IsStock,nvarchar,,Y,Y
+10175,330,View,VW_SSH_StrokMasterlinkBillableItem,vw_StockMaster,Quantity,float,,Y,0
+10176,330,View,VW_SSH_StrokMasterlinkBillableItem,vw_StockMaster,ITMTYPUID,int,FK,Y,1594
+10177,330,View,VW_SSH_StrokMasterlinkBillableItem,vw_StockMaster,UID,int,,Y,4
+10178,330,View,VW_SSH_StrokMasterlinkBillableItem,vw_StockMaster,DrugCatalogItemUID,int,FK,Y,3227
+10197,331,View,VW_SSH_StrokMasterlinkBillableItem_BillGroup,VW_SSH_StockMaster,Stock Code,nvarchar,,Y,
+10198,331,View,VW_SSH_StrokMasterlinkBillableItem_BillGroup,VW_SSH_StockMaster,Stock Description,nvarchar,,Y,
+10199,331,View,VW_SSH_StrokMasterlinkBillableItem_BillGroup,VW_SSH_StockMaster,Storage Location,nvarchar,,Y,
+10200,331,View,VW_SSH_StrokMasterlinkBillableItem_BillGroup,VW_SSH_StockMaster,Main Store,nvarchar,,Y,
+10201,331,View,VW_SSH_StrokMasterlinkBillableItem_BillGroup,VW_SSH_StockMaster,IsConsignmentFlag,nvarchar,,Y,N
+10202,331,View,VW_SSH_StrokMasterlinkBillableItem_BillGroup,VW_SSH_StockMaster,IsStock,nvarchar,,Y,Y
+10203,331,View,VW_SSH_StrokMasterlinkBillableItem_BillGroup,VW_SSH_StockMaster,Quantity,float,,Y,0
+10204,331,View,VW_SSH_StrokMasterlinkBillableItem_BillGroup,VW_SSH_StockMaster,UID,int,,Y,4
+10205,331,View,VW_SSH_StrokMasterlinkBillableItem_BillGroup,VW_SSH_StockMaster,ActiveFrom_Store,datetime,,Y,May  8 2014  1:21PM
+10206,331,View,VW_SSH_StrokMasterlinkBillableItem_BillGroup,VW_SSH_StockMaster,ActiveTo_Store,datetime,,Y,
+10207,331,View,VW_SSH_StrokMasterlinkBillableItem_BillGroup,VW_SSH_StockMaster,ITMTYPUID,int,FK,Y,1594
+10611,339,View,vw_SSHPAIPD_1,vBDMSOnWard,PatientID,nvarchar,,Y,
+10612,339,View,vw_SSHPAIPD_1,vBDMSOnWard,LocationUID,int,FK,Y,
+10613,339,View,vw_SSHPAIPD_1,vBDMSOnWard,LocationCode,nvarchar,,Y,
+10614,339,View,vw_SSHPAIPD_1,vBDMSOnWard,LocationName,nvarchar,,Y,
+10615,339,View,vw_SSHPAIPD_1,vBDMSOnWard,BedName,nvarchar,,Y,
+10616,339,View,vw_SSHPAIPD_1,vBDMSOnWard,CareProviderUID,int,FK,Y,
+10617,339,View,vw_SSHPAIPD_1,vBDMSOnWard,CareProviderName,nvarchar,,Y,
+10618,339,View,vw_SSHPAIPD_1,vBDMSOnWard,MedicalDischargeDttm,datetime,,Y,
+10619,339,View,vw_SSHPAIPD_1,vBDMSOnWard,Status,nvarchar,,Y,
+10620,339,View,vw_SSHPAIPD_1,vBDMSOnWard,SexDesc,nvarchar,,Y,
+10621,339,View,vw_SSHPAIPD_1,vBDMSOnWard,NationDesc,nvarchar,,Y,
+10741,344,View,VW_VitalSign_BEG,PatientOrderResultItem,ResultDTTM,datetime,,Y,Jun  8 2014  2:36AM
+10742,344,View,VW_VitalSign_BEG,PatientOrderResultItem,MUser,int,,Y,2436
+10744,344,View,VW_VitalSign_BEG,PatientOrderResultItem,TIMESTAMP,timestamp,,Y,
+10748,344,View,VW_VitalSign_BEG,PatientOrderResult,ResultNumber,nvarchar,,N,183525
+10753,345,View,vw_WardAndBed,BillPackage,PBLCTUID,int,FK,N,98896
+10757,345,View,vw_WardAndBed,LocationProfile,BDCATUID,int,FK,Y,99017
+10794,348,View,vwBDMSMENU_DoctorList,PatientConsultation,PatientUID,bigint,FK,Y,559229
+10814,349,View,vwBDMSMENU_DoctorList_bak,PatientConsultation,PatientVisitUID,bigint,FK,Y,127181
+10817,349,View,vwBDMSMENU_DoctorList_bak,PatientConsultation,CareProviderName,nvarchar,,N,_________ 18MED _________
+10849,351,View,vwBDMSMENU_PatienVitalsign,PatientOrderResultItem,UOMUID,int,FK,N,2295
+10928,354,View,VwCareProvider_BEG,ServiceLocation,ServiceName,nvarchar,,N,_______ _____________
+10959,357,View,VwChiefComplaints_BEG,CCHPIMASTER,UID,int,PK,Y,1
+10960,357,View,VwChiefComplaints_BEG,CCHPIMASTER,Complaint,nvarchar,,Y,Abdominal discomfort
+10961,357,View,VwChiefComplaints_BEG,PatientAssesment,UID,bigint,PK,Y,1
+10962,357,View,VwChiefComplaints_BEG,PatientAssesment,DataTemplateName,nvarchar,,Y,OPD Record
+10963,357,View,VwChiefComplaints_BEG,CCHPI,VIsitUID,bigint,FK,Y,0
+10964,357,View,VwChiefComplaints_BEG,CCHPI,Intencity,int,,N,
+10965,357,View,VwChiefComplaints_BEG,CCHPI,Period,bigint,,N,
+10966,357,View,VwChiefComplaints_BEG,CCHPI,Location,int,,N,
+10967,357,View,VwChiefComplaints_BEG,CCHPI,StatusFlag,nvarchar,,Y,A
+10968,357,View,VwChiefComplaints_BEG,CCHPI,Releincyfacotor,int,,N,
+10969,357,View,VwChiefComplaints_BEG,CCHPI,AGG_Factor,nvarchar,,N,
+10970,357,View,VwChiefComplaints_BEG,CCHPI,Complient,nvarchar,,N,Test
+10971,357,View,VwChiefComplaints_BEG,CCHPI,Remarks,nvarchar,,N,test strat run program
+10972,357,View,VwChiefComplaints_BEG,CCHPI,CWhen,datetime,,Y,Jun  8 2014  2:39AM
+10973,357,View,VwChiefComplaints_BEG,CCHPI,MWhen,datetime,,Y,Jun  8 2014  2:39AM
+10974,357,View,VwChiefComplaints_BEG,CCHPI,MUser,int,,Y,1053
+10975,357,View,VwChiefComplaints_BEG,CCHPI,CUser,int,,Y,1053
+10976,357,View,VwChiefComplaints_BEG,CCHPI,AGUOMUID,int,FK,N,
+10979,358,View,VwDiag_BEG,ReferenCevalue,UID,int,PK,Y,55630
+10980,358,View,VwDiag_BEG,ReferenCevalue,Description,nvarchar,,Y, 
+10982,358,View,VwDiag_BEG,PatientProblem,SEVTYUID,int,FK,N,
+10984,358,View,VwDiag_BEG,PatientProblem,PBMTYUID,int,FK,Y,0
+10985,358,View,VwDiag_BEG,PatientProblem,PBMSTUID,int,FK,Y,0
+10987,358,View,VwDiag_BEG,PatientProblem,CWhen,datetime,,Y,Jun  8 2014  2:40AM
+10990,358,View,VwDiag_BEG,PatientProblem,BodySite,nvarchar,,N, 
+11008,359,View,vwDiagnosis_BEG,PatientProblem,IsPrimary,nvarchar,,Y,N
+11011,360,View,VwDoctorComment_BEG,BDMSASTEMRDoctorComment,id,int,PK,Y,1
+11012,360,View,VwDoctorComment_BEG,BDMSASTEMRDoctorComment,cuser,int,,N,1380
+11013,360,View,VwDoctorComment_BEG,BDMSASTEMRDoctorComment,patuid,int,FK,N,368766
+11014,360,View,VwDoctorComment_BEG,BDMSASTEMRDoctorComment,patvisituid,int,FK,N,387086
+11015,360,View,VwDoctorComment_BEG,BDMSASTEMRDoctorComment,datetimecreate,datetime,,N,Mar 11 2014  3:08AM
+11016,360,View,VwDoctorComment_BEG,BDMSASTEMRDoctorComment,content,nvarchar,,N,_______________
+11017,360,View,VwDoctorComment_BEG,BDMSASTEMRDoctorComment,CWhen,datetime,,N,
+11018,360,View,VwDoctorComment_BEG,BDMSASTEMRDoctorComment,MUser,int,,N,
+11019,360,View,VwDoctorComment_BEG,BDMSASTEMRDoctorComment,MWhen,datetime,,N,
+11020,360,View,VwDoctorComment_BEG,BDMSASTEMRDoctorComment,StatusFlag,nvarchar,,N,
+11021,360,View,VwDoctorComment_BEG,BDMSASTEMRDoctorComment,OwnerOrganisationUID,int,FK,N,
+11022,360,View,VwDoctorComment_BEG,BDMSASTEMRDoctorComment,TIMESTAMP,timestamp,,N,
+11026,361,View,vWlogin_BEG,Login,ActiveFrom,datetime,,Y,May 29 2014 11:23AM
+11028,361,View,vWlogin_BEG,Login,LastPasswordModifiedDTTM,datetime,,N,Jun  6 2014  1:43PM
+11036,361,View,vWlogin_BEG,Careprovider,SEXXXUID,int,FK,Y,0
+11038,361,View,vWlogin_BEG,Careprovider,IsAvailOnHolidays,nvarchar,,Y,Y
+11059,363,View,vwMedCertChiefComplaint,CCHPI,PatientUID,bigint,FK,Y,6
+11078,364,View,vwMedCertDiagnosis,PatientProblem,RecordedDttm,datetime,,N,Jun  8 2014  2:40AM
+11122,367,View,vwMedCertDoctorDiagDetail,PatientProblem,AltProblemCode,nvarchar,,N,
+11124,368,View,vwMedCertEspisodeVisit,PatientVisitID,ActiveFrom,datetime,,Y,Sep 13 2004  3:26PM
+11126,368,View,vwMedCertEspisodeVisit,PatientVisitID,CWhen,datetime,,Y,Jun  7 2014 11:09PM
+11196,372,View,vwMedCertInvestigate,vBDMSPatientOrder,PatientUID,bigint,FK,Y,
+11197,372,View,vwMedCertInvestigate,vBDMSPatientOrder,PatientVisitUID,bigint,FK,Y,
+11198,372,View,vwMedCertInvestigate,vBDMSPatientOrder,OrderNumber,nvarchar,,Y,
+11199,372,View,vwMedCertInvestigate,vBDMSPatientOrder,OrderCategory,nvarchar,,Y,
+11200,372,View,vwMedCertInvestigate,vBDMSPatientOrder,ItemName,nvarchar,,Y,
+11201,372,View,vwMedCertInvestigate,vBDMSPatientOrder,Status,nvarchar,,Y,
+11202,372,View,vwMedCertInvestigate,vBDMSPatientOrder,Quantity,float,,Y,
+11203,372,View,vwMedCertInvestigate,vBDMSPatientOrder,CareproviderUID,int,FK,Y,
+11204,372,View,vwMedCertInvestigate,vBDMSPatientOrder,CareproviderDesc,nvarchar,,Y,
+11291,374,View,vwMedCertPastHistory,MedicalItem,UID,bigint,PK,Y,1
+11292,374,View,vwMedCertPastHistory,MedicalItem,PatientMedicalHistoryUID,bigint,FK,Y,1
+11293,374,View,vwMedCertPastHistory,MedicalItem,MedicalHistoryMasterUID,int,FK,Y,14
+11294,374,View,vwMedCertPastHistory,MedicalItem,MedicalItemName,nvarchar,,Y,Heart Disease / Angina
+11295,374,View,vwMedCertPastHistory,MedicalItem,HasMedicalHistoy,nvarchar,,Y, 
+11296,374,View,vwMedCertPastHistory,MedicalItem,Duration,int,,N,
+11297,374,View,vwMedCertPastHistory,MedicalItem,AGUOMUID,nvarchar,FK,N,
+11298,374,View,vwMedCertPastHistory,MedicalItem,CUser,int,,Y,1
+11299,374,View,vwMedCertPastHistory,MedicalItem,CWhen,datetime,,Y,Jun  8 2014  7:00AM
+11300,374,View,vwMedCertPastHistory,MedicalItem,MUser,int,,Y,1
+11301,374,View,vwMedCertPastHistory,MedicalItem,MWhen,datetime,,Y,Jun  9 2014  1:24PM
+11302,374,View,vwMedCertPastHistory,MedicalItem,StatusFlag,nvarchar,,Y,A
+11303,374,View,vwMedCertPastHistory,MedicalItem,OwnerOrganisationUID,int,FK,Y,18
+11304,374,View,vwMedCertPastHistory,MedicalItem,TIMESTAMP,timestamp,,Y,
+11305,374,View,vwMedCertPastHistory,MedicalItem,ShouldShowDuration,nvarchar,,Y,Y
+11306,374,View,vwMedCertPastHistory,MedicalItem,Comments,nvarchar,,N,
+11307,374,View,vwMedCertPastHistory,PatientMedicalHistory,UID,bigint,PK,Y,1
+11308,374,View,vwMedCertPastHistory,PatientMedicalHistory,PatientUID,bigint,FK,Y,559229
+11309,374,View,vwMedCertPastHistory,PatientMedicalHistory,PatientVisitUID,bigint,FK,Y,127181
+11310,374,View,vwMedCertPastHistory,PatientMedicalHistory,CurrentMedication,nvarchar,,N,Enaril 5 Mg Tab (___)*______*
+11311,374,View,vwMedCertPastHistory,PatientMedicalHistory,LongTermMedication,nvarchar,,N,Aspirin EC TABLET (81 mg) (AsPENT-M TABLET)
+11312,374,View,vwMedCertPastHistory,PatientMedicalHistory,Comments,nvarchar,,N,test run
+11313,374,View,vwMedCertPastHistory,PatientMedicalHistory,CUser,int,,Y,1
+11314,374,View,vwMedCertPastHistory,PatientMedicalHistory,CWhen,datetime,,Y,Jun  8 2014  7:00AM
+11315,374,View,vwMedCertPastHistory,PatientMedicalHistory,MUser,int,,Y,1
+11316,374,View,vwMedCertPastHistory,PatientMedicalHistory,MWhen,datetime,,Y,Jun  9 2014  1:24PM
+11317,374,View,vwMedCertPastHistory,PatientMedicalHistory,StatusFlag,nvarchar,,Y,A
+11318,374,View,vwMedCertPastHistory,PatientMedicalHistory,TIMESTAMP,timestamp,,Y,
+11319,374,View,vwMedCertPastHistory,PatientMedicalHistory,OwnerOrganisationUID,int,FK,Y,18
+11320,374,View,vwMedCertPastHistory,PatientMedicalHistory,SurgicalDetail,nvarchar,,N,test run
+11326,375,View,vwMedCertPE,BDMSASTEMRPhysicalExam,uid,int,PK,Y,1
+11327,375,View,vwMedCertPE,BDMSASTEMRPhysicalExam,PatientUID,int,FK,N,368766
+11328,375,View,vwMedCertPE,BDMSASTEMRPhysicalExam,PatientVisitUID,int,FK,N,387086
+11329,375,View,vwMedCertPE,BDMSASTEMRPhysicalExam,TextualValue,nvarchar,,N,
+11330,375,View,vwMedCertPE,BDMSASTEMRPhysicalExam,CUser,int,,N,1380
+11331,375,View,vwMedCertPE,BDMSASTEMRPhysicalExam,CWhen,datetime,,N,Mar 11 2014  3:11AM
+11332,376,View,vwMedCertPI,CCHPI,UID,bigint,PK,Y,704173
+11354,377,View,vwMedCertProgressNote,BDMSASTEMRProgressNote,id,int,PK,Y,44
+11355,377,View,vwMedCertProgressNote,BDMSASTEMRProgressNote,cuser,int,,N,1
+11356,377,View,vwMedCertProgressNote,BDMSASTEMRProgressNote,patuid,int,FK,N,559229
+11357,377,View,vwMedCertProgressNote,BDMSASTEMRProgressNote,patvisituid,int,FK,N,127181
+11358,377,View,vwMedCertProgressNote,BDMSASTEMRProgressNote,datetimecreate,datetime,,N,Jun  8 2014  7:01AM
+11359,377,View,vwMedCertProgressNote,BDMSASTEMRProgressNote,content,nvarchar,,N,test run
+11360,377,View,vwMedCertProgressNote,BDMSASTEMRProgressNote,CWhen,datetime,,N,
+11361,377,View,vwMedCertProgressNote,BDMSASTEMRProgressNote,MUser,int,,N,
+11362,377,View,vwMedCertProgressNote,BDMSASTEMRProgressNote,MWhen,datetime,,N,
+11363,377,View,vwMedCertProgressNote,BDMSASTEMRProgressNote,StatusFlag,nvarchar,,N,
+11364,377,View,vwMedCertProgressNote,BDMSASTEMRProgressNote,OwnerOrganisationUID,int,FK,N,
+11365,377,View,vwMedCertProgressNote,BDMSASTEMRProgressNote,TIMESTAMP,timestamp,,N,
+11376,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,PatientUID,bigint,FK,Y,559229
+11377,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,PatientVisitUID,bigint,FK,Y,127181
+11378,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,UID,bigint,,Y,1
+11379,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,PatientOrderDetailUID,bigint,FK,Y,1
+11380,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,OrderNumber,nvarchar,,Y,0
+11381,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,OrderCategoryUID,int,FK,Y,98954
+11382,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,OrderCategory,nvarchar,,Y,_____________ _
+11383,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,OrderSubCategoryUID,int,FK,Y,87
+11384,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,OrderSubCategory,nvarchar,,Y,_____________ _
+11385,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,ItemName,nvarchar,,Y,____________________________
+11386,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,Status,nvarchar,,Y,Executed
+11387,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,Quantity,float,,Y,1
+11388,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,Frequency,nvarchar,,Y,
+11389,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,FrequencyTH,nvarchar,,Y,
+11390,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,CareproviderUID,int,FK,Y,1805
+11391,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,CareproviderDesc,nvarchar,,Y, ________ 18OBG __________
+11392,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,UnitTH,nvarchar,,Y,
+11393,378,View,vwMedCertTreatment,VW_SSH_vBDMSPatientOrder,UnitEN,nvarchar,,Y,
+11398,379,View,vwMedCertVitalSign,PatientOrderResultItem,ITMTPUID,int,FK,Y,1519
+11401,379,View,vwMedCertVitalSign,PatientOrderResultItem,DisplayOrder,int,,Y,0
+11403,379,View,vwMedCertVitalSign,PatientOrderResultItem,Comments,nvarchar,,N,ORIPAR10
+11405,379,View,vwMedCertVitalSign,PatientOrderResultItem,IsAbnormal,nvarchar,,N,-
+11409,379,View,vwMedCertVitalSign,PatientOrderResult,OrderItemName,nvarchar,,N,Vital Sign (Adult)
+11411,379,View,vwMedCertVitalSign,PatientOrderResult,Comments,nvarchar,,N,
+11412,379,View,vwMedCertVitalSign,PatientOrderResult,CWhen,datetime,,Y,Jun  8 2014  2:37AM
+11413,379,View,vwMedCertVitalSign,PatientOrderResult,MWhen,datetime,,Y,Jun  8 2014  2:37AM
+11415,379,View,vwMedCertVitalSign,PatientOrderResult,OrderCatalogItemUID,int,FK,N,35036
+11439,381,View,vwopdcard_beg,PatientPersonalCarer,StatusFlag,nvarchar,,Y,A
+11458,381,View,vwopdcard_beg,PatientAlias,Forename,nvarchar,,N,_______
+11459,381,View,vwopdcard_beg,PatientAlias,PatientUID,bigint,FK,Y,121
+11464,382,View,VwOrderStatus_BEG,PatientOrder,MUser,int,,Y,2444
+11734,391,View,VwPatientAdmissToday_BEG,IPBooking,CareproviderUID,int,FK,Y,1053
+11735,391,View,VwPatientAdmissToday_BEG,IPBooking,BedUID,int,FK,N,
+11736,391,View,VwPatientAdmissToday_BEG,IPBooking,ExpectedLengthofStay,int,,Y,2
+11738,391,View,VwPatientAdmissToday_BEG,IPBooking,VISTYUID,int,FK,Y,439
+11739,391,View,VwPatientAdmissToday_BEG,IPBooking,BKTYPUID,int,FK,Y,4580
+11740,391,View,VwPatientAdmissToday_BEG,IPBooking,Comments,nvarchar,,N,
+11745,391,View,VwPatientAdmissToday_BEG,IPBooking,RequestedByUID,int,FK,N,1053
+11755,391,View,VwPatientAdmissToday_BEG,AdmissionEvent,CWhen,datetime,,Y,Jun  8 2014  3:04AM
+11786,393,View,VwPatientAssesment_BEG,PatientAssesment,PatientUID,bigint,FK,Y,1
+11787,393,View,VwPatientAssesment_BEG,PatientAssesment,PatientVisitUID,bigint,FK,Y,0
+11789,393,View,VwPatientAssesment_BEG,PatientAssementSection,UID,bigint,PK,Y,1
+11790,393,View,VwPatientAssesment_BEG,PatientAssementSection,PatientAssesmentUID,bigint,FK,Y,1
+11791,393,View,VwPatientAssesment_BEG,PatientAssementSection,SectionName,nvarchar,,Y,OPD Record
+11792,393,View,VwPatientAssesment_BEG,PatientAssesmentAttribute,DataAttributeUID,int,FK,Y,45
+11793,393,View,VwPatientAssesment_BEG,PatientAssesmentAttribute,AttributeValue,nvarchar,,N,
+11794,393,View,VwPatientAssesment_BEG,PatientAssesmentAttribute,CUser,int,,Y,2304
+11795,393,View,VwPatientAssesment_BEG,PatientAssesmentAttribute,CWhen,datetime,,Y,Jun  8 2014  7:39AM
+11796,393,View,VwPatientAssesment_BEG,PatientAssesmentAttribute,MWhen,datetime,,Y,Jun  8 2014  7:39AM
+11797,393,View,VwPatientAssesment_BEG,PatientAssesmentAttribute,PatientAssementSectionUID,bigint,FK,N,1
+11807,394,View,VwPatientConsult_BEG,AppointmentRequest,PatientUID,bigint,FK,Y,483174
+11809,394,View,VwPatientConsult_BEG,AppointmentRequest,Comments,nvarchar,,N,
+11810,394,View,VwPatientConsult_BEG,AppointmentRequest,APTRQSTUID,int,FK,N,23662
+12033,402,View,VwPatientOrderCount_BEG,PatientOrderDetail,FrequencyDefinitionUID,int,FK,N,
+12176,407,View,VwPatientProcedure_BEG,PatientProcedureTeam,CRROLUID,int,FK,N,67982
+12197,408,View,VwPatientProcedureTeam_BEG,PatientProcedureTeam,StatusFlag,nvarchar,,Y,A
+12200,409,View,VwPatientTimeOPDAll_BEG,PatientServiceEvent,MUser,int,,Y,2451
+12215,410,View,VwPatientTransfer_BEG,LocationTransfer,UID,bigint,PK,Y,1
+12216,410,View,VwPatientTransfer_BEG,LocationTransfer,PatientVisitUID,bigint,FK,Y,127181
+12217,410,View,VwPatientTransfer_BEG,LocationTransfer,ServiceUID,int,FK,Y,295
+12218,410,View,VwPatientTransfer_BEG,LocationTransfer,LocationUID,int,FK,Y,119
+12219,410,View,VwPatientTransfer_BEG,LocationTransfer,BedUID,int,FK,N,200
+12220,410,View,VwPatientTransfer_BEG,LocationTransfer,BDCATUID,int,FK,N,98991
+12221,410,View,VwPatientTransfer_BEG,LocationTransfer,PreviousEventUID,bigint,FK,N,
+12222,410,View,VwPatientTransfer_BEG,LocationTransfer,EffectiveDttm,datetime,,N,Jun  8 2014  3:04AM
+12269,412,View,VwPhysicalEx_BEG,BDMSASTEMRPhysicalExam,Result,image,,N,
+12284,414,View,VwPtOrderEMR_BEG,PatientORDER,UID,bigint,PK,Y,20
+12285,414,View,VwPtOrderEMR_BEG,PatientORDER,ORDCTUID,int,FK,Y,0
+12286,414,View,VwPtOrderEMR_BEG,PatientORDER,ORDSTUID,int,FK,Y,4412
+12287,414,View,VwPtOrderEMR_BEG,PatientORDER,ORDPRUID,int,FK,Y,169
+12288,414,View,VwPtOrderEMR_BEG,PatientORDER,PatientUID,bigint,FK,Y,6
+12289,414,View,VwPtOrderEMR_BEG,PatientORDER,PatientVisitUID,bigint,FK,Y,127181
+12290,414,View,VwPtOrderEMR_BEG,PatientORDER,CUser,int,,Y,1
+12291,414,View,VwPtOrderEMR_BEG,PatientORDER,StatusFlag,nvarchar,,Y,A
+12292,414,View,VwPtOrderEMR_BEG,PatientORDER,PRSTYPUID,int,FK,N,46150
+12310,414,View,VwPtOrderEMR_BEG,PatientOrderDetail,ORRSNUID,int,FK,N,
+12313,414,View,VwPtOrderEMR_BEG,PatientOrderDetail,PRSTSUID,int,FK,N,
+12317,414,View,VwPtOrderEMR_BEG,REferenceValue,UID,int,PK,Y,55630
+12319,414,View,VwPtOrderEMR_BEG,REferenceValue,Description,nvarchar,,Y, 
+12320,414,View,VwPtOrderEMR_BEG,REferenceValue,StatusFlag,nvarchar,,Y,A
+12321,414,View,VwPtOrderEMR_BEG,REferenceValue,DomainCode,nvarchar,,N,ABCAN
+12439,418,View,VwRevACCCloseShiftRpt_BEG,PatientPaymentDetail,IsRefund,nvarchar,,N,
+12441,418,View,VwRevACCCloseShiftRpt_BEG,PatientPaymentDetail,BLCATUID,int,FK,N,4323
+12447,418,View,VwRevACCCloseShiftRpt_BEG,patientbill,UID,bigint,PK,Y,1
+12449,418,View,VwRevACCCloseShiftRpt_BEG,patientbill,StatusFlag,nvarchar,,Y,A
+12451,418,View,VwRevACCCloseShiftRpt_BEG,patientbill,BillNumber,nvarchar,,N,18-CI14110001
+12481,420,View,VwRevPatientBillKriangTest_BEG,PatientBill,AdvanceAmount,float,,N,
+12506,422,View,VwSetupStockReceive_BEG,GRNItemList,ItemName,nvarchar,,N,Cap Blue
+12510,422,View,VwSetupStockReceive_BEG,GRNItemList,ExpiryDttm,datetime,,N,
+12513,422,View,VwSetupStockReceive_BEG,GRNItemList,BinLocationUID,int,FK,Y,0
+12514,422,View,VwSetupStockReceive_BEG,GRNItemList,MRPCost,float,,N,0
+12515,422,View,VwSetupStockReceive_BEG,GRNItemList,PTaxPercentage,float,,N,
+12517,422,View,VwSetupStockReceive_BEG,GRNItemList,FreeQuantity,float,,N,0
+12518,422,View,VwSetupStockReceive_BEG,ManufacturerDetail,UID,int,PK,Y,4079
+12519,422,View,VwSetupStockReceive_BEG,ManufacturerDetail,CompanyName,nvarchar,,Y,A Tech Medical Co.
+12520,422,View,VwSetupStockReceive_BEG,ManufacturerDetail,StatusFlag,nvarchar,,Y,A
+12528,422,View,VwSetupStockReceive_BEG,GRNDetail,InvoiceNo,nvarchar,,N,20140608102357_00000
+12529,422,View,VwSetupStockReceive_BEG,GRNDetail,Discount,float,,N,0
+12530,422,View,VwSetupStockReceive_BEG,GRNDetail,NetAmount,float,,N,2999.75
+12531,422,View,VwSetupStockReceive_BEG,GRNDetail,ShippingCharges,float,,N,
+12532,422,View,VwSetupStockReceive_BEG,GRNDetail,RoundOffValue,float,,N,
+12538,423,View,VwStockTransferDetails_BEG,Stock,ItemCost,float,,Y,0
+12559,423,View,VwStockTransferDetails_BEG,IssuedItemList,StockUID,int,FK,N,84811
+12564,424,View,VwVitalSign_BEG,PatientORDERResultItem,OrderResultItemUID,int,FK,Y,1
+12565,424,View,VwVitalSign_BEG,PatientORDERResultItem,ResultItemName,nvarchar,,Y,Height
+12566,424,View,VwVitalSign_BEG,PatientORDERResultItem,ResultValue,nvarchar,,N,156
+12567,424,View,VwVitalSign_BEG,PatientORDERResultItem,UOMUID,int,FK,N,2295
+12568,424,View,VwVitalSign_BEG,PatientORDERResultItem,ReferenceRange,nvarchar,,N,
+12569,424,View,VwVitalSign_BEG,PatientORDERResultItem,IsAbnormal,nvarchar,,N,-
+12580,425,View,VwVitalSignPIVOT_BEG,PatientOrderResultItem,CUser,int,,Y,2436
+12582,425,View,VwVitalSignPIVOT_BEG,PatientOrderResultItem,ReferenceRange,nvarchar,,N,
+12620,428,View,VW_HN,fBDMSGetAgeYear,,,,Y,
+12633,428,View,VW_HN,fGetPatientRelationName,,,,Y,
